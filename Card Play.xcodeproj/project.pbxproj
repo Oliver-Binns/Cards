@@ -15,8 +15,10 @@
 		7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */; };
 		7C0AE6FB279D674F005695FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D2279D674C005695FB /* ContentView.swift */; };
 		7C0AE6FC279D674F005695FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D2279D674C005695FB /* ContentView.swift */; };
-		7C0AE6FD279D674F005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D3279D674E005695FB /* Assets.xcassets */; };
-		7C0AE6FE279D674F005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D3279D674E005695FB /* Assets.xcassets */; };
+		7C0AE719279D7E06005695FB /* Cards in Frameworks */ = {isa = PBXBuildFile; productRef = 7C0AE718279D7E06005695FB /* Cards */; };
+		7C0AE71B279D7E3D005695FB /* Cards in Frameworks */ = {isa = PBXBuildFile; productRef = 7C0AE71A279D7E3D005695FB /* Cards */; };
+		7C0AE71C279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
+		7C0AE71D279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 /* Begin PBXFileReference section */
 		7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_PlayApp.swift; sourceTree = "<group>"; };
 		7C0AE6D2279D674C005695FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		7C0AE6D3279D674E005695FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C0AE6D8279D674E005695FB /* Card Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Play.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6DE279D674E005695FB /* Card Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Play.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6E0279D674E005695FB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		7C0AE6F1279D674F005695FB /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6F5279D674F005695FB /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		7C0AE6F7279D674F005695FB /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		7C0AE716279D6D4D005695FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0AE719279D7E06005695FB /* Cards in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0AE71B279D7E3D005695FB /* Cards in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,15 +95,16 @@
 				7C0AE6E8279D674E005695FB /* Tests iOS */,
 				7C0AE6F4279D674F005695FB /* Tests macOS */,
 				7C0AE6D9279D674E005695FB /* Products */,
+				7C0AE717279D7E06005695FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		7C0AE6D0279D674C005695FB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7C0AE716279D6D4D005695FB /* Assets.xcassets */,
 				7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */,
 				7C0AE6D2279D674C005695FB /* ContentView.swift */,
-				7C0AE6D3279D674E005695FB /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -141,6 +146,13 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		7C0AE717279D7E06005695FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +169,9 @@
 			dependencies = (
 			);
 			name = "Card Play (iOS)";
+			packageProductDependencies = (
+				7C0AE718279D7E06005695FB /* Cards */,
+			);
 			productName = "Card Play (iOS)";
 			productReference = 7C0AE6D8279D674E005695FB /* Card Play.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +189,9 @@
 			dependencies = (
 			);
 			name = "Card Play (macOS)";
+			packageProductDependencies = (
+				7C0AE71A279D7E3D005695FB /* Cards */,
+			);
 			productName = "Card Play (macOS)";
 			productReference = 7C0AE6DE279D674E005695FB /* Card Play.app */;
 			productType = "com.apple.product-type.application";
@@ -266,7 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C0AE6FD279D674F005695FB /* Assets.xcassets in Resources */,
+				7C0AE71C279D7F39005695FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C0AE6FE279D674F005695FB /* Assets.xcassets in Resources */,
+				7C0AE71D279D7F39005695FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +721,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C0AE718279D7E06005695FB /* Cards */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cards;
+		};
+		7C0AE71A279D7E3D005695FB /* Cards */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cards;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C0AE6CC279D674C005695FB /* Project object */;
 }

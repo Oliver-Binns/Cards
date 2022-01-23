@@ -1,16 +1,16 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Binns, Oliver on 23/01/2022.
-//
-
+import Cards
 import SwiftUI
 
 struct ContentView: View {
+    let style = DefaultStyle()
+    let deck = Deck.full.shuffled()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ScrollView {
+            ForEach(0..<deck.count) { index in
+                style.front.image(forCard: deck[index])
+            }
+        }.padding()
     }
 }
 
