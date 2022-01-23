@@ -4,7 +4,7 @@ import SwiftUI
 import GroupActivities
 
 struct ContentView: View {
-    @State private var deck = Deck.full.shuffled()
+    @State private var game: Sevens = .init(players: 6)
     @State private var subscriptions = Set<AnyCancellable>()
     
     @StateObject private var groupStateObserver = GroupStateObserver()
@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
-                DeckView(deck: $deck)
+                SevensView(game: $game)
                 if sharePlayEnabled {
                     Text("Players: \(participants)")
                 }
@@ -49,7 +49,9 @@ struct ContentView: View {
     }
     
     private func attemptActivation() async throws {
-        let groupActivity = PlayTogether(title: "Hearts", cards: deck)
+        let game = Sevens(players: 2)
+        let data = try JSONEncoder().encode(game)
+        let groupActivity = PlayTogether(title: game.title, data: data)
         if let session = session {
             session.activity = groupActivity
         } else {
@@ -80,7 +82,9 @@ struct ContentView: View {
         }.store(in: &subscriptions)
         
         session.$activity.sink {
-            self.deck = $0.cards
+            if let game = try? JSONDecoder().decode(Sevens.self, from: $0.data) {
+                self.game = game
+            }
         }.store(in: &subscriptions)
         
         session.$activeParticipants.sink {

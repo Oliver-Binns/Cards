@@ -1,4 +1,4 @@
-import Cards
+import Foundation
 import GroupActivities
 
 struct PlayTogether: GroupActivity {
@@ -8,7 +8,7 @@ struct PlayTogether: GroupActivity {
         metadata.title = title
         return metadata
     }
-    
+
     let title: String
-    let cards: Deck
+    let data: Data
 }

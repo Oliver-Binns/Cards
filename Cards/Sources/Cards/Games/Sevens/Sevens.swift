@@ -1,7 +1,7 @@
-struct Sevens {
-    
-    private(set) var hands: [[PlayingCard]]
-    private(set) var table: [Suit: Run]
+public struct Sevens: Game, Codable {
+    public private(set) var title: String = "Sevens"
+    public private(set) var hands: [[PlayingCard]]
+    public private(set) var table: [Suit: Run]
     
     var scores: [Int] {
         hands.map {
@@ -9,7 +9,7 @@ struct Sevens {
         }
     }
     
-    init(players: Int) {
+    public init(players: Int) {
         hands = Deck.noJokers.shuffled().deal(playerCount: players)
         table = Suit.allCases.reduce(into: [:], { $0[$1] = Run() })
     }

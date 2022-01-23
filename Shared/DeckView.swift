@@ -2,7 +2,7 @@ import Cards
 import SwiftUI
 
 struct DeckView: View {
-    @Binding var deck: Deck
+    var deck: Deck
     let style = DefaultStyle()
     
     var body: some View {
