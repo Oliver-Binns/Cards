@@ -19,6 +19,8 @@
 		7C0AE71B279D7E3D005695FB /* Cards in Frameworks */ = {isa = PBXBuildFile; productRef = 7C0AE71A279D7E3D005695FB /* Cards */; };
 		7C0AE71C279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
 		7C0AE71D279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
+		7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE720279D9446005695FB /* PlayTogether.swift */; };
+		7C0AE722279D9446005695FB /* PlayTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE720279D9446005695FB /* PlayTogether.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		7C0AE6F5279D674F005695FB /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		7C0AE6F7279D674F005695FB /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		7C0AE716279D6D4D005695FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C0AE71E279D93D6005695FB /* Card Play (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Card Play (iOS).entitlements"; sourceTree = "<group>"; };
+		7C0AE720279D9446005695FB /* PlayTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogether.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		7C0AE6CB279D674C005695FB = {
 			isa = PBXGroup;
 			children = (
+				7C0AE71E279D93D6005695FB /* Card Play (iOS).entitlements */,
 				7C0AE6D0279D674C005695FB /* Shared */,
 				7C0AE6DF279D674E005695FB /* macOS */,
 				7C0AE6E8279D674E005695FB /* Tests iOS */,
@@ -102,6 +107,7 @@
 		7C0AE6D0279D674C005695FB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7C0AE71F279D943A005695FB /* SharePlay */,
 				7C0AE716279D6D4D005695FB /* Assets.xcassets */,
 				7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */,
 				7C0AE6D2279D674C005695FB /* ContentView.swift */,
@@ -151,6 +157,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C0AE71F279D943A005695FB /* SharePlay */ = {
+			isa = PBXGroup;
+			children = (
+				7C0AE720279D9446005695FB /* PlayTogether.swift */,
+			);
+			path = SharePlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C0AE6FB279D674F005695FB /* ContentView.swift in Sources */,
+				7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */,
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C0AE6FC279D674F005695FB /* ContentView.swift in Sources */,
+				7C0AE722279D9446005695FB /* PlayTogether.swift in Sources */,
 				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Card Play (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z86DH46P79;
@@ -511,6 +528,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Card Play (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z86DH46P79;

@@ -1,4 +1,4 @@
-struct TurnState {
+struct TurnState: Codable {
     private let playerCount: Int
     private(set) var currentPlayer: Int = 0
     

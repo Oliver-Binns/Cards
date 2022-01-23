@@ -1,4 +1,4 @@
-public enum SuitedCard: String, CaseIterable, Equatable {
+public enum SuitedCard: String, CaseIterable, Equatable, Codable {
     case king
     case queen
     case jack

@@ -1,4 +1,4 @@
-public enum Suit: String, CaseIterable, Equatable {
+public enum Suit: String, CaseIterable, Equatable, Codable {
     case spades
     case clubs
     case diamonds
