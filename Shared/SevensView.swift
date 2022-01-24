@@ -7,6 +7,7 @@ struct SevensView: View {
     
     var body: some View {
         VStack {
+            SevensTableView(table: game.table)
             Spacer()
             HandView(hand: game.hand(forPlayer: 0)) { card in
                 game.play(card: card)

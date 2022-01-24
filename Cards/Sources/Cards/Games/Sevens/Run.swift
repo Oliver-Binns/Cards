@@ -1,6 +1,6 @@
 extension Sevens {
     public struct Run: Codable {
-        private(set) var cards: [SuitedCard] = []
+        private(set) public var cards: [SuitedCard] = []
         private var trumpChecker: AcesLowTrumpChecker { AcesLowTrumpChecker() }
         
         func canAddCard(card: SuitedCard) -> Bool {
