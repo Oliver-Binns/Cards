@@ -4,7 +4,7 @@ import SwiftUI
 import GroupActivities
 
 struct ContentView: View {
-    @State private var game: Sevens = .init(players: 6)
+    @State private var game: Sevens = .init(players: 1)
     @State private var subscriptions = Set<AnyCancellable>()
     
     @StateObject private var groupStateObserver = GroupStateObserver()
@@ -43,6 +43,7 @@ struct ContentView: View {
                 }
             }
         }
+        .background(Color.green)
         .task {
             await checkForSessions()
         }

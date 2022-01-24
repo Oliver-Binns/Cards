@@ -25,6 +25,8 @@
 		7C0AE725279DA03F005695FB /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE723279DA03F005695FB /* DeckView.swift */; };
 		7C3E52E7279DC0300002DE88 /* SevensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E6279DC0300002DE88 /* SevensView.swift */; };
 		7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E6279DC0300002DE88 /* SevensView.swift */; };
+		7C3E52EA279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
+		7C3E52EB279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		7C0AE720279D9446005695FB /* PlayTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogether.swift; sourceTree = "<group>"; };
 		7C0AE723279DA03F005695FB /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		7C3E52E6279DC0300002DE88 /* SevensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensView.swift; sourceTree = "<group>"; };
+		7C3E52E9279E11400002DE88 /* HandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 				7C0AE6D2279D674C005695FB /* ContentView.swift */,
 				7C0AE723279DA03F005695FB /* DeckView.swift */,
 				7C3E52E6279DC0300002DE88 /* SevensView.swift */,
+				7C3E52E9279E11400002DE88 /* HandView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -342,6 +346,7 @@
 				7C3E52E7279DC0300002DE88 /* SevensView.swift in Sources */,
 				7C0AE6FB279D674F005695FB /* ContentView.swift in Sources */,
 				7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */,
+				7C3E52EA279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C0AE724279DA03F005695FB /* DeckView.swift in Sources */,
 			);
@@ -354,6 +359,7 @@
 				7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */,
 				7C0AE6FC279D674F005695FB /* ContentView.swift in Sources */,
 				7C0AE722279D9446005695FB /* PlayTogether.swift in Sources */,
+				7C3E52EB279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C0AE725279DA03F005695FB /* DeckView.swift in Sources */,
 			);
