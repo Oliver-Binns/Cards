@@ -9,14 +9,22 @@ struct ContentView: View {
     
     @StateObject private var groupStateObserver = GroupStateObserver()
     @State private var session: GroupSession<PlayTogether>?
+    @State private var sessionMessenger: GroupSessionMessenger?
     
     @State private var sharePlayEnabled: Bool = false
     @State private var participants: Int = 0
     
+    @State private var playerIndex: Int = 0
+    
     var body: some View {
         ZStack {
             VStack {
-                SevensView(game: $game)
+                SevensView(game: $game, playerIndex: $playerIndex) { card in
+                    game.play(card: card)
+                    sessionMessenger?.send(card) {
+                        print("error?:", $0)
+                    }
+                }
                 if sharePlayEnabled {
                     Text("Players: \(participants)")
                 }
@@ -50,6 +58,7 @@ struct ContentView: View {
     }
     
     private func attemptActivation() async throws {
+        print(session?.activeParticipants.count)
         let game = Sevens(players: 2)
         let data = try JSONEncoder().encode(game)
         let groupActivity = PlayTogether(title: game.title, data: data)
@@ -73,6 +82,14 @@ struct ContentView: View {
     }
     
     private func configureSession(_ session: GroupSession<PlayTogether>) {
+        sessionMessenger = GroupSessionMessenger(session: session)
+        
+        Task {
+            for await move in sessionMessenger!.messages(of: PlayingCard?.self) {
+                self.game.play(card: move.0)
+            }
+        }
+        
         session.$state.sink {
             switch $0 {
             case .joined:
@@ -89,6 +106,10 @@ struct ContentView: View {
         }.store(in: &subscriptions)
         
         session.$activeParticipants.sink {
+            // todo
+            // "x left the game..."
+            // "ask them to rejoin"
+            // restart option
             participants = $0.count
         }.store(in: &subscriptions)
         

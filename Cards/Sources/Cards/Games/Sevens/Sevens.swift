@@ -12,6 +12,10 @@ public struct Sevens: Game, Codable {
         }
     }
     
+    public var currentPlayer: Int {
+        turn.currentPlayer
+    }
+    
     public init(players: Int) {
         hands = Deck.noJokers.shuffled().deal(playerCount: players)
         table = Suit.allCases.reduce(into: [:], { $0[$1] = Run() })

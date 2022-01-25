@@ -8,7 +8,7 @@ struct SevensTableView: View {
     var body: some View {
         HStack {
             ForEach(0..<Suit.allCases.count) { suitIndex in
-                ZStack {
+                ZStack(alignment: .top) {
                     ForEach(0..<SuitedCard.allCases.count) { valueIndex in
                         style.front
                             .image(forCard: card(value: valueIndex, suit: suitIndex))
@@ -16,7 +16,7 @@ struct SevensTableView: View {
                             .scaledToFit()
                             .opacity(table[suit(at: suitIndex)]?
                                         .cards.contains(value(at: valueIndex)) ?? false ? 1 : 0)
-                            .padding(.top, 32 * CGFloat(valueIndex))
+                            .padding(.top, 16 * CGFloat(valueIndex))
                     }
                 }
             }
