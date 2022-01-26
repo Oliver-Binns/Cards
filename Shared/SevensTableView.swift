@@ -21,6 +21,7 @@ struct SevensTableView: View {
                                     .padding(.top, 16 * CGFloat(valueIndex))
                                     .matchedGeometryEffect(id: card(value: valueIndex, suit: suitIndex),
                                                            in: namespace)
+                                    .transition(.move(edge: .top))
                             } else {
                                 style.back.image
                                     .resizable()

@@ -10,20 +10,22 @@ struct SevensView: View {
     @Namespace private var namespace
     
     var body: some View {
-        ZStack {
-            VStack {
-                SevensTableView(table: game.table, namespace: namespace)
-                Spacer()
+        VStack {
+            SevensTableView(table: game.table, namespace: namespace)
+            Spacer()
+            
+            ZStack(alignment: .bottom) {
                 HandView(hand: game.hand(forPlayer: playerIndex),
                          namespace: namespace) { card in
                     didPlay(card)
                 }
                 .disabled(game.currentPlayer != playerIndex)
-            }
-            if game.currentPlayer != playerIndex {
-                Text("Waiting for your turn!")
-                    .font(.largeTitle)
-                    .foregroundColor(.purple)
+                if game.currentPlayer != playerIndex {
+                    Text("Waiting for your turn!")
+                        .font(.largeTitle)
+                        .foregroundColor(.purple)
+                        .fontWeight(.semibold)
+                }
             }
         }
         
