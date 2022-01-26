@@ -1,4 +1,4 @@
-public enum PlayingCard: Equatable, Codable {
+public enum PlayingCard: Equatable, Hashable, Codable {
     case suited(SuitedCard, Suit)
     case joker(JokerType)
 }

@@ -7,6 +7,8 @@ struct HandView: View {
     @State private var selectedCard: HandCard?
     
     let style = DefaultStyle()
+    
+    let namespace: Namespace.ID
     let playCard: (PlayingCard) -> Void
     
     var body: some View {
@@ -31,6 +33,7 @@ struct HandView: View {
                         .padding(.leading, offset(forIndex: index))
                         .rotationEffect(.degrees(angle(forIndex: index)), anchor: .bottom)
                         .offset(x: 0, y: selectedCard == item ? -60 : 0)
+                        .matchedGeometryEffect(id: item.card, in: namespace)
                     }
                 }
                 .padding(40)

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct SevensTableView: View {
     let table: [Suit: Sevens.Run]
+    let namespace: Namespace.ID
     let style = DefaultStyle()
     
     var body: some View {
@@ -10,13 +11,24 @@ struct SevensTableView: View {
             ForEach(0..<Suit.allCases.count) { suitIndex in
                 ZStack(alignment: .top) {
                     ForEach(0..<SuitedCard.allCases.count) { valueIndex in
-                        style.front
-                            .image(forCard: card(value: valueIndex, suit: suitIndex))
-                            .resizable()
-                            .scaledToFit()
-                            .opacity(table[suit(at: suitIndex)]?
-                                        .cards.contains(value(at: valueIndex)) ?? false ? 1 : 0)
-                            .padding(.top, 16 * CGFloat(valueIndex))
+                        VStack {
+                            if table[suit(at: suitIndex)]?
+                                .cards.contains(value(at: valueIndex)) ?? false {
+                                style.front
+                                    .image(forCard: card(value: valueIndex, suit: suitIndex))
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(.top, 16 * CGFloat(valueIndex))
+                                    .matchedGeometryEffect(id: card(value: valueIndex, suit: suitIndex),
+                                                           in: namespace)
+                            } else {
+                                style.back.image
+                                    .resizable()
+                                    .scaledToFit()
+                                    .opacity(0)
+                                    .padding(.top, 16 * CGFloat(valueIndex))
+                            }
+                        }
                     }
                 }
             }
