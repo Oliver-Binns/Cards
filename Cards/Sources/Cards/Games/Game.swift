@@ -1,3 +1,3 @@
-public protocol Game: Codable {
-    var title: String { get }
+public enum Game: Codable {
+    case sevens(Sevens)
 }

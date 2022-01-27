@@ -1,3 +1,4 @@
+import Cards
 import Foundation
 import GroupActivities
 
@@ -10,5 +11,6 @@ struct PlayTogether: GroupActivity {
     }
 
     let title: String
-    let data: Data
+    var game: Game?
+    var players: [UUID]?
 }

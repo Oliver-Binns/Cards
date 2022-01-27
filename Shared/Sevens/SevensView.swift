@@ -3,8 +3,8 @@ import Combine
 import SwiftUI
 
 struct SevensView: View {
-    @Binding var game: Sevens
-    @Binding var playerIndex: Int
+    let game: Sevens
+    let playerIndex: Int
     let didPlay: (PlayingCard?) -> Void
     
     @Namespace private var namespace
@@ -20,6 +20,7 @@ struct SevensView: View {
                     didPlay(card)
                 }
                 .disabled(game.currentPlayer != playerIndex)
+                
                 if game.currentPlayer != playerIndex {
                     Text("Waiting for your turn!")
                         .font(.largeTitle)
@@ -28,6 +29,5 @@ struct SevensView: View {
                 }
             }
         }
-        
     }
 }

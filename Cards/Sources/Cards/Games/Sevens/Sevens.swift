@@ -1,4 +1,4 @@
-public struct Sevens: Game, Codable {
+public struct Sevens: Codable {
     public private(set) var title: String = "Sevens"
     
     private var turn: TurnState!

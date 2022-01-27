@@ -4,7 +4,7 @@ import SwiftUI
 struct Card_PlayApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainMenu()
         }
     }
 }

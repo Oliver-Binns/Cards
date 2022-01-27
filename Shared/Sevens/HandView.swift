@@ -9,7 +9,7 @@ struct HandView: View {
     let style = DefaultStyle()
     
     let namespace: Namespace.ID
-    let playCard: (PlayingCard) -> Void
+    let playCard: (PlayingCard?) -> Void
     
     var body: some View {
         VStack {
@@ -39,18 +39,27 @@ struct HandView: View {
                 .padding(40)
                 .padding(.top, 60)
             }
-            Button("Play") {
-                guard let selectedCard = selectedCard else {
-                    return
+            
+            if hand.contains(where: { $0.isValid }) {
+                Button("Play") {
+                    guard let selectedCard = selectedCard else {
+                        return
+                    }
+                    withAnimation {
+                        playCard(selectedCard.card)
+                        self.selectedCard = nil
+                    }
                 }
-                withAnimation {
-                    playCard(selectedCard.card)
-                    self.selectedCard = nil
+                .tint(.blue)
+                .disabled(selectedCard == nil)
+                .buttonStyle(.borderedProminent)
+            } else {
+                Button("Pass") {
+                    playCard(nil)
                 }
+                .tint(.blue)
+                .buttonStyle(.borderedProminent)
             }
-            .tint(.blue)
-            .disabled(selectedCard == nil)
-            .buttonStyle(.borderedProminent)
         }
         .frame(maxHeight: 300)
         .padding(.vertical)
