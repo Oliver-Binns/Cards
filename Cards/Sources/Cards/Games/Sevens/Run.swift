@@ -1,5 +1,5 @@
 extension Sevens {
-    public struct Run: Codable {
+    public struct Run: Codable, Equatable {
         private(set) public var cards: [SuitedCard] = []
         private var trumpChecker: AcesLowTrumpChecker { AcesLowTrumpChecker() }
         

@@ -23,10 +23,9 @@ struct GameView: View {
         .background(Color.green)
     }
 }
-/*
+
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(game: ))
+        GameView(game: .constant(.sevens(.init(players: 2))))
     }
 }
-*/

@@ -15,7 +15,9 @@ struct HandView: View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 ZStack(alignment: .leading) {
-                    ForEach(Array(hand.enumerated()), id: \.element.id) { (index, item) in
+                    ForEach(Array(hand
+                                    .sorted(by: compareCards(_:_:))
+                                    .enumerated()), id: \.element.id) { (index, item) in
                         style.front.image(forCard: item.card)
                             .resizable()
                             .scaledToFit()
@@ -74,5 +76,30 @@ struct HandView: View {
     
     func offset(forIndex index: Int) -> CGFloat {
         CGFloat(index) * 10
+    }
+    
+    private func compareCards(_ lhs: HandCard, _ rhs: HandCard) -> Bool {
+        compareCards(lhs.card, rhs.card)
+    }
+    
+    private func compareCards(_ lhs: PlayingCard, _ rhs: PlayingCard) -> Bool {
+        switch (lhs, rhs) {
+        case (.joker, .joker):
+            return true
+        case (.suited, .joker):
+            return true
+        case (.joker, .suited):
+            return false
+        case (.suited(let lhsValue, let lhsSuit), .suited(let rhsValue, let rhsSuit)):
+            guard lhsSuit == rhsSuit else {
+                return lhsSuit.hashValue > rhsSuit.hashValue
+            }
+            switch AcesLowTrumpChecker().compare(lhsValue, rhsValue) {
+            case .lower:
+                return true
+            default:
+                return false
+            }
+        }
     }
 }

@@ -1,6 +1,4 @@
-public struct Sevens: Codable {
-    public private(set) var title: String = "Sevens"
-    
+public struct Sevens: Codable, Equatable {
     private var turn: TurnState!
     private var hands: [[PlayingCard]]
     

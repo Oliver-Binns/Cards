@@ -27,9 +27,6 @@ struct MainMenu: View {
                 .accentColor(.blue)
                 .padding(.bottom)
                 
-                Text("joined: \((state == .joined).description)")
-                Text("waiting: \((state == .waiting).description)")
-                
                 if groupStateObserver.isEligibleForGroupSession {
                     if state == .joined {
                         NavigationLink("Play with Friends",

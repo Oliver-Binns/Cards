@@ -1,4 +1,4 @@
-enum ComparisonResult: Equatable {
+public enum ComparisonResult: Equatable {
     case higher(Int)
     case equal
     case lower(Int)

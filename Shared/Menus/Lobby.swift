@@ -18,7 +18,7 @@ struct Lobby: View {
             .font(.largeTitle)
             .fontWeight(.semibold)
             
-            if let playerCount = session?.activeParticipants.count {
+            if let playerCount = participants?.count {
                 Text("\(playerCount) Players")
             }
             
@@ -28,19 +28,18 @@ struct Lobby: View {
             Spacer()
             
             Button("Play Sevens") {
-                guard let playerCount = session?.activeParticipants.count,
-                      let players = session?.activeParticipants.map({ $0.id }) else { return }
+                guard let playerCount = participants?.count,
+                      let players = participants?.map({ $0.id }) else { return }
                 session?.activity = .init(title: "Sevens",
                                          game: .sevens(.init(players: playerCount)),
                                          players: players)
-                print("setting activity")
             }
 
             if let game = game,
                let players = session?.activity.players,
                let playerID = session?.localParticipant.id,
                let playerIndex = players.firstIndex(of: playerID) {
-                NavigationLink(isActive: .init(get: { game != nil },
+                NavigationLink(isActive: .init(get: { true },
                                                set: { _ in session?.activity.game = nil }),
                                destination: { GameView(game: .init(get: { game },
                                                                  set: { session?.activity.game = $0 }),
@@ -60,12 +59,12 @@ struct Lobby: View {
         //    self.receiveMessage(message)
         //}
         
-        /*session.$activeParticipants.sink {
+        session?.$activeParticipants.sink {
             self.participants = $0
-        }.store(in: &cancellables)*/
+        }.store(in: &cancellables)
         
         session?.$activity.sink {
-            print("updated activity", $0)
+            guard self.game != $0.game else { return }
             self.game = $0.game
         }.store(in: &cancellables)
     }

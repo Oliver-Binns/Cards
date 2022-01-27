@@ -1,5 +1,7 @@
-struct AcesLowTrumpChecker: TrumpChecker {
-    func compare(_ lhs: SuitedCard, _ rhs: SuitedCard) -> ComparisonResult {
+public struct AcesLowTrumpChecker: TrumpChecker {
+    public init() { }
+    
+    public func compare(_ lhs: SuitedCard, _ rhs: SuitedCard) -> ComparisonResult {
         let scoreChecker = AcesLowTrumpScore()
         let difference = scoreChecker.score(forCard: rhs) -
             scoreChecker.score(forCard: lhs)
