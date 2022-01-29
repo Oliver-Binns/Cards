@@ -1,1 +1,3 @@
-struct Hearts { }
+import Combine
+
+final class Hearts: ObservableObject { }

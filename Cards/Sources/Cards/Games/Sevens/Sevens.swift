@@ -78,12 +78,6 @@ extension Sevens: Codable {
     }
 }
 
-extension Sevens: Equatable {
-    public static func == (lhs: Sevens, rhs: Sevens) -> Bool {
-        lhs.table == rhs.table
-    }
-}
-
 extension PlayingCard {
     var isSeven: Bool {
         switch self {

@@ -20,7 +20,7 @@ struct GameView: View {
                         game = .sevens(sevens)
                     }
                 }
-            case .none:
+            default:
                 EmptyView()
             }
             
@@ -29,10 +29,9 @@ struct GameView: View {
     }
 }
 
-/*struct GameView_Previews: PreviewProvider {
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
         GameView(game: .constant(.sevens(.init(players: 2))),
                  playerIndex: 0) { _ in }
     }
 }
-*/

@@ -2,7 +2,7 @@ import Cards
 import Foundation
 import GroupActivities
 
-struct PlayTogether: GroupActivity, Equatable {
+struct PlayTogether: GroupActivity {
     var metadata: GroupActivityMetadata {
         var metadata = GroupActivityMetadata()
         metadata.type = .generic

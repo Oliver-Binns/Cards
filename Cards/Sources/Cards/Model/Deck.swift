@@ -30,4 +30,12 @@ extension Array where Element == PlayingCard {
         
         return dealtCards
     }
+    
+    public mutating func deal(playerCount: Int, cardsPerPlayer: Int) -> [[PlayingCard]] {
+        (0..<playerCount).map { _ in
+            let hand = Array(prefix(cardsPerPlayer))
+            removeFirst(cardsPerPlayer)
+            return hand
+        }
+    }
 }

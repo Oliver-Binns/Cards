@@ -15,11 +15,8 @@ extension GameButtonViewModel {
             /*.init(imageName: "heart.square.fill", name: "Hearts", playerCount: 4...4) {
                 .sevens(.init(players: $0))
             },
-            .init(imageName: "heart.square.fill", name: "Yaniv", playerCount: 2...8) {
-                .sevens(.init(players: $0))
-            },
             .init(imageName: "heart.square.fill", name: "Go Fish", playerCount: 2...5) {
-                .sevens(.init(players: $0))
+                .goFish(.init(players: $0))
             }*/
         ]
     }
