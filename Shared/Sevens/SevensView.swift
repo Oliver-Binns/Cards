@@ -3,7 +3,8 @@ import Combine
 import SwiftUI
 
 struct SevensView: View {
-    let game: Sevens
+    @ObservedObject var game: Sevens
+    
     let playerIndex: Int
     let didPlay: (PlayingCard?) -> Void
     

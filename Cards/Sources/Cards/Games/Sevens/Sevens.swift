@@ -1,8 +1,9 @@
-public struct Sevens: Codable, Equatable {
-    private var turn: TurnState!
-    private var hands: [[PlayingCard]]
-    
-    public private(set) var table: [Suit: Run]
+import Combine
+
+public final class Sevens: ObservableObject {
+    @Published private var turn: TurnState!
+    @Published private var hands: [[PlayingCard]]
+    @Published public private(set) var table: [Suit: Run]
     
     public var winner: Int? {
         hands.firstIndex(where: \.isEmpty)
@@ -43,7 +44,7 @@ public struct Sevens: Codable, Equatable {
         }
     }
     
-    public mutating func play(card: PlayingCard?) {
+    public func play(card: PlayingCard?) {
         if let card = card,
            case .suited(let value, let suit) = card,
            isValid(card: card) {
@@ -54,6 +55,32 @@ public struct Sevens: Codable, Equatable {
             }
         }
         turn.next()
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        turn = try container.decode(TurnState.self, forKey: .turn)
+        hands = try container.decode([[PlayingCard]].self, forKey: .hands)
+        table = try container.decode([Suit: Run].self, forKey: .table)
+    }
+}
+
+extension Sevens: Codable {
+    enum CodingKeys: CodingKey {
+        case turn, hands, table
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(turn, forKey: .turn)
+        try container.encode(hands, forKey: .hands)
+        try container.encode(table, forKey: .table)
+    }
+}
+
+extension Sevens: Equatable {
+    public static func == (lhs: Sevens, rhs: Sevens) -> Bool {
+        lhs.table == rhs.table
     }
 }
 

@@ -9,7 +9,7 @@ struct GameView: View {
     var body: some View {
         VStack {
             switch game {
-            case .sevens(var sevens):
+            case .sevens(let sevens):
                 SevensView(game: sevens, playerIndex: playerIndex) { card in
                     sevens.play(card: card)
                     
