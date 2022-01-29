@@ -13,4 +13,5 @@ struct PlayTogether: GroupActivity {
     let title: String
     var game: Game?
     var players: [UUID]?
+    var names: [UUID: String] = [:]
 }

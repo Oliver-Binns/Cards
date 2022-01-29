@@ -4,6 +4,10 @@ public struct Sevens: Codable, Equatable {
     
     public private(set) var table: [Suit: Run]
     
+    public var winner: Int? {
+        hands.firstIndex(where: \.isEmpty)
+    }
+    
     var scores: [Int] {
         hands.map {
             $0.map(SimpleScore().score).reduce(0, +)

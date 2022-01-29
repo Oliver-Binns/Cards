@@ -12,43 +12,77 @@ struct MainMenu: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 16) {
                 Text("Card Play")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
+                    .font(.largeTitle)
+                    .fontWeight(.semibold)
                 
                 Spacer()
                 
-                
-                NavigationLink("Play Solo") {
-                    SoloGame()
-                }
-                .buttonStyle(.borderedProminent)
-                .accentColor(.blue)
-                .padding(.bottom)
-                
-                if groupStateObserver.isEligibleForGroupSession {
-                    if state == .joined {
-                        NavigationLink("Play with Friends",
-                                       isActive: .constant(true)) {
-                            Lobby(session: $session)
+                VStack(alignment: .leading, spacing: 16) {
+                    NavigationLink {
+                        SoloGame()
+                    } label: {
+                        HStack {
+                            Image(systemName: "person")
+                            Text("Play Solo")
                         }
-                    } else {
-                        Button("Play with Friends") {
-                            Task {
-                                try await startSession()
+                        .padding(8)
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .accentColor(.blue)
+                }
+                .padding()
+                .background(.white)
+                .cornerRadius(8)
+                .shadow(radius: 4)
+                
+                
+                VStack(spacing: 8) {
+                    Text("Card Play is best enjoyed with friends.")
+                        .frame(maxWidth: .infinity)
+                    
+                    if groupStateObserver.isEligibleForGroupSession {
+                        if state == .joined {
+                            NavigationLink("Play with Friends",
+                                           isActive: .init(get: { state == .joined },
+                                                           set: { _ in session?.end() })) {
+                                Lobby(session: $session)
                             }
                         }
-                        .buttonStyle(.borderedProminent)
-                        .accentColor(.blue)
+                    } else {
+                        HStack {
+                            Image(systemName: "video.fill")
+                            Text("Join a FaceTime call to activate SharePlay!")
+                        }
                     }
-                } else {
-                    Text("Join a FaceTime call to play with friends")
-                    .multilineTextAlignment(.center)
+                    
+                    Button {
+                        Task {
+                            try await startSession()
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "shareplay")
+                            Text("Start SharePlay")
+                        }
+                        .padding(8)
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.blue)
+                    .disabled(!groupStateObserver.isEligibleForGroupSession)
                 }
+                .padding()
+                .background(.white)
+                .cornerRadius(8)
+                .shadow(radius: 4)
+                
                 Spacer()
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding()
+            //.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.green)
         }
         .accentColor(.primary)
