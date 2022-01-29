@@ -21,7 +21,6 @@ struct HandView: View {
                         style.front.image(forCard: item.card)
                             .resizable()
                             .scaledToFit()
-                            // TODO: add disabled styling
                             .overlay(Color.black.blendMode(.multiply).opacity(item.isValid ? 0 : 0.3))
                         .onTapGesture {
                             withAnimation {
@@ -63,7 +62,6 @@ struct HandView: View {
                 .buttonStyle(.borderedProminent)
             }
         }
-        .frame(maxHeight: 300)
         .padding(.vertical)
     }
     

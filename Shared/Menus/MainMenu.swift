@@ -34,7 +34,7 @@ struct MainMenu: View {
                     .accentColor(.blue)
                 }
                 .padding()
-                .background(.white)
+                .background(.background)
                 .cornerRadius(8)
                 .shadow(radius: 4)
                 
@@ -76,17 +76,17 @@ struct MainMenu: View {
                     .disabled(!groupStateObserver.isEligibleForGroupSession)
                 }
                 .padding()
-                .background(.white)
+                .background(.background)
                 .cornerRadius(8)
                 .shadow(radius: 4)
                 
                 Spacer()
             }
             .padding()
-            //.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.green)
         }
         .navigationViewStyle(.stack)
+        .navigationBarTitleDisplayMode(.inline)
         .accentColor(.primary)
         .task {
             await checkForSession()

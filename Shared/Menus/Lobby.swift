@@ -9,7 +9,7 @@ struct Lobby: View {
     
     @State private var cancellables: Set<AnyCancellable> = []
 
-    @State var winner: String? = "Bob"
+    @State var winner: String? = nil
     @State var alertText: String?
     
     let games = GameButtonViewModel.games

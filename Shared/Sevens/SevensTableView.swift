@@ -33,7 +33,7 @@ struct SevensTableView: View {
                     }
                 }
             }
-        }.padding()
+        }.padding(.horizontal)
     }
     
     func suit(at index: Int) -> Suit {

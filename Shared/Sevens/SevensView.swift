@@ -12,7 +12,6 @@ struct SevensView: View {
     var body: some View {
         VStack {
             SevensTableView(table: game.table, namespace: namespace)
-            Spacer()
             
             ZStack(alignment: .bottom) {
                 HandView(hand: game.hand(forPlayer: playerIndex),
