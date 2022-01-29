@@ -12,7 +12,7 @@ extension GameButtonViewModel {
             .init(imageName: "7.square.fill", name: "Sevens", playerCount: 3...7) {
                 .sevens(.init(players: $0))
             },
-            .init(imageName: "heart.square.fill", name: "Hearts", playerCount: 4...4) {
+            /*.init(imageName: "heart.square.fill", name: "Hearts", playerCount: 4...4) {
                 .sevens(.init(players: $0))
             },
             .init(imageName: "heart.square.fill", name: "Yaniv", playerCount: 2...8) {
@@ -20,7 +20,7 @@ extension GameButtonViewModel {
             },
             .init(imageName: "heart.square.fill", name: "Go Fish", playerCount: 2...5) {
                 .sevens(.init(players: $0))
-            }
+            }*/
         ]
     }
 }

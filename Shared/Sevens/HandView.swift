@@ -90,7 +90,7 @@ struct HandView: View {
             return false
         case (.suited(let lhsValue, let lhsSuit), .suited(let rhsValue, let rhsSuit)):
             guard lhsSuit == rhsSuit else {
-                return lhsSuit.hashValue > rhsSuit.hashValue
+                return lhsSuit < rhsSuit
             }
             switch AcesLowTrumpChecker().compare(lhsValue, rhsValue) {
             case .lower:
