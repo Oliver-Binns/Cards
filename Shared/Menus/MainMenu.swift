@@ -44,11 +44,12 @@ struct MainMenu: View {
                         .frame(maxWidth: .infinity)
                     
                     if groupStateObserver.isEligibleForGroupSession {
-                        if state == .joined {
+                        if let session = session,
+                           state == .joined {
                             NavigationLink("Play with Friends",
                                            isActive: .init(get: { state == .joined },
-                                                           set: { _ in session?.end() })) {
-                                Lobby(session: $session)
+                                                           set: { _ in session.end() })) {
+                                Lobby(session: session)
                             }
                         }
                     } else {
@@ -85,6 +86,7 @@ struct MainMenu: View {
             //.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.green)
         }
+        .navigationViewStyle(.stack)
         .accentColor(.primary)
         .task {
             await checkForSession()

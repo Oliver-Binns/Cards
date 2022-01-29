@@ -4,21 +4,13 @@ import GroupActivities
 import SwiftUI
 
 struct Lobby: View {
-    @Binding var session: GroupSession<PlayTogether>?
+    @ObservedObject var session: GroupSession<PlayTogether>
+    @State var messenger: GroupSessionMessenger?
     
-    @State var activity: PlayTogether?
-    
-    var game: Game? {
-        activity?.game
-    }
-    
-    @State private var participants: Set<Participant>? = nil
     @State private var cancellables: Set<AnyCancellable> = []
-    
-    @FocusState private var nameIsFocussed: Bool
 
+    @State var winner: String? = nil
     @State var alertText: String?
-    @State var winner: Int?
     
     let games = GameButtonViewModel.games
     
@@ -28,23 +20,21 @@ struct Lobby: View {
             .font(.largeTitle)
             .fontWeight(.semibold)
             
-            if let playerCount = participants?.count {
+            if let playerCount = session.activeParticipants.count {
                 Text("\(playerCount) Players")
             }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text("Your Name").font(.caption2)
                 TextField("Holleigh", text: .init(get: {
-                    guard let uuid = session?.localParticipant.id,
-                        let name = session?.activity.names[uuid] else { return "" }
-                    return name
+                    let uuid = session.localParticipant.id
+                    return session.activity.names[uuid, default: ""]
                 }, set: {
-                    guard let uuid = session?.localParticipant.id,
-                          !$0.isEmpty else { return }
-                    session?.activity.names[uuid] = $0
+                    guard !$0.isEmpty else { return }
+                    let uuid = session.localParticipant.id
+                    session.activity.names[uuid] = $0
                 }))
                 .textContentType(.givenName)
-                .focused($nameIsFocussed)
             }
             .padding()
             .background(.background)
@@ -60,38 +50,41 @@ struct Lobby: View {
                                    name: games[index].name,
                                    players: games[index].playerCount) {
                             startGame(model: games[index])
-                        }.disabled(!games[index].playerCount.contains(participants?.count ?? 0))
+                        }.disabled(!games[index].playerCount.contains(session.activeParticipants.count))
                     }
                 }
             }
             
 
-            if let game = game,
-               let players = session?.activity.players,
-               let playerID = session?.localParticipant.id,
+            if let players = session.activity.players,
+               let playerID = session.localParticipant.id,
                let playerIndex = players.firstIndex(of: playerID) {
-                NavigationLink(isActive: .init(get: { activity?.game != nil },
-                                               set: { _ in session?.activity.game = nil })) {
-                    
-                    GameView(game: .init(get: { game },
-                                         set: { session?.activity.game = $0 }),
-                             playerIndex: playerIndex) { winner in
-                        session?.activity.game = nil
-                        activity?.game = nil
-                        if let winningPlayerID = session?.activity.players?[winner],
-                           let winningPlayerName = session?.activity.names[winningPlayerID] {
-                            alertText = "\(winningPlayerName) wins!"
-                        }
+                NavigationLink(isActive: .init(get: { session.activity.game != nil },
+                                               set: { _ in session.activity.game = nil })) {
+                    GameView(game: .init(get: {
+                        session.activity.game
+                    }, set: { session.activity.game = $0 }), playerIndex: playerIndex) { winner in
+                        announceWinner(winner)
                     }
                 } label: { EmptyView() }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(.green)
-        .onAppear {
-            configureSession()
+        .overlay {
+            if let winner = winner {
+                WinnerView(winner: winner)
+                    .onTapGesture {
+                        withAnimation {
+                            self.winner = nil
+                        }
+                    }
+            } else {
+                EmptyView()
+            }
         }
+        .background(.green)
+        .onAppear { Task { await getMessages() } }
         .alert("Oh no!",
                isPresented: .init { alertText != nil } set: { _ in alertText = nil }) {
             Text("Ok")
@@ -99,27 +92,37 @@ struct Lobby: View {
     }
     
     private func startGame(model: GameButtonViewModel) {
-        guard let playerCount = participants?.count,
-              let playerIDs = participants?.map({ $0.id }),
-              let playerNames = session?.activity.names else {
-            return
-        }
+        let playerCount = session.activeParticipants.count
+        let playerIDs = session.activeParticipants.map(\.id)
+        let playerNames = session.activity.names
         guard playerIDs.allSatisfy(playerNames.keys.contains) else {
             alertText = "All players must have entered a name to continue"
             return
         }
-        session?.activity = .init(title: model.name, game: model.startGame(playerCount), players: playerIDs, names: playerNames)
+        session.activity =  .init(title: model.name,
+                                  game: model.startGame(playerCount),
+                                  players: playerIDs,
+                                  names: playerNames)
         
     }
     
-    private func configureSession() {
-        session?.$activeParticipants.sink {
-            self.participants = $0
-        }.store(in: &cancellables)
-        
-        session?.$activity.sink {
-            self.activity = $0
-        }.store(in: &cancellables)
+    private func announceWinner(_ winner: Int) {
+        if let winningPlayerID = session.activity.players?[winner],
+           let winningPlayerName = session.activity.names[winningPlayerID] {
+            self.winner = winningPlayerName
+            messenger?.send(winningPlayerName) {
+                if let error = $0 {
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    private func getMessages() async {
+        messenger = GroupSessionMessenger(session: session)
+        for await message in messenger!.messages(of: String.self) {
+            self.winner = message.0
+        }
     }
 }
 

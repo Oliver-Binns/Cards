@@ -23,7 +23,7 @@ struct GameButton: View {
                         .fontWeight(.semibold)
                 }
                 .font(.caption)
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
             }.padding()
         }
         .foregroundColor(.red)

@@ -37,6 +37,8 @@
 		7C91992627A548FA00BC5802 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992427A548FA00BC5802 /* GameButton.swift */; };
 		7C91992827A55F4800BC5802 /* GameButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */; };
 		7C91992927A55F4800BC5802 /* GameButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */; };
+		7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
+		7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
 		7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
 		7CFC65D627A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,7 @@
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
 		7C91992427A548FA00BC5802 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonViewModel.swift; sourceTree = "<group>"; };
+		7C91992D27A5921300BC5802 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		7CFC65D427A30C1300B61C83 /* SoloGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +207,7 @@
 				7C3A069027A1D73800261364 /* Lobby.swift */,
 				7C91992427A548FA00BC5802 /* GameButton.swift */,
 				7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */,
+				7C91992D27A5921300BC5802 /* WinnerView.swift */,
 			);
 			path = Menus;
 			sourceTree = "<group>";
@@ -394,6 +398,7 @@
 				7C3E52EA279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C91992527A548FA00BC5802 /* GameButton.swift in Sources */,
+				7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C0AE724279DA03F005695FB /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +418,7 @@
 				7C3E52EB279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C91992627A548FA00BC5802 /* GameButton.swift in Sources */,
+				7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C0AE725279DA03F005695FB /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

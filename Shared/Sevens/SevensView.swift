@@ -22,10 +22,17 @@ struct SevensView: View {
                 .disabled(game.currentPlayer != playerIndex)
                 
                 if game.currentPlayer != playerIndex {
-                    Text("Waiting for your turn!")
-                        .font(.largeTitle)
-                        .foregroundColor(.purple)
-                        .fontWeight(.semibold)
+                    HStack(spacing: 8) {
+                        ProgressView()
+                        Text("Waiting for your turn")
+                    }
+                    .font(.headline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(.background)
+                    .cornerRadius(8)
+                    .shadow(radius: 4)
+                    .padding()
                 }
             }
         }
