@@ -9,7 +9,7 @@ struct Lobby: View {
     
     @State private var cancellables: Set<AnyCancellable> = []
 
-    @State var winner: String? = nil
+    @State var winner: String? = "Bob"
     @State var alertText: String?
     
     let games = GameButtonViewModel.games
@@ -71,6 +71,7 @@ struct Lobby: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
+        .background(.green)
         .overlay {
             if let winner = winner {
                 WinnerView(winner: winner)
@@ -83,7 +84,6 @@ struct Lobby: View {
                 EmptyView()
             }
         }
-        .background(.green)
         .onAppear { Task { await getMessages() } }
         .alert("Oh no!",
                isPresented: .init { alertText != nil } set: { _ in alertText = nil }) {

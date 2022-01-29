@@ -39,6 +39,8 @@
 		7C91992927A55F4800BC5802 /* GameButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */; };
 		7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
 		7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
+		7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993127A59DD600BC5802 /* ConfettiSwiftUI */; };
+		7C91993427A59DED00BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993327A59DED00BC5802 /* ConfettiSwiftUI */; };
 		7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
 		7CFC65D627A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */,
 				7C0AE719279D7E06005695FB /* Cards in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C91993427A59DED00BC5802 /* ConfettiSwiftUI in Frameworks */,
 				7C0AE71B279D7E3D005695FB /* Cards in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +245,7 @@
 			name = "Card Play (iOS)";
 			packageProductDependencies = (
 				7C0AE718279D7E06005695FB /* Cards */,
+				7C91993127A59DD600BC5802 /* ConfettiSwiftUI */,
 			);
 			productName = "Card Play (iOS)";
 			productReference = 7C0AE6D8279D674E005695FB /* Card Play.app */;
@@ -261,6 +266,7 @@
 			name = "Card Play (macOS)";
 			packageProductDependencies = (
 				7C0AE71A279D7E3D005695FB /* Cards */,
+				7C91993327A59DED00BC5802 /* ConfettiSwiftUI */,
 			);
 			productName = "Card Play (macOS)";
 			productReference = 7C0AE6DE279D674E005695FB /* Card Play.app */;
@@ -337,6 +343,9 @@
 				Base,
 			);
 			mainGroup = 7C0AE6CB279D674C005695FB;
+			packageReferences = (
+				7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 7C0AE6D9279D674E005695FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -816,6 +825,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		7C0AE718279D7E06005695FB /* Cards */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -824,6 +844,16 @@
 		7C0AE71A279D7E3D005695FB /* Cards */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Cards;
+		};
+		7C91993127A59DD600BC5802 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+		7C91993327A59DED00BC5802 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
