@@ -11,30 +11,37 @@ struct SevensView: View {
     @Namespace private var namespace
     
     var body: some View {
-        VStack {
-            SevensTableView(table: game.table, namespace: namespace)
-            
-            ZStack(alignment: .bottom) {
-                HandView(hand: game.hand(forPlayer: playerIndex),
-                         namespace: namespace) { card in
-                    didPlay(card)
-                }
-                .disabled(game.currentPlayer != playerIndex)
+        ZStack {
+            GeometryReader { geo in
+                SevensTableView(table: game.table, namespace: namespace)
+                    .layoutPriority(0.1)
                 
-                if game.currentPlayer != playerIndex {
-                    HStack(spacing: 8) {
-                        ProgressView()
-                        Text("Waiting for your turn")
-                    }
-                    .font(.headline)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.background)
-                    .cornerRadius(8)
-                    .shadow(radius: 4)
-                    .padding()
+                VStack {
+                    Spacer()
+                    ZStack(alignment: .bottom) {
+                        HandView(hand: game.hand(forPlayer: playerIndex),
+                                 namespace: namespace) { card in
+                            didPlay(card)
+                        }
+                        .disabled(game.currentPlayer != playerIndex)
+                        
+                        if game.currentPlayer != playerIndex {
+                            HStack(spacing: 8) {
+                                ProgressView()
+                                Text("Waiting for your turn")
+                            }
+                            .font(.headline)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(.background)
+                            .cornerRadius(8)
+                            .shadow(radius: 4)
+                            .padding()
+                            .transition(.move(edge: .bottom))
+                        }
+                    }.frame(maxHeight: geo.size.height * 0.7)
                 }
             }
-        }
+        }.navigationTitle("Sevens").navigationBarTitleDisplayMode(.inline)
     }
 }

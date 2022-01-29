@@ -13,32 +13,35 @@ struct HandView: View {
     
     var body: some View {
         VStack {
-            ScrollView(.horizontal, showsIndicators: false) {
-                ZStack(alignment: .leading) {
-                    ForEach(Array(hand
-                                    .sorted(by: compareCards(_:_:))
-                                    .enumerated()), id: \.element.id) { (index, item) in
-                        style.front.image(forCard: item.card)
+            GeometryReader { geo in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    ZStack(alignment: .leading) {
+                        ForEach(Array(hand
+                                        .sorted(by: compareCards(_:_:))
+                                        .enumerated()), id: \.element.id) { (index, item) in
+                            style.front.image(forCard: item.card)
                             .resizable()
                             .scaledToFit()
+                            .shadow(radius: 4)
                             .overlay(Color.black.blendMode(.multiply).opacity(item.isValid ? 0 : 0.3))
-                        .onTapGesture {
-                            withAnimation {
-                                guard item.isValid else {
-                                    selectedCard = nil
-                                    return
+                            .onTapGesture {
+                                withAnimation {
+                                    guard item.isValid else {
+                                        selectedCard = nil
+                                        return
+                                    }
+                                    selectedCard = item
                                 }
-                                selectedCard = item
                             }
+                            .rotationEffect(.degrees(angle(forIndex: index)), anchor: anchorPoint(forIndex: index))
+                            .padding(.leading, CGFloat(index) * geo.size.height * 0.07)
+                            .offset(x: 0, y: selectedCard == item ? -geo.size.height / 4 : 0)
+                            .matchedGeometryEffect(id: item.card, in: namespace)
                         }
-                        .padding(.leading, offset(forIndex: index))
-                        .rotationEffect(.degrees(angle(forIndex: index)), anchor: .bottom)
-                        .offset(x: 0, y: selectedCard == item ? -60 : 0)
-                        .matchedGeometryEffect(id: item.card, in: namespace)
                     }
+                    .padding(geo.size.height / 8)
+                    .padding(.top, geo.size.height / 3)
                 }
-                .padding(40)
-                .padding(.top, 60)
             }
             
             if hand.contains(where: { $0.isValid }) {
@@ -72,8 +75,8 @@ struct HandView: View {
         return CGFloat(index) * 30.0 / CGFloat(hand.count - 1) - 15
     }
     
-    func offset(forIndex index: Int) -> CGFloat {
-        CGFloat(index) * 10
+    func anchorPoint(forIndex index: Int) -> UnitPoint {
+        angle(forIndex: index) < 0 ? .bottomTrailing : .bottomLeading
     }
     
     private func compareCards(_ lhs: HandCard, _ rhs: HandCard) -> Bool {

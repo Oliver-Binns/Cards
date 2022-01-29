@@ -9,7 +9,7 @@ struct GameButtonViewModel {
 extension GameButtonViewModel {
     static var games: [GameButtonViewModel] {
         [
-            .init(imageName: "7.square.fill", name: "Sevens", playerCount: 3...7) {
+            .init(imageName: "7.square.fill", name: "Sevens", playerCount: 2...7) {
                 .sevens(.init(players: $0))
             },
             /*.init(imageName: "heart.square.fill", name: "Hearts", playerCount: 4...4) {

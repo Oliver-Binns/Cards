@@ -95,12 +95,14 @@ struct MainMenu: View {
     
     private func checkForSession() async {
         for await session in PlayTogether.sessions() {
-            self.session = session
             configureSession(session)
         }
     }
     
+    @MainActor
     private func configureSession(_ session: GroupSession<PlayTogether>) {
+        self.session = session
+        
         session.$state.sink { state in
             self.state = state
         }.store(in: &cancellables)

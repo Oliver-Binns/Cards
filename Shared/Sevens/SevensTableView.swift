@@ -11,24 +11,26 @@ struct SevensTableView: View {
             ForEach(0..<Suit.allCases.count) { suitIndex in
                 ZStack(alignment: .top) {
                     ForEach(0..<SuitedCard.allCases.count) { valueIndex in
-                        VStack {
-                            if table[suit(at: suitIndex)]?
-                                .cards.contains(value(at: valueIndex)) ?? false {
-                                style.front
-                                    .image(forCard: card(value: valueIndex, suit: suitIndex))
-                                    .resizable()
-                                    .scaledToFit()
-                                    .padding(.top, 16 * CGFloat(valueIndex))
-                                    .matchedGeometryEffect(id: card(value: valueIndex, suit: suitIndex),
-                                                           in: namespace)
-                                    .transition(.move(edge: .top))
-                            } else {
-                                style.back.image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .opacity(0)
-                                    .padding(.top, 16 * CGFloat(valueIndex))
-                            }
+                        GeometryReader { geo in
+                            VStack {
+                                if table[suit(at: suitIndex)]?
+                                    .cards.contains(value(at: valueIndex)) ?? false {
+                                    style.front
+                                        .image(forCard: card(value: valueIndex, suit: suitIndex))
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(.top, geo.size.width * 0.20 * CGFloat(valueIndex))
+                                        .matchedGeometryEffect(id: card(value: valueIndex, suit: suitIndex),
+                                                               in: namespace)
+                                        .transition(.move(edge: .top))
+                                } else {
+                                    style.back.image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .opacity(0)
+                                        .padding(.top, geo.size.width * 0.20 * CGFloat(valueIndex))
+                                }
+                            }.shadow(radius: 4)
                         }
                     }
                 }
