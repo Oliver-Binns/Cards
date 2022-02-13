@@ -11,7 +11,7 @@ struct SevensView: View {
     @Namespace private var namespace
     
     var body: some View {
-        print(Self._printChanges())
+        Self._printChanges()
         return ZStack {
             GeometryReader { geo in
                 SevensTableView(table: game.table, namespace: namespace)
@@ -21,10 +21,10 @@ struct SevensView: View {
                     Spacer()
                     ZStack(alignment: .bottom) {
                         HandView(hand: game.hand(forPlayer: playerIndex),
+                                 isDisabled: game.currentPlayer != playerIndex,
                                  namespace: namespace) { card in
                             didPlay(card)
                         }
-                        .disabled(game.currentPlayer != playerIndex)
                         
                         if game.currentPlayer != playerIndex {
                             HStack(spacing: 8) {

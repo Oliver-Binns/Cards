@@ -4,6 +4,7 @@ import SwiftUI
 
 struct HandView: View {
     let hand: Hand
+    let isDisabled: Bool
     @State private var selectedCard: HandCard?
     
     let style = DefaultStyle()
@@ -19,11 +20,20 @@ struct HandView: View {
                         ForEach(Array(hand
                                         .sorted(by: compareCards(_:_:))
                                         .enumerated()), id: \.element.id) { (index, item) in
-                            style.front.image(forCard: item.card)
-                            .resizable()
-                            .scaledToFit()
-                            .shadow(radius: 4)
-                            .overlay(Color.black.blendMode(.multiply).opacity(item.isValid ? 0 : 0.5))
+                            ZStack {
+                                style.front.image(forCard: item.card)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .shadow(radius: 4)
+                                
+                                if !item.isValid {
+                                    style.blank
+                                        .resizable()
+                                        .scaledToFit()
+                                        .colorInvert()
+                                        .opacity(0.5)
+                                }
+                            }
                             .onTapGesture {
                                 withAnimation {
                                     guard item.isValid else {
@@ -39,6 +49,7 @@ struct HandView: View {
                             .matchedGeometryEffect(id: item.card, in: namespace)
                         }
                     }
+                    .disabled(isDisabled)
                     .padding(geo.size.height / 8)
                     .padding(.top, geo.size.height / 3)
                 }

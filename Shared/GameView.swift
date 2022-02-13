@@ -56,6 +56,10 @@ struct GameView: View {
             let hand = sevens.hand(forPlayer: sevens.currentPlayer)
             withAnimation {
                 sevens.play(card: computerPlayer(hand))
+                
+                if let winner = sevens.winner {
+                    didWin(winner)
+                }
             }
         }
     }
