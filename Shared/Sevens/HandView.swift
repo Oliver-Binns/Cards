@@ -23,7 +23,7 @@ struct HandView: View {
                             .resizable()
                             .scaledToFit()
                             .shadow(radius: 4)
-                            .overlay(Color.black.blendMode(.multiply).opacity(item.isValid ? 0 : 0.3))
+                            .overlay(Color.black.blendMode(.multiply).opacity(item.isValid ? 0 : 0.5))
                             .onTapGesture {
                                 withAnimation {
                                     guard item.isValid else {

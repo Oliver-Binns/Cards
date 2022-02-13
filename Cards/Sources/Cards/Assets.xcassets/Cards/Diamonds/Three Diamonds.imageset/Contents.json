@@ -3,6 +3,16 @@
     {
       "filename" : "diamonds_3.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "diamonds_3 dark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

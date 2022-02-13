@@ -24,3 +24,9 @@ public extension BackStyle {
         Image(imageName, bundle: .module)
     }
 }
+
+extension CardStyle {
+    public var blank: Image {
+        Image("Blank", bundle: .module)
+    }
+}

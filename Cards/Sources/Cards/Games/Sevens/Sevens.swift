@@ -45,7 +45,8 @@ public final class Sevens: ObservableObject {
     }
     
     public func play(card: PlayingCard?) {
-        if let card = card,
+        if winner == nil,
+           let card = card,
            case .suited(let value, let suit) = card,
            isValid(card: card) {
             

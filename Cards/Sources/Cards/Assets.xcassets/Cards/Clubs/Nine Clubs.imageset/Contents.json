@@ -3,6 +3,16 @@
     {
       "filename" : "Nine of Clubs Playing Card.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Nine of Clubs Playing Card Dark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

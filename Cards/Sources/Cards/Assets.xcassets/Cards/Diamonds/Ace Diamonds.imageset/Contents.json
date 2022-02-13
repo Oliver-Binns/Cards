@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "diamonds_ace.png",
+      "filename" : "diamonds_ace.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "diamonds_ace dark.svg",
       "idiom" : "universal"
     }
   ],

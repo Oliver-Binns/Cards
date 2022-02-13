@@ -9,7 +9,7 @@ struct Lobby: View {
     
     @State private var cancellables: Set<AnyCancellable> = []
 
-    @State var winner: String? = nil
+    @State var winner: Int? = nil
     @State var alertText: String?
     
     let games = GameButtonViewModel.games
@@ -63,7 +63,9 @@ struct Lobby: View {
                                                set: { _ in session.activity.game = nil })) {
                     GameView(game: .init(get: {
                         session.activity.game
-                    }, set: { session.activity.game = $0 }), playerIndex: playerIndex) { winner in
+                    }, set: {
+                        session.activity.game = $0
+                    }), playerIndex: playerIndex) { winner in
                         announceWinner(winner)
                     }
                 } label: { EmptyView() }
@@ -71,17 +73,26 @@ struct Lobby: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(.green)
+        .background(Color.dynamicGreen)
         .overlay {
-            if let winner = winner {
-                WinnerView(winner: winner)
-                    .onTapGesture {
-                        withAnimation {
-                            self.winner = nil
-                        }
+            VStack {
+                if let winner = winner,
+                   let players = session.activity.players,
+                   let currentPlayer = players.firstIndex(of: session.localParticipant.id) {
+                    
+                    if currentPlayer == winner {
+                        WinnerView()
+                    } else if let winningPlayerID = session.activity.players?[winner],
+                              let winningPlayerName = session.activity.names[winningPlayerID] {
+                        LoserView(winnerName: winningPlayerName)
                     }
-            } else {
-                EmptyView()
+                } else {
+                    EmptyView()
+                }
+            }.onTapGesture {
+                withAnimation {
+                    self.winner = nil
+                }
             }
         }
         .onAppear { Task { await getMessages() } }
@@ -99,28 +110,25 @@ struct Lobby: View {
             alertText = "All players must have entered a name to continue"
             return
         }
-        session.activity =  .init(title: model.name,
-                                  game: model.startGame(playerCount),
-                                  players: playerIDs,
-                                  names: playerNames)
+        session.activity = .init(title: model.name,
+                                 game: model.startGame(playerCount),
+                                 players: playerIDs,
+                                 names: playerNames)
         
     }
     
     private func announceWinner(_ winner: Int) {
-        if let winningPlayerID = session.activity.players?[winner],
-           let winningPlayerName = session.activity.names[winningPlayerID] {
-            self.winner = winningPlayerName
-            messenger?.send(winningPlayerName) {
-                if let error = $0 {
-                    print(error)
-                }
+        self.winner = winner
+        messenger?.send(winner) {
+            if let error = $0 {
+                print(error)
             }
         }
     }
     
     private func getMessages() async {
         messenger = GroupSessionMessenger(session: session)
-        for await message in messenger!.messages(of: String.self) {
+        for await message in messenger!.messages(of: Int.self) {
             self.winner = message.0
         }
     }

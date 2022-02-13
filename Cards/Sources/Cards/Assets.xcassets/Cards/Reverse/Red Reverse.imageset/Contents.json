@@ -3,6 +3,16 @@
     {
       "filename" : "Red Card Back.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Red Card Back Dark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

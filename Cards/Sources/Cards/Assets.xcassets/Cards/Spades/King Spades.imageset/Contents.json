@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "spades_king.png",
+      "filename" : "spades_king.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "spades_king_dark.svg",
       "idiom" : "universal"
     }
   ],

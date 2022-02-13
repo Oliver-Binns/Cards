@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hearts_ace.png",
+      "filename" : "hearts_ace.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "hearts_ace dark.svg",
       "idiom" : "universal"
     }
   ],

@@ -83,7 +83,7 @@ struct MainMenu: View {
                 Spacer()
             }
             .padding()
-            .background(.green)
+            .background(Color.dynamicGreen)
         }
         .navigationViewStyle(.stack)
         .navigationBarTitleDisplayMode(.inline)

@@ -1,16 +1,14 @@
-
 import SwiftUI
 import ConfettiSwiftUI
 
 struct WinnerView: View {
-    let winner: String
     @State var startConfetti: Int = 0
     
     var body: some View {
         ZStack {
             VStack(spacing: 16) {
                 Text("🥳🥳🥳").font(.system(size: 80))
-                Text("\(winner) Wins").font(.largeTitle)
+                Text("You Win").font(.largeTitle)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             

@@ -11,7 +11,8 @@ struct SevensView: View {
     @Namespace private var namespace
     
     var body: some View {
-        ZStack {
+        print(Self._printChanges())
+        return ZStack {
             GeometryReader { geo in
                 SevensTableView(table: game.table, namespace: namespace)
                     .layoutPriority(0.1)
@@ -42,6 +43,8 @@ struct SevensView: View {
                     }.frame(maxHeight: geo.size.height * 0.7)
                 }
             }
-        }.navigationTitle("Sevens").navigationBarTitleDisplayMode(.inline)
+        }
+        .navigationTitle("Sevens")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

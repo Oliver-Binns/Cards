@@ -3,6 +3,16 @@
     {
       "filename" : "Black Joker Playing Card.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Black Joker Playing Card Dark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

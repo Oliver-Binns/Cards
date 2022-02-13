@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hearts_king.png",
+      "filename" : "hearts_king.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "hearts_king dark.svg",
       "idiom" : "universal"
     }
   ],

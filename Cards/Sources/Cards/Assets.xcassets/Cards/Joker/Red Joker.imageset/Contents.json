@@ -3,6 +3,16 @@
     {
       "filename" : "Red Joker Playing Card.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Red Joker Playing Card Dark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

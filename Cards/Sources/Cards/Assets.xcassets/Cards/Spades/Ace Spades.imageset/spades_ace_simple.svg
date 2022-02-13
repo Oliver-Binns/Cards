@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="62mm"
+   height="88mm"
+   viewBox="0 0 62 88"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="spades_ace_simple.svg"
+   inkscape:export-filename="C:\Users\fowle\OneDrive\Projects\Playing-Cards\others\png-096-dpi\spades_ace_simple.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <title
+     id="title3968">Ace of Spades - Plain</title>
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="38.974263"
+     inkscape:cy="229.14656"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1-0"
+     showgrid="false"
+     inkscape:showpageshadow="false"
+     showborder="false"
+     inkscape:window-width="1787"
+     inkscape:window-height="928"
+     inkscape:window-x="45"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Ace of Spades - Plain</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
+        <dc:date>2020-05-01</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Daniel S. Fowler</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Public Domain</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>https://tekeye.uk</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:language>en-GB</dc:language>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>ace; spades; playing; card; black; white</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:description>An Ace of Spades playing card</dc:description>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/publicdomain/zero/1.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-209)">
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,-12.168248,-10.960132)"
+       id="layer1-0"
+       inkscape:label="Layer 1">
+      <g
+         id="g866">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#808080;stroke-width:0.75590552;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect4266"
+           width="233.57602"
+           height="331.84372"
+           x="46.36758"
+           y="831.72272"
+           ry="8.9349632"
+           rx="8.931879" />
+        <path
+           style="fill:#000000;stroke:none;stroke-width:0.31496063"
+           d="m 58.675692,892.44775 c 0,-0.55625 -0.0309,-0.95802 -0.0309,-1.5143 1.153748,0 2.403861,0 3.557603,0 0,-1.32227 0,-1.41578 0,-2.73808 -2.252094,0.0723 -4.689458,0.23902 -6.798545,-0.68724 -1.632535,-0.89304 -2.082998,-2.97191 -1.753852,-4.68098 0.281726,-1.92822 1.357194,-3.64057 2.760199,-4.95937 1.825726,-1.94646 4.154129,-3.26044 6.58502,-4.31767 2.481348,1.07512 4.861087,2.4321 6.709966,4.42986 1.665335,1.55987 2.77491,3.76447 2.740822,6.07272 0.03613,1.66608 -0.999307,3.42668 -2.707197,3.79024 -1.91063,0.52737 -3.844407,0.4338 -5.805789,0.35244 0,1.3223 0,1.41581 0,2.73808 1.153742,0 2.211134,0 3.364885,0 0,0.55628 0.0309,0.95805 0.0309,1.5143 -2.641861,-0.0186 -5.799647,-0.0186 -8.653118,0 z"
+           id="path2985-3-11"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccccccccccc" />
+        <path
+           style="fill:#000000;stroke:none;stroke-width:0.31496063"
+           d="m 258.99063,1102.8414 c 0,0.5563 -0.0309,0.9581 -0.0309,1.5143 1.15373,0 2.40384,0 3.55761,0 0,1.3223 0,1.4158 0,2.7381 -2.2521,-0.072 -4.68948,-0.239 -6.79856,0.6873 -1.63253,0.893 -2.08299,2.9719 -1.75385,4.6809 0.28173,1.9283 1.35719,3.6406 2.76019,4.9594 1.82573,1.9465 4.15414,3.2605 6.58503,4.3177 2.48136,-1.0751 4.86108,-2.4321 6.70996,-4.4299 1.66535,-1.5598 2.77493,-3.7645 2.74082,-6.0727 0.0361,-1.6661 -0.99931,-3.4267 -2.70718,-3.7902 -1.91065,-0.5274 -3.84441,-0.4338 -5.8058,-0.3525 0,-1.3223 0,-1.4158 0,-2.7381 1.15373,0 2.21115,0 3.36488,0 0,-0.5562 0.0309,-0.958 0.0309,-1.5143 -2.64189,0.019 -5.79966,0.019 -8.65314,0 z"
+           id="path2985-3-11-7"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccccccccccc" />
+        <path
+           style="fill:#000000;stroke:none;stroke-width:0.31496063"
+           d="m 150.18837,1025.9911 c 0,-1.6689 -0.0927,-2.8741 -0.0927,-4.5429 3.46125,0 7.21158,0 10.67281,0 0,-3.9669 0,-4.2474 0,-8.2143 -6.75629,0.217 -14.06838,0.7171 -20.39563,-2.0617 -4.89761,-2.6791 -6.249,-8.9158 -5.26156,-14.04297 0.84518,-5.78463 4.07158,-10.92167 8.2806,-14.87811 5.47717,-5.83934 12.46238,-9.78126 19.75505,-12.95298 7.44405,3.22536 14.58326,7.29629 20.1299,13.28958 4.996,4.67959 8.32473,11.29345 8.22247,18.21818 0.10836,4.9982 -2.99793,10.28 -8.12159,11.3707 -5.73189,1.5821 -11.53322,1.3014 -17.41737,1.0573 0,3.9669 0,4.2474 0,8.2143 3.46123,0 6.6334,0 10.09465,0 0,1.6688 0.0927,2.874 0.0927,4.5429 -7.92559,-0.056 -17.39894,-0.056 -25.95936,0 z"
+           id="path2985-3-3-5-4-3"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccccccccccc" />
+        <g
+           id="text3755-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77952766px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.31496063"
+           transform="scale(0.83190889,1.2020547)"
+           aria-label="A">
+          <path
+             id="path825"
+             style="font-size:32.83158493px;line-height:1.25;stroke-width:0.31496063"
+             d="m 87.085164,721.47375 h -4.665035 l -1.84357,-4.8574 H 70.95793 l -1.923725,4.8574 H 64.36917 l 9.089604,-23.58167 h 4.552817 z m -8.191865,-9.23388 -3.126054,-8.09568 -3.142086,8.09568 z"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="text3755-2-2"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77952743px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.31496063"
+           transform="scale(-0.83190897,-1.2020546)"
+           aria-label="A">
+          <path
+             id="path828"
+             style="font-size:32.83158493px;line-height:1.25;stroke-width:0.31496063"
+             d="m -305.15867,-938.42517 h -4.66504 l -1.84357,-4.85741 h -9.61862 l -1.92373,4.85741 h -4.66504 l 9.08961,-23.58167 h 4.55282 z m -8.19187,-9.23388 -3.12605,-8.09568 -3.14209,8.09568 z"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

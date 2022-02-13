@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="96"
    inkscape:export-xdpi="96"
    inkscape:export-filename="C:\Users\fowle\OneDrive\Projects\Playing-Cards\fronts\png-096-dpi\joker_black.png"
-   sodipodi:docname="joker_black.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="Black Joker Playing Card.svg"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
    version="1.1"
    id="svg2"
    height="333.00012"
-   width="234.00009">
+   width="234.00009"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <title
      id="title1406">Black Joker Playing Card</title>
   <defs
@@ -36,14 +36,22 @@
     </filter>
     <filter
        style="color-interpolation-filters:sRGB"
-       id="filter4594-85">
+       id="filter4594-85"
+       x="-0.062091807"
+       y="-0.092985074"
+       width="1.1492085"
+       height="1.1876186">
       <feGaussianBlur
          stdDeviation="0.93967823"
          id="feGaussianBlur4596-7" />
     </filter>
     <filter
        style="color-interpolation-filters:sRGB"
-       id="filter4594-8-6">
+       id="filter4594-8-6"
+       x="-0.063290638"
+       y="-0.09505465"
+       width="1.1523708"
+       height="1.1918078">
       <feGaussianBlur
          stdDeviation="0.93967823"
          id="feGaussianBlur4596-1-1" />
@@ -58,26 +66,27 @@
      showborder="false"
      inkscape:snap-to-guides="false"
      inkscape:window-maximized="1"
-     inkscape:window-y="-8"
-     inkscape:window-x="-8"
-     inkscape:window-height="1057"
-     inkscape:window-width="1920"
+     inkscape:window-y="25"
+     inkscape:window-x="0"
+     inkscape:window-height="1387"
+     inkscape:window-width="2560"
      inkscape:snap-global="false"
      inkscape:guide-bbox="true"
      showguides="true"
      inkscape:showpageshadow="false"
      showgrid="false"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g8352"
      inkscape:document-units="px"
-     inkscape:cy="126.84776"
-     inkscape:cx="127.66025"
-     inkscape:zoom="1.549743"
+     inkscape:cy="169.04583"
+     inkscape:cx="99.613178"
+     inkscape:zoom="2.8660867"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
      bordercolor="#666666"
      pagecolor="#ffffff"
-     id="base">
+     id="base"
+     inkscape:pagecheckerboard="0">
     <inkscape:grid
        originy="5.2403288e-05"
        originx="4.7236681e-05"
@@ -163,126 +172,106 @@
          style="fill:none;stroke:#000000;stroke-width:3.18133;stroke-opacity:1"
          id="g4227"
          transform="matrix(0.07348586,0,0,0.07370835,-248.01734,933.60069)" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="6.0495987"
-         y="857.1853"
+      <g
+         aria-label="J"
+         transform="scale(1.1356171,0.88057848)"
          id="text3755-0"
-         transform="scale(1.1356171,0.88057848)"><tspan
-           sodipodi:role="line"
-           id="tspan3757-9"
-           x="6.0495987"
-           y="857.1853"
-           style="font-size:43.7026px;line-height:1.25;stroke-width:1">J</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="8.34797"
-         y="647.11194"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m 26.663227,847.86009 q 0,2.09124 -0.746871,3.92641 -0.74687,1.81382 -2.219272,3.07283 -1.557759,1.34437 -3.755692,2.09124 -2.197934,0.72553 -5.441486,0.72553 -2.197934,0 -4.139797,-0.17071 -1.9418636,-0.14937 -3.4142656,-0.44812 v -6.44443 h 0.7682097 q 1.0242797,0.38411 2.133916,0.72553 1.1096359,0.32009 2.8381079,0.32009 2.240612,0 3.435605,-0.5975 1.216332,-0.59749 1.728472,-1.66445 0.490801,-1.04562 0.554818,-2.28329 0.06402,-1.25901 0.06402,-3.20087 v -12.65413 h -7.276653 v -5.84693 h 15.470891 z"
+           style="font-size:43.7026px;line-height:1.25"
+           id="path1421" />
+      </g>
+      <g
+         aria-label="O"
+         transform="scale(0.81968,1.2199883)"
          id="text3995-4"
-         transform="scale(0.81968,1.2199883)"><tspan
-           sodipodi:role="line"
-           id="tspan3997-0"
-           x="8.34797"
-           y="647.11194"
-           style="font-weight:bold;font-size:30.7888px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">O</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="5.0162516"
-         y="788.6748"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m 32.972996,635.92694 q 0,5.35196 -3.066853,8.50902 -3.066853,3.14202 -8.478947,3.14202 -5.39706,0 -8.463913,-3.14202 -3.0668529,-3.15706 -3.0668529,-8.50902 0,-5.39706 3.0668529,-8.52404 3.066853,-3.14202 8.463913,-3.14202 5.382027,0 8.463913,3.14202 3.081887,3.12698 3.081887,8.52404 z m -7.652099,5.66767 q 0.841881,-1.02228 1.247788,-2.40538 0.405907,-1.39812 0.405907,-3.27732 0,-2.0145 -0.466041,-3.42766 -0.466042,-1.41316 -1.217721,-2.2851 -0.766713,-0.90202 -1.773964,-1.30793 -0.992217,-0.4059 -2.074636,-0.4059 -1.097452,0 -2.074636,0.39087 -0.96215,0.39087 -1.773964,1.29289 -0.75168,0.84188 -1.232755,2.33021 -0.466041,1.47329 -0.466041,3.42765 0,1.99947 0.451008,3.41263 0.466041,1.39812 1.217721,2.28511 0.751679,0.88698 1.75893,1.30792 1.007251,0.42094 2.119737,0.42094 1.112486,0 2.119737,-0.42094 1.00725,-0.43597 1.75893,-1.33799 z"
+           style="font-size:30.7888px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1424" />
+      </g>
+      <g
+         aria-label="K"
+         transform="scale(0.95622314,1.045781)"
          id="text3999-9"
-         transform="scale(0.95622314,1.045781)"><tspan
-           sodipodi:role="line"
-           id="tspan4001-4"
-           x="5.0162516"
-           y="788.6748"
-           style="font-weight:bold;font-size:37.7245px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">K</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="3.4698021"
-         y="948.18518"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m 34.120113,788.6748 h -8.675898 l -8.196974,-10.97841 -1.657814,2.00779 v 8.97062 H 8.516083 v -27.42762 h 7.073344 v 12.41519 l 9.799528,-12.41519 h 8.196973 l -10.720536,12.69149 z"
+           style="font-size:37.7245px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1427" />
+      </g>
+      <g
+         aria-label="E"
+         transform="scale(1.1032918,0.90637855)"
          id="text4003-8"
-         transform="scale(1.1032918,0.90637855)"><tspan
-           sodipodi:role="line"
-           id="tspan4005-8"
-           x="3.4698021"
-           y="948.18518"
-           style="font-weight:bold;font-size:43.5266px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">E</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="3.9849741"
-         y="910.23438"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="M 30.397635,948.18518 H 7.5079144 V 916.53913 H 30.397635 v 6.12093 h -14.77099 v 5.46208 h 13.708329 v 6.12093 H 15.626645 v 7.82118 h 14.77099 z"
+           style="font-size:43.5266px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1430" />
+      </g>
+      <g
+         aria-label="R"
+         transform="scale(1.0181043,0.98221763)"
          id="text4007-2"
-         transform="scale(1.0181043,0.98221763)"><tspan
-           sodipodi:role="line"
-           id="tspan4009-4"
-           x="3.9849741"
-           y="910.23438"
-           style="font-weight:bold;font-size:40.1658px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">R</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="-200.00574"
-         y="-1154.8147"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m 24.087485,889.97497 q 0,-1.09829 -0.45108,-1.88278 -0.451081,-0.78448 -1.549365,-1.23556 -0.764876,-0.3138 -1.78471,-0.37264 -1.019835,-0.0784 -2.373077,-0.0784 h -2.726097 v 7.8645 h 2.31424 q 1.804323,0 3.02028,-0.17651 1.215957,-0.17651 2.03967,-0.8041 0.784488,-0.60798 1.137508,-1.33363 0.372631,-0.74526 0.372631,-1.98083 z m 11.747712,20.2594 h -9.198125 l -7.962555,-10.70826 h -3.471361 v 10.70826 H 7.7112933 V 881.0318 H 20.341554 q 2.588811,0 4.451971,0.29418 1.863159,0.29419 3.490973,1.2748 1.647425,0.98061 2.608423,2.54958 0.98061,1.54937 0.98061,3.90283 0,3.23602 -1.51014,5.27569 -1.490527,2.03967 -4.275461,3.39291 z"
+           style="font-size:40.1658px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1433" />
+      </g>
+      <g
+         aria-label="J"
+         transform="scale(-1.1356166,-0.8805789)"
          id="text3755-0-7"
-         transform="scale(-1.1356166,-0.8805789)"><tspan
-           sodipodi:role="line"
-           id="tspan3757-9-6"
-           x="-200.00574"
-           y="-1154.8147"
-           style="font-size:43.7026px;line-height:1.25;stroke-width:1">J</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="-277.41559"
-         y="-805.13507"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m -179.39211,-1164.1399 q 0,2.0912 -0.74687,3.9264 -0.74687,1.8138 -2.21927,3.0728 -1.55776,1.3444 -3.75569,2.0913 -2.19794,0.7255 -5.44149,0.7255 -2.19793,0 -4.1398,-0.1707 -1.94186,-0.1494 -3.41426,-0.4481 v -6.4445 h 0.76821 q 1.02428,0.3841 2.13391,0.7256 1.10964,0.3201 2.83811,0.3201 2.24061,0 3.43561,-0.5975 1.21633,-0.5975 1.72847,-1.6645 0.4908,-1.0456 0.55482,-2.2833 0.064,-1.259 0.064,-3.2009 v -12.6541 h -7.27665 v -5.8469 h 15.47089 z"
+           style="font-size:43.7026px;line-height:1.25"
+           id="path1448" />
+      </g>
+      <g
+         aria-label="O"
+         transform="scale(-0.81968,-1.2199883)"
          id="text3995-4-1"
-         transform="scale(-0.81968,-1.2199883)"><tspan
-           sodipodi:role="line"
-           id="tspan3997-0-4"
-           x="-277.41559"
-           y="-805.13507"
-           style="font-weight:bold;font-size:30.7888px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">O</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="-239.69661"
-         y="-905.48865"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m -252.79056,-816.32006 q 0,5.35195 -3.06686,8.50901 -3.06685,3.14202 -8.47894,3.14202 -5.39706,0 -8.46392,-3.14202 -3.06685,-3.15706 -3.06685,-8.50901 0,-5.39706 3.06685,-8.52405 3.06686,-3.14202 8.46392,-3.14202 5.38202,0 8.46391,3.14202 3.08189,3.12699 3.08189,8.52405 z m -7.6521,5.66766 q 0.84188,-1.02228 1.24779,-2.40537 0.4059,-1.39813 0.4059,-3.27733 0,-2.0145 -0.46604,-3.42766 -0.46604,-1.41315 -1.21772,-2.2851 -0.76671,-0.90202 -1.77396,-1.30793 -0.99222,-0.4059 -2.07464,-0.4059 -1.09745,0 -2.07463,0.39087 -0.96215,0.39087 -1.77397,1.29289 -0.75168,0.84188 -1.23275,2.33021 -0.46604,1.47329 -0.46604,3.42766 0,1.99946 0.451,3.41262 0.46604,1.39813 1.21772,2.28511 0.75168,0.88698 1.75893,1.30792 1.00726,0.42094 2.11974,0.42094 1.11249,0 2.11974,-0.42094 1.00725,-0.43597 1.75893,-1.33799 z"
+           style="font-size:30.7888px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1445" />
+      </g>
+      <g
+         aria-label="K"
+         transform="scale(-0.95622269,-1.0457815)"
          id="text3999-9-2"
-         transform="scale(-0.95622269,-1.0457815)"><tspan
-           sodipodi:role="line"
-           id="tspan4001-4-3"
-           x="-239.69661"
-           y="-905.48865"
-           style="font-weight:bold;font-size:37.7245px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">K</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="-208.62288"
-         y="-1006.5432"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m -210.59275,-905.48865 h -8.6759 l -8.19697,-10.97842 -1.65781,2.0078 v 8.97062 h -7.07335 v -27.42762 h 7.07335 v 12.41519 l 9.79952,-12.41519 h 8.19698 l -10.72054,12.69149 z"
+           style="font-size:37.7245px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1442" />
+      </g>
+      <g
+         aria-label="E"
+         transform="scale(-1.1032911,-0.90637909)"
          id="text4003-8-2"
-         transform="scale(-1.1032911,-0.90637909)"><tspan
-           sodipodi:role="line"
-           id="tspan4005-8-2"
-           x="-208.62288"
-           y="-1006.5432"
-           style="font-weight:bold;font-size:43.5266px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">E</tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1"
-         x="-225.85405"
-         y="-893.56549"
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m -181.69505,-1006.5432 h -22.88972 v -31.6461 h 22.88972 v 6.121 h -14.77099 v 5.462 h 13.70833 v 6.121 h -13.70833 v 7.8212 h 14.77099 z"
+           style="font-size:43.5266px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1439" />
+      </g>
+      <g
+         aria-label="R"
+         transform="scale(-1.0181038,-0.9822181)"
          id="text4007-2-1"
-         transform="scale(-1.0181038,-0.9822181)"><tspan
-           sodipodi:role="line"
-           id="tspan4009-4-6"
-           x="-225.85405"
-           y="-893.56549"
-           style="font-weight:bold;font-size:40.1658px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold';fill:#000000;stroke-width:1">R</tspan></text>
+         style="font-weight:bold;font-size:3.77201px;line-height:0%;font-family:'Levenim MT';-inkscape-font-specification:'Sans Bold';letter-spacing:0px;word-spacing:0px">
+        <path
+           d="m -205.75154,-913.8249 q 0,-1.09828 -0.45108,-1.88277 -0.45108,-0.78449 -1.54936,-1.23557 -0.76488,-0.3138 -1.78471,-0.37263 -1.01984,-0.0784 -2.37308,-0.0784 h -2.7261 v 7.86449 h 2.31424 q 1.80433,0 3.02028,-0.17651 1.21596,-0.17651 2.03967,-0.8041 0.78449,-0.60798 1.13751,-1.33363 0.37263,-0.74526 0.37263,-1.98083 z m 11.74771,20.25941 h -9.19812 l -7.96256,-10.70827 h -3.47136 v 10.70827 h -7.49186 v -29.20258 h 12.63026 q 2.58881,0 4.45197,0.29419 1.86316,0.29418 3.49097,1.27479 1.64743,0.98061 2.60843,2.54959 0.98061,1.54936 0.98061,3.90283 0,3.23601 -1.51014,5.27568 -1.49053,2.03967 -4.27546,3.39291 z"
+           style="font-size:40.1658px;line-height:1.25;-inkscape-font-specification:'Levenim MT Bold'"
+           id="path1436" />
+      </g>
       <path
          id="path15686-8"
          d="m 164.77006,822.39168 c -1.25964,-0.8637 -1.00255,-2.81514 -0.97441,-4.26995 0.0172,-0.88899 0.19311,-1.83145 0.696,-2.58777 0.2249,-0.33825 0.55611,-0.69295 0.97441,-0.77635 0.80392,-0.16028 1.78503,0.10653 2.3664,0.64694 0.58141,0.54043 0.67164,1.43569 0.696,2.19961 0.0184,0.57517 -0.31976,1.11386 -0.41759,1.68208 -0.16202,0.94079 0.44639,2.17287 -0.2784,2.84655 -0.72481,0.67371 -2.23755,0.82435 -3.06241,0.25878 z"

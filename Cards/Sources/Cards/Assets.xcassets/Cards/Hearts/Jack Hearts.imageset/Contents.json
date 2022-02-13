@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "hearts_jack.png",
+      "filename" : "hearts_jack.svg",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "hearts_jack dark.svg",
       "idiom" : "universal"
     }
   ],
