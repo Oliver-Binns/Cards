@@ -26,13 +26,11 @@ struct HandView: View {
                                     .scaledToFit()
                                     .shadow(radius: 4)
                                 
-                                if !item.isValid {
-                                    style.blank
-                                        .resizable()
-                                        .scaledToFit()
-                                        .colorInvert()
-                                        .opacity(0.5)
-                                }
+                                style.blank
+                                    .resizable()
+                                    .scaledToFit()
+                                    .colorInvert()
+                                    .opacity(item.isValid ? 0 : 0.5)
                             }
                             .onTapGesture {
                                 withAnimation {
