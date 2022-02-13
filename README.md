@@ -6,6 +6,7 @@ A simple demo app showing the implementation of a card game across multiple devi
 ## How to Run
 
 The app will compile and run on Xcode 13 for devices running iOS 15.2 or later.
+
 Checkout the repository, open the `xcworkspace` in Xcode 13. No additional setup is required.
 
 ## More Details

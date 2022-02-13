@@ -10,9 +10,10 @@ struct SevensView: View {
     
     @Namespace private var namespace
     
+    @State private var displayHelp: Bool = false
+    
     var body: some View {
-        Self._printChanges()
-        return ZStack {
+        ZStack {
             GeometryReader { geo in
                 SevensTableView(table: game.table, namespace: namespace)
                     .layoutPriority(0.1)
@@ -46,5 +47,15 @@ struct SevensView: View {
         }
         .navigationTitle("Sevens")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Button {
+                displayHelp = true
+            } label: {
+                Image(systemName: "questionmark.circle.fill")
+            }
+        }
+        .sheet(isPresented: $displayHelp) {
+            SevensGuide()
+        }
     }
 }

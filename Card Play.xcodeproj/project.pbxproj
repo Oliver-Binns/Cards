@@ -33,6 +33,8 @@
 		7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E6279DC0300002DE88 /* SevensView.swift */; };
 		7C3E52EA279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
 		7C3E52EB279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
+		7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
+		7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C7560A5279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C91992527A548FA00BC5802 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992427A548FA00BC5802 /* GameButton.swift */; };
@@ -69,7 +71,7 @@
 /* Begin PBXFileReference section */
 		7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_PlayApp.swift; sourceTree = "<group>"; };
 		7C0AE6D2279D674C005695FB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		7C0AE6D8279D674E005695FB /* Card Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Play.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0AE6D8279D674E005695FB /* Deal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6DE279D674E005695FB /* Card Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Play.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6E0279D674E005695FB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		7C0AE6E5279D674E005695FB /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 		7C3A069027A1D73800261364 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
 		7C3E52E6279DC0300002DE88 /* SevensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensView.swift; sourceTree = "<group>"; };
 		7C3E52E9279E11400002DE88 /* HandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandView.swift; sourceTree = "<group>"; };
+		7C5C324127B9778E004897BF /* SevensGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensGuide.swift; sourceTree = "<group>"; };
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
 		7C91992427A548FA00BC5802 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonViewModel.swift; sourceTree = "<group>"; };
@@ -161,7 +164,7 @@
 		7C0AE6D9279D674E005695FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7C0AE6D8279D674E005695FB /* Card Play.app */,
+				7C0AE6D8279D674E005695FB /* Deal.app */,
 				7C0AE6DE279D674E005695FB /* Card Play.app */,
 				7C0AE6E5279D674E005695FB /* Tests iOS.xctest */,
 				7C0AE6F1279D674F005695FB /* Tests macOS.xctest */,
@@ -231,6 +234,7 @@
 				7C3E52E6279DC0300002DE88 /* SevensView.swift */,
 				7C3E52E9279E11400002DE88 /* HandView.swift */,
 				7C7560A3279F6927007E3DE1 /* SevensTableView.swift */,
+				7C5C324127B9778E004897BF /* SevensGuide.swift */,
 			);
 			path = Sevens;
 			sourceTree = "<group>";
@@ -256,7 +260,7 @@
 				7C91993127A59DD600BC5802 /* ConfettiSwiftUI */,
 			);
 			productName = "Card Play (iOS)";
-			productReference = 7C0AE6D8279D674E005695FB /* Card Play.app */;
+			productReference = 7C0AE6D8279D674E005695FB /* Deal.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7C0AE6DD279D674E005695FB /* Card Play (macOS) */ = {
@@ -418,6 +422,7 @@
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C91992527A548FA00BC5802 /* GameButton.swift in Sources */,
 				7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */,
+				7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */,
 				7C0AE724279DA03F005695FB /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +445,7 @@
 				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C91992627A548FA00BC5802 /* GameButton.swift in Sources */,
 				7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */,
+				7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */,
 				7C0AE725279DA03F005695FB /* DeckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +618,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.oliverbinns.cardplay.Card-Play";
-				PRODUCT_NAME = "Card Play";
+				PRODUCT_NAME = Deal;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -643,7 +649,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.oliverbinns.cardplay.Card-Play";
-				PRODUCT_NAME = "Card Play";
+				PRODUCT_NAME = Deal;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

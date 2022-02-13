@@ -13,8 +13,8 @@ struct MainMenu: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                Text("Card Play")
-                    .font(.largeTitle)
+                Text("Deal ♠️")
+                    .font(.system(.largeTitle, design: .rounded))
                     .fontWeight(.semibold)
                 
                 Spacer()
@@ -40,7 +40,7 @@ struct MainMenu: View {
                 
                 
                 VStack(spacing: 8) {
-                    Text("Card Play is best enjoyed with friends.")
+                    Text("Deal ♠️ is best enjoyed with friends.")
                         .frame(maxWidth: .infinity)
                     
                     if groupStateObserver.isEligibleForGroupSession {
@@ -111,7 +111,7 @@ struct MainMenu: View {
     }
     
     private func startSession() async throws {
-        let groupActivity = PlayTogether(title: "Card Play")
+        let groupActivity = PlayTogether(title: "Deal ♠️")
         _ = try await groupActivity.activate()
     }
 }
