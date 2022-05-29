@@ -21,7 +21,7 @@ struct PlayTogetherView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            Text("Deal ♠️ is best enjoyed with friends.")
+            Text("Face Cards 🃏 is best enjoyed with friends.")
                 .frame(maxWidth: .infinity)
             
             if groupStateObserver.isEligibleForGroupSession {
@@ -64,9 +64,7 @@ struct PlayTogetherView: View {
     
     private func startSharePlay() {
         if #available(iOS 15.4, *) {
-            startActivity = GroupActivityView {  () -> PlayTogether in
-                PlayTogether(title: "Lobby")
-            }
+            startActivity = GroupActivityView { PlayTogether(title: "Face Cards 🃏") }
         } else {
             Task {
                 try await startSession()
@@ -92,9 +90,7 @@ struct PlayTogetherView: View {
     }
     
     private func startSession() async throws {
-        let groupActivity = PlayTogether(title: "Deal ♠️")
+        let groupActivity = PlayTogether(title: "Face Cards 🃏")
         _ = try await groupActivity.activate()
     }
-    
-    
 }
