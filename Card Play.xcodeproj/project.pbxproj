@@ -33,6 +33,14 @@
 		7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E6279DC0300002DE88 /* SevensView.swift */; };
 		7C3E52EA279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
 		7C3E52EB279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
+		7C55556F284378FA000C6F2C /* GroupActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55556E284378FA000C6F2C /* GroupActivityView.swift */; };
+		7C555570284378FA000C6F2C /* GroupActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55556E284378FA000C6F2C /* GroupActivityView.swift */; };
+		7C555576284381C2000C6F2C /* PlaySoloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555575284381C2000C6F2C /* PlaySoloView.swift */; };
+		7C555577284381C2000C6F2C /* PlaySoloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555575284381C2000C6F2C /* PlaySoloView.swift */; };
+		7C555579284381F8000C6F2C /* PlayTogetherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555578284381F8000C6F2C /* PlayTogetherView.swift */; };
+		7C55557A284381F8000C6F2C /* PlayTogetherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555578284381F8000C6F2C /* PlayTogetherView.swift */; };
+		7C55557D284388FA000C6F2C /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55557C284388FA000C6F2C /* ReadableWidth.swift */; };
+		7C55557E284388FA000C6F2C /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55557C284388FA000C6F2C /* ReadableWidth.swift */; };
 		7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
 		7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
@@ -89,6 +97,10 @@
 		7C3A069027A1D73800261364 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
 		7C3E52E6279DC0300002DE88 /* SevensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensView.swift; sourceTree = "<group>"; };
 		7C3E52E9279E11400002DE88 /* HandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandView.swift; sourceTree = "<group>"; };
+		7C55556E284378FA000C6F2C /* GroupActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupActivityView.swift; sourceTree = "<group>"; };
+		7C555575284381C2000C6F2C /* PlaySoloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoloView.swift; sourceTree = "<group>"; };
+		7C555578284381F8000C6F2C /* PlayTogetherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogetherView.swift; sourceTree = "<group>"; };
+		7C55557C284388FA000C6F2C /* ReadableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableWidth.swift; sourceTree = "<group>"; };
 		7C5C324127B9778E004897BF /* SevensGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensGuide.swift; sourceTree = "<group>"; };
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
 		7C91992427A548FA00BC5802 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
@@ -150,6 +162,7 @@
 		7C0AE6D0279D674C005695FB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				7C55557B284388F1000C6F2C /* Extensions */,
 				7CFC65D327A30BFA00B61C83 /* Sevens */,
 				7C0AE71F279D943A005695FB /* SharePlay */,
 				7C0AE716279D6D4D005695FB /* Assets.xcassets */,
@@ -209,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				7C0AE720279D9446005695FB /* PlayTogether.swift */,
+				7C55556E284378FA000C6F2C /* GroupActivityView.swift */,
 			);
 			path = SharePlay;
 			sourceTree = "<group>";
@@ -216,8 +230,8 @@
 		7C3A068F27A1D42700261364 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				7C555574284381B6000C6F2C /* Main */,
 				7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */,
-				7C3A068C27A1D18D00261364 /* MainMenu.swift */,
 				7C3A069027A1D73800261364 /* Lobby.swift */,
 				7C91992427A548FA00BC5802 /* GameButton.swift */,
 				7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */,
@@ -225,6 +239,24 @@
 				7C9277E127AECB5400511484 /* LoserView.swift */,
 			);
 			path = Menus;
+			sourceTree = "<group>";
+		};
+		7C555574284381B6000C6F2C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A068C27A1D18D00261364 /* MainMenu.swift */,
+				7C555575284381C2000C6F2C /* PlaySoloView.swift */,
+				7C555578284381F8000C6F2C /* PlayTogetherView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7C55557B284388F1000C6F2C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C55557C284388FA000C6F2C /* ReadableWidth.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7CFC65D327A30BFA00B61C83 /* Sevens */ = {
@@ -408,6 +440,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C555579284381F8000C6F2C /* PlayTogetherView.swift in Sources */,
+				7C55556F284378FA000C6F2C /* GroupActivityView.swift in Sources */,
 				7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */,
 				7C3E52E7279DC0300002DE88 /* SevensView.swift in Sources */,
 				7C0AE6FB279D674F005695FB /* GameView.swift in Sources */,
@@ -420,10 +454,12 @@
 				7C9277E227AECB5400511484 /* LoserView.swift in Sources */,
 				7C3E52EA279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
+				7C55557D284388FA000C6F2C /* ReadableWidth.swift in Sources */,
 				7C91992527A548FA00BC5802 /* GameButton.swift in Sources */,
 				7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */,
 				7C0AE724279DA03F005695FB /* DeckView.swift in Sources */,
+				7C555576284381C2000C6F2C /* PlaySoloView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +467,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C55557A284381F8000C6F2C /* PlayTogetherView.swift in Sources */,
+				7C555570284378FA000C6F2C /* GroupActivityView.swift in Sources */,
 				7C7560A5279F6927007E3DE1 /* SevensTableView.swift in Sources */,
 				7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */,
 				7C0AE6FC279D674F005695FB /* GameView.swift in Sources */,
@@ -443,10 +481,12 @@
 				7C9277E327AECB5400511484 /* LoserView.swift in Sources */,
 				7C3E52EB279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
+				7C55557E284388FA000C6F2C /* ReadableWidth.swift in Sources */,
 				7C91992627A548FA00BC5802 /* GameButton.swift in Sources */,
 				7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */,
 				7C0AE725279DA03F005695FB /* DeckView.swift in Sources */,
+				7C555577284381C2000C6F2C /* PlaySoloView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

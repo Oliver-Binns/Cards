@@ -17,6 +17,7 @@ struct SevensView: View {
             GeometryReader { geo in
                 SevensTableView(table: game.table, namespace: namespace)
                     .layoutPriority(0.1)
+                    .readableGuidePadding()
                 
                 VStack {
                     Spacer()

@@ -26,7 +26,7 @@ struct Lobby: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 Text("Your Name").font(.caption2)
-                TextField("Holleigh", text: .init(get: {
+                TextField("Rosie 🌹", text: .init(get: {
                     let uuid = session.localParticipant.id
                     return session.activity.names[uuid, default: ""]
                 }, set: {
