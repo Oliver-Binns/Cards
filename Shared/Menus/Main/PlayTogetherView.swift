@@ -8,8 +8,6 @@ struct PlayTogetherView: View {
     @State private var session: GroupSession<PlayTogether>?
     @State private var state: GroupSession<PlayTogether>.State?
     @State private var cancellables: Set<AnyCancellable> = []
-    
-    @available(iOS 15.4, *)
     @State private var startActivity: GroupActivityView<PlayTogether>?
     
     private var canStartSharePlay: Bool {

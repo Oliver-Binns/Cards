@@ -20,9 +20,7 @@ struct Lobby: View {
             .font(.largeTitle)
             .fontWeight(.semibold)
             
-            if let playerCount = session.activeParticipants.count {
-                Text("\(playerCount) Players")
-            }
+            Text("\(session.activeParticipants.count) Players")
             
             VStack(alignment: .leading, spacing: 4) {
                 Text("Your Name").font(.caption2)
@@ -57,8 +55,7 @@ struct Lobby: View {
             
 
             if let players = session.activity.players,
-               let playerID = session.localParticipant.id,
-               let playerIndex = players.firstIndex(of: playerID) {
+               let playerIndex = players.firstIndex(of: session.localParticipant.id) {
                 NavigationLink(isActive: .init(get: { session.activity.game != nil },
                                                set: { _ in session.activity.game = nil })) {
                     GameView(game: .init(get: {

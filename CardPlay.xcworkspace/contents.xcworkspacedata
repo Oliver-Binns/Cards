@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Card Play.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../Cards.xctestplan">
+   </FileRef>
 </Workspace>
