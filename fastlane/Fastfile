@@ -1,0 +1,109 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+require 'securerandom'
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Bump Build Number & Deploy to TestFlight"
+  lane :on_merge do |options|
+    # Increment Build Number	
+    is_new_beta = analyze_commits(match: 'beta/*.*.*')
+
+    if !is_new_beta
+      puts "No changes since last deployment. Exiting build."
+      next
+    end
+
+    build_number = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    increment_build_number_in_plist(build_number: build_number)
+    increment_build_number_in_xcodeproj(build_number: build_number)
+
+    # Increment Version Number
+    analyze_commits(match: '*.*.*')
+    version_number = lane_context[SharedValues::RELEASE_NEXT_VERSION]
+    increment_version_number_in_plist(version_number: version_number)
+    increment_version_number_in_xcodeproj(version_number: version_number)
+
+    # Import Signing Certificate
+    password = SecureRandom.hex
+
+    create_keychain(
+      name: "signing_temp",
+      password: password,
+      unlock: true
+    )
+
+    import_certificate(
+      certificate_path: options[:certificate_path],
+      certificate_password: options[:certificate_password],
+      keychain_name: 'signing_temp',
+      keychain_password: password,
+      log_output: true
+    )
+
+    get_provisioning_profile(
+      provisioning_name: options[:scheme],
+      readonly: true,
+      api_key: options[:api_key]
+    )
+
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      profile_name: options[:scheme],
+      targets: options[:scheme],
+      team_id: "Z86DH46P79",
+      build_configurations: "Release",
+      code_sign_identity: "Apple Distribution"
+    )
+
+    xcarchive(
+       scheme: options[:scheme],
+       sdk: "iphoneos",
+       destination: "generic/platform=iOS",
+       configuration: "Release",
+       archive_path: options[:scheme] + ".xcarchive"
+    )
+
+    Dir.chdir("..") do
+      sh(
+        "xcodebuild",
+        "-exportArchive",
+        "-archivePath", options[:scheme] + ".xcarchive",
+        "-exportOptionsPlist", "exportOptions.plist",
+        "-exportPath", "./build"
+      )
+    end
+
+    add_git_tag(
+      tag: "beta/" + build_number
+    )
+    push_git_tags
+
+    # Upload Build
+    notes = conventional_changelog(format: 'plain')
+
+    upload_to_testflight(
+      distribute_external: true,
+      groups: ["Public"],
+      changelog: notes,
+      api_key: options[:api_key],
+      reject_build_waiting_for_review: false,
+      submit_beta_review: true,
+      ipa: "build/" + options[:scheme] + ".ipa"
+    )
+    
+    delete_keychain(name: "signing_temp")
+  end
+end
