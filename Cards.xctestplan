@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "BE2614CC-878E-4A8E-B118-2FA270379E52",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Card Play.xcodeproj",
+      "identifier" : "7C0AE6D7279D674E005695FB",
+      "name" : "Card Play (iOS)"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Card Play.xcodeproj",
+        "identifier" : "7C0AE6E4279D674E005695FB",
+        "name" : "Tests iOS"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Cards",
+        "identifier" : "CardsTests",
+        "name" : "CardsTests"
+      }
+    }
+  ],
+  "version" : 1
+}
