@@ -19,16 +19,16 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Card Play.xcodeproj",
-        "identifier" : "7C0AE6E4279D674E005695FB",
-        "name" : "Tests iOS"
+        "containerPath" : "container:Cards",
+        "identifier" : "CardsTests",
+        "name" : "CardsTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:Cards",
-        "identifier" : "CardsTests",
-        "name" : "CardsTests"
+        "containerPath" : "container:Card Play.xcodeproj",
+        "identifier" : "7C0AE6E4279D674E005695FB",
+        "name" : "Tests iOS"
       }
     }
   ],
