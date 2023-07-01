@@ -1,0 +1,49 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-13
+
+    env:
+        DEVELOPER_DIR: /Applications/Xcode_14.3.1.app/Contents/Developer
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: 'true'
+          fetch-depth: 0
+
+      - name: Set Default Scheme
+        run: |
+          scheme_list=$(xcodebuild -list -json | tr -d "\n")
+          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          echo $default | cat >default
+          echo Using default scheme: $default
+          echo "SCHEME=$(echo $default)" >> $GITHUB_ENV
+
+      - name: Save Certificate
+        env:
+          CERTIFICATE: ${{ secrets.CERTIFICATE }}
+        run: |
+          CERTIFICATE_PATH="$RUNNER_TEMP/distribution.p12"
+          echo -n "$CERTIFICATE" | base64 --decode -o $CERTIFICATE_PATH
+
+      - name: Deploy to TestFlight
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
+        run: |
+          CERTIFICATE_PATH="$RUNNER_TEMP/distribution.p12"
+          fastlane on_merge scheme:"$SCHEME" api_key:"$API_KEY" certificate_path:"$CERTIFICATE_PATH" certificate_password:"$CERTIFICATE_PASSWORD"
+
+      - name: Cleanup
+        run: |
+          CERTIFICATE_PATH="$RUNNER_TEMP/distribution.p12"
+          rm -f "$CERTIFICATE_PATH"
