@@ -7,8 +7,8 @@ struct DeckView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(0..<deck.count) { index in
-                style.front.image(forCard: deck[index])
+            ForEach(deck) { card in
+                style.front.image(forCard: card)
             }
             .padding()
         }

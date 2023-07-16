@@ -3,6 +3,12 @@ public enum PlayingCard: Equatable, Hashable, Codable {
     case joker(JokerType)
 }
 
+extension PlayingCard: Identifiable {
+    public var id: Int {
+        hashValue
+    }
+}
+
 public enum JokerType: Codable {
     case red
     case black

@@ -4,6 +4,7 @@ public enum Suit: String, CaseIterable, Equatable, Codable {
     case diamonds
     case hearts
 }
+
 extension Suit: Comparable {
     public static func < (lhs: Suit, rhs: Suit) -> Bool {
         lhs.compareValue < rhs.compareValue

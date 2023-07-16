@@ -43,12 +43,12 @@ struct Lobby: View {
             
             LazyVGrid(columns: [.init(), .init()]) {
                 Section {
-                    ForEach(0..<games.count) { index in
-                        GameButton(imageName: games[index].imageName,
-                                   name: games[index].name,
-                                   players: games[index].playerCount) {
-                            startGame(model: games[index])
-                        }.disabled(!games[index].playerCount.contains(session.activeParticipants.count))
+                    ForEach(games) { game in
+                        GameButton(imageName: game.imageName,
+                                   name: game.name,
+                                   players: game.playerCount) {
+                            startGame(model: game)
+                        }.disabled(!game.playerCount.contains(session.activeParticipants.count))
                     }
                 }
             }
