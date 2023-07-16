@@ -1,4 +1,6 @@
-import Cards
+import CardsModel
+import CardsScoring
+import CardsStyle
 import Combine
 import SwiftUI
 

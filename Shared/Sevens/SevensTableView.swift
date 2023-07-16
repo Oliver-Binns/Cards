@@ -1,4 +1,6 @@
-import Cards
+import CardsModel
+import CardsStyle
+import Sevens
 import SwiftUI
 
 struct SevensTableView: View {
