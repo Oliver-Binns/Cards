@@ -1,4 +1,5 @@
 import Cards
+import Sevens
 import SwiftUI
 
 struct SoloGame: View {

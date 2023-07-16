@@ -20,8 +20,22 @@
     {
       "target" : {
         "containerPath" : "container:Cards",
-        "identifier" : "CardsTests",
-        "name" : "CardsTests"
+        "identifier" : "CardsModelTests",
+        "name" : "CardsModelTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Cards",
+        "identifier" : "CardsScoringTests",
+        "name" : "CardsScoringTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Cards",
+        "identifier" : "SevensTests",
+        "name" : "SevensTests"
       }
     },
     {

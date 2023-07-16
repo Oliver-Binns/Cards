@@ -21,8 +21,6 @@
 		7C0AE71D279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
 		7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE720279D9446005695FB /* PlayTogether.swift */; };
 		7C0AE722279D9446005695FB /* PlayTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE720279D9446005695FB /* PlayTogether.swift */; };
-		7C0AE724279DA03F005695FB /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE723279DA03F005695FB /* DeckView.swift */; };
-		7C0AE725279DA03F005695FB /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE723279DA03F005695FB /* DeckView.swift */; };
 		7C1ECFB827B81A2100C8C601 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1ECFB727B81A2100C8C601 /* Color.swift */; };
 		7C1ECFB927B81A2100C8C601 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1ECFB727B81A2100C8C601 /* Color.swift */; };
 		7C3A068D27A1D18D00261364 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A068C27A1D18D00261364 /* MainMenu.swift */; };
@@ -43,6 +41,9 @@
 		7C55557E284388FA000C6F2C /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55557C284388FA000C6F2C /* ReadableWidth.swift */; };
 		7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
 		7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
+		7C72FDEC2A63EDFD001E6551 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72FDEB2A63EDFD001E6551 /* Game.swift */; };
+		7C72FDED2A63EDFD001E6551 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72FDEB2A63EDFD001E6551 /* Game.swift */; };
+		7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */ = {isa = PBXBuildFile; productRef = 7C72FDEE2A63EE2E001E6551 /* Sevens */; };
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C7560A5279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C91992527A548FA00BC5802 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992427A548FA00BC5802 /* GameButton.swift */; };
@@ -91,7 +92,6 @@
 		7C0AE716279D6D4D005695FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C0AE71E279D93D6005695FB /* Card Play (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Card Play (iOS).entitlements"; sourceTree = "<group>"; };
 		7C0AE720279D9446005695FB /* PlayTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogether.swift; sourceTree = "<group>"; };
-		7C0AE723279DA03F005695FB /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		7C1ECFB727B81A2100C8C601 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7C3A068C27A1D18D00261364 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		7C3A069027A1D73800261364 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
@@ -102,6 +102,7 @@
 		7C555578284381F8000C6F2C /* PlayTogetherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogetherView.swift; sourceTree = "<group>"; };
 		7C55557C284388FA000C6F2C /* ReadableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableWidth.swift; sourceTree = "<group>"; };
 		7C5C324127B9778E004897BF /* SevensGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensGuide.swift; sourceTree = "<group>"; };
+		7C72FDEB2A63EDFD001E6551 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Shared/SharePlay/Game.swift; sourceTree = SOURCE_ROOT; };
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
 		7C91992427A548FA00BC5802 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */,
 				7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */,
 				7C0AE719279D7E06005695FB /* Cards in Frameworks */,
 			);
@@ -221,6 +223,7 @@
 		7C0AE71F279D943A005695FB /* SharePlay */ = {
 			isa = PBXGroup;
 			children = (
+				7C72FDEB2A63EDFD001E6551 /* Game.swift */,
 				7C0AE720279D9446005695FB /* PlayTogether.swift */,
 				7C55556E284378FA000C6F2C /* GroupActivityView.swift */,
 			);
@@ -262,7 +265,6 @@
 		7CFC65D327A30BFA00B61C83 /* Sevens */ = {
 			isa = PBXGroup;
 			children = (
-				7C0AE723279DA03F005695FB /* DeckView.swift */,
 				7C3E52E6279DC0300002DE88 /* SevensView.swift */,
 				7C3E52E9279E11400002DE88 /* HandView.swift */,
 				7C7560A3279F6927007E3DE1 /* SevensTableView.swift */,
@@ -290,6 +292,7 @@
 			packageProductDependencies = (
 				7C0AE718279D7E06005695FB /* Cards */,
 				7C91993127A59DD600BC5802 /* ConfettiSwiftUI */,
+				7C72FDEE2A63EE2E001E6551 /* Sevens */,
 			);
 			productName = "Card Play (iOS)";
 			productReference = 7C0AE6D8279D674E005695FB /* Deal.app */;
@@ -451,6 +454,7 @@
 				7C91992827A55F4800BC5802 /* GameButtonViewModel.swift in Sources */,
 				7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */,
 				7C1ECFB827B81A2100C8C601 /* Color.swift in Sources */,
+				7C72FDEC2A63EDFD001E6551 /* Game.swift in Sources */,
 				7C9277E227AECB5400511484 /* LoserView.swift in Sources */,
 				7C3E52EA279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
@@ -458,7 +462,6 @@
 				7C91992527A548FA00BC5802 /* GameButton.swift in Sources */,
 				7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */,
-				7C0AE724279DA03F005695FB /* DeckView.swift in Sources */,
 				7C555576284381C2000C6F2C /* PlaySoloView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +481,7 @@
 				7C91992927A55F4800BC5802 /* GameButtonViewModel.swift in Sources */,
 				7CFC65D627A30C1300B61C83 /* SoloGame.swift in Sources */,
 				7C1ECFB927B81A2100C8C601 /* Color.swift in Sources */,
+				7C72FDED2A63EDFD001E6551 /* Game.swift in Sources */,
 				7C9277E327AECB5400511484 /* LoserView.swift in Sources */,
 				7C3E52EB279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
@@ -485,7 +489,6 @@
 				7C91992627A548FA00BC5802 /* GameButton.swift in Sources */,
 				7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */,
-				7C0AE725279DA03F005695FB /* DeckView.swift in Sources */,
 				7C555577284381C2000C6F2C /* PlaySoloView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -904,6 +907,10 @@
 		7C0AE71A279D7E3D005695FB /* Cards */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Cards;
+		};
+		7C72FDEE2A63EE2E001E6551 /* Sevens */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sevens;
 		};
 		7C91993127A59DD600BC5802 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

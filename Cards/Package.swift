@@ -9,23 +9,38 @@ let package = Package(
         .macOS(.v10_15)
     ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(
-            name: "Cards",
-            targets: ["Cards"]),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .library(name: "Cards", targets: ["CardsModel", "CardsScoring", "CardsStyle"]),
+        .library(name: "GoFish", targets: ["GoFish"]),
+        .library(name: "Hearts", targets: ["Hearts"]),
+        .library(name: "Sevens", targets: ["Sevens"])
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "Cards",
-            dependencies: []),
-        .testTarget(
-            name: "CardsTests",
-            dependencies: ["Cards"]),
+        // Core Components: Scoring, Modelling, Styling
+        .target(name: "CardsModel"),
+        .testTarget(name: "CardsModelTests",
+                    dependencies: ["CardsModel"]),
+        
+        .target(name: "CardsScoring",
+                dependencies: ["CardsModel"]),
+        .testTarget(name: "CardsScoringTests",
+                    dependencies: ["CardsModel", "CardsScoring"]),
+        
+        .target(name: "CardsStyle"),
+        
+        // Game Components: Each New Game should be a new target
+        .target(name: "GoFish", dependencies: [
+            "CardsModel", "CardsScoring"
+        ]),
+    
+        .target(name: "Hearts", dependencies: [
+            "CardsModel", "CardsScoring"
+        ]),
+
+        .target(name: "Sevens", dependencies: [
+            "CardsModel", "CardsScoring"
+        ]),
+        .testTarget(name: "SevensTests", dependencies: [
+            "CardsModel", "CardsScoring", "Sevens"
+        ]),
     ]
 )
