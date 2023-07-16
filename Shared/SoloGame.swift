@@ -2,10 +2,9 @@ import Cards
 import SwiftUI
 
 struct SoloGame: View {
-    @State private var game: Game? = .sevens(.init(players: 4))
     let playerIndex: Int = 0
-    
     @State var winner: Int? = nil
+    @State private var game: Game?
 
     var body: some View {
         GameView(game: $game,
@@ -29,6 +28,8 @@ struct SoloGame: View {
                     self.game = .sevens(.init(players: 4))
                 }
             }
+        }.onAppear {
+            game = .sevens(.init(players: 4))
         }
     }
 }
