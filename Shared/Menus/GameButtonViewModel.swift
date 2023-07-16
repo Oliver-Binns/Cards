@@ -1,5 +1,3 @@
-import Cards
-
 struct GameButtonViewModel {
     let imageName: String
     let name: String

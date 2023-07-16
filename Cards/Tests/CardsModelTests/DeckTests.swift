@@ -1,5 +1,5 @@
 import XCTest
-@testable import Cards
+@testable import CardsModel
 
 final class DeckTests: XCTestCase {
     func testStandardDecks() {

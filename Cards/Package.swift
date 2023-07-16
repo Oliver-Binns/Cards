@@ -25,7 +25,7 @@ let package = Package(
         .testTarget(name: "CardsScoringTests",
                     dependencies: ["CardsModel", "CardsScoring"]),
         
-        .target(name: "CardsStyle"),
+        .target(name: "CardsStyle", dependencies: ["CardsModel"]),
         
         // Game Components: Each New Game should be a new target
         .target(name: "GoFish", dependencies: [

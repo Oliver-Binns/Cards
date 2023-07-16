@@ -1,5 +1,6 @@
+import CardsModel
+@testable import Sevens
 import XCTest
-@testable import Cards
 
 final class RunTests: XCTestCase {
     func testCanInitiallyAddSeven() {
