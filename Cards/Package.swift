@@ -35,6 +35,9 @@ let package = Package(
         .target(name: "Hearts", dependencies: [
             "CardsModel", "CardsScoring"
         ]),
+        .testTarget(name: "HeartsTests", dependencies: [
+            "CardsModel", "CardsScoring", "Hearts"
+        ]),
 
         .target(name: "Sevens", dependencies: [
             "CardsModel", "CardsScoring"
