@@ -21,3 +21,9 @@ extension GameButtonViewModel {
         ]
     }
 }
+
+extension GameButtonViewModel: Identifiable {
+    var id: String {
+        name
+    }
+}

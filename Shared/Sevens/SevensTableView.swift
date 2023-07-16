@@ -8,27 +8,26 @@ struct SevensTableView: View {
     
     var body: some View {
         HStack {
-            ForEach(0..<Suit.allCases.count) { suitIndex in
+            ForEach(Suit.allCases, id: \.self) { suit in
                 ZStack(alignment: .top) {
-                    ForEach(0..<SuitedCard.allCases.count) { valueIndex in
+                    ForEach(Array(SuitedCard.allCases.enumerated()), id: \.offset) { (index, card) in
                         GeometryReader { geo in
                             VStack {
-                                if table[suit(at: suitIndex)]?
-                                    .cards.contains(value(at: valueIndex)) ?? false {
+                                if table[suit]?
+                                    .cards.contains(card) ?? false {
                                     style.front
-                                        .image(forCard: card(value: valueIndex, suit: suitIndex))
+                                        .image(forCard: .suited(card, suit))
                                         .resizable()
                                         .scaledToFit()
-                                        .padding(.top, geo.size.width * 0.20 * CGFloat(valueIndex))
-                                        .matchedGeometryEffect(id: card(value: valueIndex, suit: suitIndex),
-                                                               in: namespace)
+                                        .padding(.top, geo.size.width * 0.20 * CGFloat(index))
+                                        .matchedGeometryEffect(id: PlayingCard.suited(card, suit), in: namespace)
                                         .transition(.move(edge: .top))
                                 } else {
                                     style.back.image
                                         .resizable()
                                         .scaledToFit()
                                         .opacity(0)
-                                        .padding(.top, geo.size.width * 0.20 * CGFloat(valueIndex))
+                                        .padding(.top, geo.size.width * 0.20 * CGFloat(index))
                                 }
                             }.shadow(radius: 4)
                         }
@@ -36,17 +35,5 @@ struct SevensTableView: View {
                 }
             }
         }.padding(.horizontal)
-    }
-    
-    func suit(at index: Int) -> Suit {
-        Suit.allCases[index]
-    }
-                                   
-   func value(at index: Int) -> SuitedCard {
-        SuitedCard.allCases[index]
-    }
-    
-    func card(value: Int, suit: Int) -> PlayingCard {
-        .suited(self.value(at: value), self.suit(at: suit))
     }
 }
