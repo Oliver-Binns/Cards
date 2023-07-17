@@ -2,7 +2,10 @@ import CardsModel
 import Combine
 
 public final class Player: ObservableObject {
+    @Published
     public private(set) var hand: [PlayingCard]
+    
+    @Published
     public private(set) var score: Int
     private let scoringSystem = HeartsScore()
     
@@ -26,5 +29,24 @@ public final class Player: ObservableObject {
         score = cards
             .map(scoringSystem.score)
             .reduce(score, +)
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        hand = try container.decode([PlayingCard].self, forKey: .hand)
+        score = try container.decode(Int.self, forKey: .score)
+    }
+}
+
+extension Player: Codable {
+    enum CodingKeys: CodingKey {
+        case hand
+        case score
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(hand, forKey: .hand)
+        try container.encode(score, forKey: .score)
     }
 }

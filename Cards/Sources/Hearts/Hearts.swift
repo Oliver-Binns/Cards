@@ -2,11 +2,12 @@ import CardsModel
 import Combine
 
 public final class Hearts: ObservableObject {
-    @Published private(set) var hands: [[PlayingCard]]
+    @Published private(set) var players: [Player]
 
     public init(players: Int) {
-        hands = Deck.hearts(playerCount: players)
+        self.players = Deck.hearts(playerCount: players)
             .deal(playerCount: players)
+            .map(Player.init)
     }
     
     func isValid(card: PlayingCard) -> Bool {
@@ -15,17 +16,17 @@ public final class Hearts: ObservableObject {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        hands = try container.decode([[PlayingCard]].self, forKey: .hands)
+        players = try container.decode([Player].self, forKey: .players)
     }
 }
 
 extension Hearts: Codable {
     enum CodingKeys: CodingKey {
-        case hands
+        case players
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(hands, forKey: .hands)
+        try container.encode(players, forKey: .players)
     }
 }
