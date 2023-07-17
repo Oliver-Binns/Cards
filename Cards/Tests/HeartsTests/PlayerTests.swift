@@ -50,3 +50,20 @@ final class PlayerTests: XCTestCase {
         XCTAssertTrue(sut.shotForTheMoon)
     }
 }
+
+extension PlayerTests {
+    func testPlayCard() {
+        let sut = Player(hand: [
+            .suited(.five, .diamonds),
+            .suited(.jack, .spades)
+        ])
+        
+        sut.play(card: .suited(.five, .diamonds))
+        XCTAssertEqual(sut.selectedCard, .suited(.five, .diamonds))
+        XCTAssertEqual(sut.hand, [.suited(.jack, .spades)])
+        
+        sut.play(card: .suited(.jack, .spades))
+        XCTAssertEqual(sut.selectedCard, .suited(.jack, .spades))
+        XCTAssertEqual(sut.hand, [])
+    }
+}

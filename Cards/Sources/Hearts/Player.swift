@@ -6,6 +6,9 @@ public final class Player: ObservableObject {
     public private(set) var hand: [PlayingCard]
     
     @Published
+    public private(set) var selectedCard: PlayingCard?
+    
+    @Published
     public private(set) var score: Int
     private let scoringSystem = HeartsScore()
     
@@ -23,9 +26,11 @@ public final class Player: ObservableObject {
             preconditionFailure("Cannot play a card that is not in your hand")
         }
         hand.remove(at: index)
+        selectedCard = card
     }
     
     func pickUp(cards: [PlayingCard]) {
+        selectedCard = nil
         score = cards
             .map(scoringSystem.score)
             .reduce(score, +)

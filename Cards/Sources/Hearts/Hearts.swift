@@ -3,6 +3,9 @@ import Combine
 
 public final class Hearts: ObservableObject {
     @Published private(set) var players: [Player]
+    var trick: [PlayingCard] {
+        players.compactMap(\.selectedCard)
+    }
 
     public init(players: Int) {
         self.players = Deck.hearts(playerCount: players)
