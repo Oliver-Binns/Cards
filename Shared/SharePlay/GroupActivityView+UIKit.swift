@@ -1,11 +1,7 @@
-//
-//  GroupActivityView.swift
-//  Card Play
-//
-//  Created by Binns, Oliver on 29/05/2022.
-//
 import GroupActivities
 import SwiftUI
+
+#if canImport(UIKit)
 import UIKit
 
 struct GroupActivityView<ActivityType: GroupActivity>: UIViewControllerRepresentable, Identifiable {
@@ -24,3 +20,4 @@ struct GroupActivityView<ActivityType: GroupActivity>: UIViewControllerRepresent
         
     }
 }
+#endif

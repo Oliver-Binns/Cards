@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,52 +12,34 @@
 		7C0AE6F6279D674F005695FB /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6F5279D674F005695FB /* Tests_macOS.swift */; };
 		7C0AE6F8279D674F005695FB /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6F7279D674F005695FB /* Tests_macOSLaunchTests.swift */; };
 		7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */; };
-		7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */; };
 		7C0AE6FB279D674F005695FB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D2279D674C005695FB /* GameView.swift */; };
-		7C0AE6FC279D674F005695FB /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6D2279D674C005695FB /* GameView.swift */; };
 		7C0AE719279D7E06005695FB /* Cards in Frameworks */ = {isa = PBXBuildFile; productRef = 7C0AE718279D7E06005695FB /* Cards */; };
-		7C0AE71B279D7E3D005695FB /* Cards in Frameworks */ = {isa = PBXBuildFile; productRef = 7C0AE71A279D7E3D005695FB /* Cards */; };
 		7C0AE71C279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
-		7C0AE71D279D7F39005695FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0AE716279D6D4D005695FB /* Assets.xcassets */; };
 		7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE720279D9446005695FB /* PlayTogether.swift */; };
-		7C0AE722279D9446005695FB /* PlayTogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE720279D9446005695FB /* PlayTogether.swift */; };
 		7C1ECFB827B81A2100C8C601 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1ECFB727B81A2100C8C601 /* Color.swift */; };
-		7C1ECFB927B81A2100C8C601 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1ECFB727B81A2100C8C601 /* Color.swift */; };
 		7C3A068D27A1D18D00261364 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A068C27A1D18D00261364 /* MainMenu.swift */; };
-		7C3A068E27A1D18D00261364 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A068C27A1D18D00261364 /* MainMenu.swift */; };
 		7C3A069127A1D73800261364 /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A069027A1D73800261364 /* Lobby.swift */; };
-		7C3A069227A1D73800261364 /* Lobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A069027A1D73800261364 /* Lobby.swift */; };
 		7C3E52E7279DC0300002DE88 /* SevensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E6279DC0300002DE88 /* SevensView.swift */; };
-		7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E6279DC0300002DE88 /* SevensView.swift */; };
 		7C3E52EA279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
-		7C3E52EB279E11400002DE88 /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3E52E9279E11400002DE88 /* HandView.swift */; };
-		7C55556F284378FA000C6F2C /* GroupActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55556E284378FA000C6F2C /* GroupActivityView.swift */; };
-		7C555570284378FA000C6F2C /* GroupActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55556E284378FA000C6F2C /* GroupActivityView.swift */; };
+		7C47903B2A73A4CC00ABC40D /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C47903A2A73A4CC00ABC40D /* GenericError.swift */; };
+		7C55556F284378FA000C6F2C /* GroupActivityView+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55556E284378FA000C6F2C /* GroupActivityView+UIKit.swift */; };
 		7C555576284381C2000C6F2C /* PlaySoloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555575284381C2000C6F2C /* PlaySoloView.swift */; };
-		7C555577284381C2000C6F2C /* PlaySoloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555575284381C2000C6F2C /* PlaySoloView.swift */; };
 		7C555579284381F8000C6F2C /* PlayTogetherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555578284381F8000C6F2C /* PlayTogetherView.swift */; };
-		7C55557A284381F8000C6F2C /* PlayTogetherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C555578284381F8000C6F2C /* PlayTogetherView.swift */; };
 		7C55557D284388FA000C6F2C /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55557C284388FA000C6F2C /* ReadableWidth.swift */; };
-		7C55557E284388FA000C6F2C /* ReadableWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C55557C284388FA000C6F2C /* ReadableWidth.swift */; };
 		7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
-		7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
 		7C72FDEC2A63EDFD001E6551 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72FDEB2A63EDFD001E6551 /* Game.swift */; };
-		7C72FDED2A63EDFD001E6551 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72FDEB2A63EDFD001E6551 /* Game.swift */; };
 		7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */ = {isa = PBXBuildFile; productRef = 7C72FDEE2A63EE2E001E6551 /* Sevens */; };
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
-		7C7560A5279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
+		7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */; };
+		7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */; };
 		7C91992527A548FA00BC5802 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992427A548FA00BC5802 /* GameButton.swift */; };
-		7C91992627A548FA00BC5802 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992427A548FA00BC5802 /* GameButton.swift */; };
 		7C91992827A55F4800BC5802 /* GameButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */; };
-		7C91992927A55F4800BC5802 /* GameButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */; };
 		7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
-		7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
 		7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993127A59DD600BC5802 /* ConfettiSwiftUI */; };
-		7C91993427A59DED00BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993327A59DED00BC5802 /* ConfettiSwiftUI */; };
 		7C9277E227AECB5400511484 /* LoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9277E127AECB5400511484 /* LoserView.swift */; };
-		7C9277E327AECB5400511484 /* LoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9277E127AECB5400511484 /* LoserView.swift */; };
+		7CA9E68D2A6F261E009CFA58 /* GroupSession+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */; };
+		7CA9E6902A6F292B009CFA58 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */; };
 		7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
-		7CFC65D627A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,20 +50,12 @@
 			remoteGlobalIDString = 7C0AE6D7279D674E005695FB;
 			remoteInfo = "Card Play (iOS)";
 		};
-		7C0AE6F2279D674F005695FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7C0AE6CC279D674C005695FB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7C0AE6DD279D674E005695FB;
-			remoteInfo = "Card Play (macOS)";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card_PlayApp.swift; sourceTree = "<group>"; };
 		7C0AE6D2279D674C005695FB /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7C0AE6D8279D674E005695FB /* Deal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deal.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C0AE6DE279D674E005695FB /* Card Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card Play.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6E0279D674E005695FB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		7C0AE6E5279D674E005695FB /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6E9279D674F005695FB /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
@@ -90,24 +64,28 @@
 		7C0AE6F5279D674F005695FB /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		7C0AE6F7279D674F005695FB /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		7C0AE716279D6D4D005695FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7C0AE71E279D93D6005695FB /* Card Play (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Card Play (iOS).entitlements"; sourceTree = "<group>"; };
+		7C0AE71E279D93D6005695FB /* Card Play.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Card Play.entitlements"; sourceTree = "<group>"; };
 		7C0AE720279D9446005695FB /* PlayTogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogether.swift; sourceTree = "<group>"; };
 		7C1ECFB727B81A2100C8C601 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7C3A068C27A1D18D00261364 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		7C3A069027A1D73800261364 /* Lobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lobby.swift; sourceTree = "<group>"; };
 		7C3E52E6279DC0300002DE88 /* SevensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensView.swift; sourceTree = "<group>"; };
 		7C3E52E9279E11400002DE88 /* HandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandView.swift; sourceTree = "<group>"; };
-		7C55556E284378FA000C6F2C /* GroupActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupActivityView.swift; sourceTree = "<group>"; };
+		7C47903A2A73A4CC00ABC40D /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
+		7C55556E284378FA000C6F2C /* GroupActivityView+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupActivityView+UIKit.swift"; sourceTree = "<group>"; };
 		7C555575284381C2000C6F2C /* PlaySoloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySoloView.swift; sourceTree = "<group>"; };
 		7C555578284381F8000C6F2C /* PlayTogetherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTogetherView.swift; sourceTree = "<group>"; };
 		7C55557C284388FA000C6F2C /* ReadableWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableWidth.swift; sourceTree = "<group>"; };
 		7C5C324127B9778E004897BF /* SevensGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensGuide.swift; sourceTree = "<group>"; };
 		7C72FDEB2A63EDFD001E6551 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Shared/SharePlay/Game.swift; sourceTree = SOURCE_ROOT; };
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
+		7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSupport.swift; sourceTree = "<group>"; };
+		7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupActivityView+AppKit.swift"; sourceTree = "<group>"; };
 		7C91992427A548FA00BC5802 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonViewModel.swift; sourceTree = "<group>"; };
 		7C91992D27A5921300BC5802 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		7C9277E127AECB5400511484 /* LoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserView.swift; sourceTree = "<group>"; };
+		7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupSession+Hashable.swift"; sourceTree = "<group>"; };
 		7CFC65D427A30C1300B61C83 /* SoloGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,18 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA9E6902A6F292B009CFA58 /* SwiftUINavigation in Frameworks */,
 				7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */,
 				7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */,
 				7C0AE719279D7E06005695FB /* Cards in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C0AE6DB279D674E005695FB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7C91993427A59DED00BC5802 /* ConfettiSwiftUI in Frameworks */,
-				7C0AE71B279D7E3D005695FB /* Cards in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +121,7 @@
 		7C0AE6CB279D674C005695FB = {
 			isa = PBXGroup;
 			children = (
-				7C0AE71E279D93D6005695FB /* Card Play (iOS).entitlements */,
+				7C0AE71E279D93D6005695FB /* Card Play.entitlements */,
 				7C0AE6D0279D674C005695FB /* Shared */,
 				7C0AE6DF279D674E005695FB /* macOS */,
 				7C0AE6E8279D674E005695FB /* Tests iOS */,
@@ -180,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				7C0AE6D8279D674E005695FB /* Deal.app */,
-				7C0AE6DE279D674E005695FB /* Card Play.app */,
 				7C0AE6E5279D674E005695FB /* Tests iOS.xctest */,
 				7C0AE6F1279D674F005695FB /* Tests macOS.xctest */,
 			);
@@ -225,7 +194,8 @@
 			children = (
 				7C72FDEB2A63EDFD001E6551 /* Game.swift */,
 				7C0AE720279D9446005695FB /* PlayTogether.swift */,
-				7C55556E284378FA000C6F2C /* GroupActivityView.swift */,
+				7C55556E284378FA000C6F2C /* GroupActivityView+UIKit.swift */,
+				7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */,
 			);
 			path = SharePlay;
 			sourceTree = "<group>";
@@ -233,6 +203,7 @@
 		7C3A068F27A1D42700261364 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
+				7C4790392A73A4BF00ABC40D /* Errors */,
 				7C555574284381B6000C6F2C /* Main */,
 				7C0AE6D1279D674C005695FB /* Card_PlayApp.swift */,
 				7C3A069027A1D73800261364 /* Lobby.swift */,
@@ -242,6 +213,14 @@
 				7C9277E127AECB5400511484 /* LoserView.swift */,
 			);
 			path = Menus;
+			sourceTree = "<group>";
+		};
+		7C4790392A73A4BF00ABC40D /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				7C47903A2A73A4CC00ABC40D /* GenericError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		7C555574284381B6000C6F2C /* Main */ = {
@@ -257,9 +236,19 @@
 		7C55557B284388F1000C6F2C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7CA9E68B2A6F2610009CFA58 /* GroupActivities */,
 				7C55557C284388FA000C6F2C /* ReadableWidth.swift */,
+				7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CA9E68B2A6F2610009CFA58 /* GroupActivities */ = {
+			isa = PBXGroup;
+			children = (
+				7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */,
+			);
+			path = GroupActivities;
 			sourceTree = "<group>";
 		};
 		7CFC65D327A30BFA00B61C83 /* Sevens */ = {
@@ -276,9 +265,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7C0AE6D7279D674E005695FB /* Card Play (iOS) */ = {
+		7C0AE6D7279D674E005695FB /* Card Play */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C0AE701279D674F005695FB /* Build configuration list for PBXNativeTarget "Card Play (iOS)" */;
+			buildConfigurationList = 7C0AE701279D674F005695FB /* Build configuration list for PBXNativeTarget "Card Play" */;
 			buildPhases = (
 				7C0AE6D4279D674E005695FB /* Sources */,
 				7C0AE6D5279D674E005695FB /* Frameworks */,
@@ -288,35 +277,15 @@
 			);
 			dependencies = (
 			);
-			name = "Card Play (iOS)";
+			name = "Card Play";
 			packageProductDependencies = (
 				7C0AE718279D7E06005695FB /* Cards */,
 				7C91993127A59DD600BC5802 /* ConfettiSwiftUI */,
 				7C72FDEE2A63EE2E001E6551 /* Sevens */,
+				7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */,
 			);
 			productName = "Card Play (iOS)";
 			productReference = 7C0AE6D8279D674E005695FB /* Deal.app */;
-			productType = "com.apple.product-type.application";
-		};
-		7C0AE6DD279D674E005695FB /* Card Play (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7C0AE704279D674F005695FB /* Build configuration list for PBXNativeTarget "Card Play (macOS)" */;
-			buildPhases = (
-				7C0AE6DA279D674E005695FB /* Sources */,
-				7C0AE6DB279D674E005695FB /* Frameworks */,
-				7C0AE6DC279D674E005695FB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Card Play (macOS)";
-			packageProductDependencies = (
-				7C0AE71A279D7E3D005695FB /* Cards */,
-				7C91993327A59DED00BC5802 /* ConfettiSwiftUI */,
-			);
-			productName = "Card Play (macOS)";
-			productReference = 7C0AE6DE279D674E005695FB /* Card Play.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7C0AE6E4279D674E005695FB /* Tests iOS */ = {
@@ -348,7 +317,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				7C0AE6F3279D674F005695FB /* PBXTargetDependency */,
 			);
 			name = "Tests macOS";
 			productName = "Tests macOS";
@@ -368,9 +336,6 @@
 					7C0AE6D7279D674E005695FB = {
 						CreatedOnToolsVersion = 13.2;
 					};
-					7C0AE6DD279D674E005695FB = {
-						CreatedOnToolsVersion = 13.2;
-					};
 					7C0AE6E4279D674E005695FB = {
 						CreatedOnToolsVersion = 13.2;
 						TestTargetID = 7C0AE6D7279D674E005695FB;
@@ -382,7 +347,7 @@
 				};
 			};
 			buildConfigurationList = 7C0AE6CF279D674C005695FB /* Build configuration list for PBXProject "Card Play" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -392,13 +357,13 @@
 			mainGroup = 7C0AE6CB279D674C005695FB;
 			packageReferences = (
 				7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				7CA9E68E2A6F292B009CFA58 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 			);
 			productRefGroup = 7C0AE6D9279D674E005695FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C0AE6D7279D674E005695FB /* Card Play (iOS) */,
-				7C0AE6DD279D674E005695FB /* Card Play (macOS) */,
+				7C0AE6D7279D674E005695FB /* Card Play */,
 				7C0AE6E4279D674E005695FB /* Tests iOS */,
 				7C0AE6F0279D674F005695FB /* Tests macOS */,
 			);
@@ -411,14 +376,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C0AE71C279D7F39005695FB /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C0AE6DC279D674E005695FB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7C0AE71D279D7F39005695FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C555579284381F8000C6F2C /* PlayTogetherView.swift in Sources */,
-				7C55556F284378FA000C6F2C /* GroupActivityView.swift in Sources */,
+				7C55556F284378FA000C6F2C /* GroupActivityView+UIKit.swift in Sources */,
 				7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */,
 				7C3E52E7279DC0300002DE88 /* SevensView.swift in Sources */,
 				7C0AE6FB279D674F005695FB /* GameView.swift in Sources */,
@@ -452,10 +409,14 @@
 				7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */,
 				7C3A069127A1D73800261364 /* Lobby.swift in Sources */,
 				7C91992827A55F4800BC5802 /* GameButtonViewModel.swift in Sources */,
+				7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */,
+				7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */,
 				7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */,
+				7C47903B2A73A4CC00ABC40D /* GenericError.swift in Sources */,
 				7C1ECFB827B81A2100C8C601 /* Color.swift in Sources */,
 				7C72FDEC2A63EDFD001E6551 /* Game.swift in Sources */,
 				7C9277E227AECB5400511484 /* LoserView.swift in Sources */,
+				7CA9E68D2A6F261E009CFA58 /* GroupSession+Hashable.swift in Sources */,
 				7C3E52EA279E11400002DE88 /* HandView.swift in Sources */,
 				7C0AE6F9279D674F005695FB /* Card_PlayApp.swift in Sources */,
 				7C55557D284388FA000C6F2C /* ReadableWidth.swift in Sources */,
@@ -463,33 +424,6 @@
 				7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */,
 				7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */,
 				7C555576284381C2000C6F2C /* PlaySoloView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7C0AE6DA279D674E005695FB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7C55557A284381F8000C6F2C /* PlayTogetherView.swift in Sources */,
-				7C555570284378FA000C6F2C /* GroupActivityView.swift in Sources */,
-				7C7560A5279F6927007E3DE1 /* SevensTableView.swift in Sources */,
-				7C3E52E8279DC0300002DE88 /* SevensView.swift in Sources */,
-				7C0AE6FC279D674F005695FB /* GameView.swift in Sources */,
-				7C3A068E27A1D18D00261364 /* MainMenu.swift in Sources */,
-				7C0AE722279D9446005695FB /* PlayTogether.swift in Sources */,
-				7C3A069227A1D73800261364 /* Lobby.swift in Sources */,
-				7C91992927A55F4800BC5802 /* GameButtonViewModel.swift in Sources */,
-				7CFC65D627A30C1300B61C83 /* SoloGame.swift in Sources */,
-				7C1ECFB927B81A2100C8C601 /* Color.swift in Sources */,
-				7C72FDED2A63EDFD001E6551 /* Game.swift in Sources */,
-				7C9277E327AECB5400511484 /* LoserView.swift in Sources */,
-				7C3E52EB279E11400002DE88 /* HandView.swift in Sources */,
-				7C0AE6FA279D674F005695FB /* Card_PlayApp.swift in Sources */,
-				7C55557E284388FA000C6F2C /* ReadableWidth.swift in Sources */,
-				7C91992627A548FA00BC5802 /* GameButton.swift in Sources */,
-				7C91992F27A5921300BC5802 /* WinnerView.swift in Sources */,
-				7C5C324327B9778E004897BF /* SevensGuide.swift in Sources */,
-				7C555577284381C2000C6F2C /* PlaySoloView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,13 +450,8 @@
 /* Begin PBXTargetDependency section */
 		7C0AE6E7279D674E005695FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7C0AE6D7279D674E005695FB /* Card Play (iOS) */;
+			target = 7C0AE6D7279D674E005695FB /* Card Play */;
 			targetProxy = 7C0AE6E6279D674E005695FB /* PBXContainerItemProxy */;
-		};
-		7C0AE6F3279D674F005695FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7C0AE6DD279D674E005695FB /* Card Play (macOS) */;
-			targetProxy = 7C0AE6F2279D674F005695FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -645,7 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Card Play (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Card Play.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z86DH46P79;
@@ -657,7 +586,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -666,9 +595,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.oliverbinns.cardplay.Card-Play";
 				PRODUCT_NAME = Deal;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 			};
 			name = Debug;
 		};
@@ -677,7 +610,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Card Play (iOS).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Card Play.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z86DH46P79;
@@ -689,7 +622,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,68 +631,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.oliverbinns.cardplay.Card-Play";
 				PRODUCT_NAME = Deal;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		7C0AE705279D674F005695FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = Z86DH46P79;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.oliverbinns.cardplay.Card-Play";
-				PRODUCT_NAME = "Card Play";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		7C0AE706279D674F005695FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = Z86DH46P79;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "uk.co.oliverbinns.cardplay.Card-Play";
-				PRODUCT_NAME = "Card Play";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -856,20 +735,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C0AE701279D674F005695FB /* Build configuration list for PBXNativeTarget "Card Play (iOS)" */ = {
+		7C0AE701279D674F005695FB /* Build configuration list for PBXNativeTarget "Card Play" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C0AE702279D674F005695FB /* Debug */,
 				7C0AE703279D674F005695FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7C0AE704279D674F005695FB /* Build configuration list for PBXNativeTarget "Card Play (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7C0AE705279D674F005695FB /* Debug */,
-				7C0AE706279D674F005695FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -903,14 +773,18 @@
 				minimumVersion = 0.3.0;
 			};
 		};
+		7CA9E68E2A6F292B009CFA58 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		7C0AE718279D7E06005695FB /* Cards */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Cards;
-		};
-		7C0AE71A279D7E3D005695FB /* Cards */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Cards;
 		};
@@ -923,10 +797,10 @@
 			package = 7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
-		7C91993327A59DED00BC5802 /* ConfettiSwiftUI */ = {
+		7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
-			productName = ConfettiSwiftUI;
+			package = 7CA9E68E2A6F292B009CFA58 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

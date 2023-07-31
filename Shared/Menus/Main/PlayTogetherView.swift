@@ -1,54 +1,55 @@
 import Combine
 import GroupActivities
 import SwiftUI
+import SwiftUINavigation
 
 struct PlayTogetherView: View {
     @StateObject private var groupStateObserver = GroupStateObserver()
     
     @State private var session: GroupSession<PlayTogether>?
-    @State private var state: GroupSession<PlayTogether>.State?
     @State private var cancellables: Set<AnyCancellable> = []
+
     @State private var startActivity: GroupActivityView<PlayTogether>?
     
     private var canStartSharePlay: Bool {
-        guard #available(iOS 15.4, *) else {
-            return groupStateObserver.isEligibleForGroupSession
+        guard #available(iOS 15.4, macOS 13, *) else {
+            return false
         }
+        #if os(macOS) && swift(<5.9)
+        return false
+        #else
         return true
+        #endif
+        
     }
+    
+    private var isOnFaceTimeCall: Bool {
+        groupStateObserver.isEligibleForGroupSession
+    }
+    
     
     var body: some View {
         VStack(spacing: 8) {
             Text("Face Cards 🃏 is best enjoyed with friends.")
                 .frame(maxWidth: .infinity)
             
-            if groupStateObserver.isEligibleForGroupSession {
-                if let session = session,
-                   state == .joined {
-                    NavigationLink("Play with Friends",
-                                   isActive: .init(get: { state == .joined },
-                                                   set: { _ in session.end() })) {
-                        Lobby(session: session)
+            if canStartSharePlay || isOnFaceTimeCall {
+                Button(action: startSharePlay) {
+                    HStack {
+                        Image(systemName: "shareplay")
+                        Text("Start SharePlay")
                     }
+                    .padding(8)
+                    .frame(maxWidth: .infinity)
                 }
-            } else if #unavailable(iOS 15.4) {
+                .buttonStyle(.borderedProminent)
+                .tint(.blue)
+            } else {
                 HStack {
                     Image(systemName: "video.fill")
                     Text("Join a FaceTime call to activate SharePlay!")
                 }
             }
-            
-            Button(action: startSharePlay) {
-                HStack {
-                    Image(systemName: "shareplay")
-                    Text("Start SharePlay")
-                }
-                .padding(8)
-                .frame(maxWidth: .infinity)
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(.blue)
-            .disabled(!canStartSharePlay)
         }
         .padding()
         .background(.background)
@@ -58,15 +59,25 @@ struct PlayTogetherView: View {
         .task {
             await checkForSession()
         }
+        .navigationDestination(unwrapping: $session) { session in
+            switch session.wrappedValue.state {
+            case .joined, .waiting:
+                Lobby(session: session.wrappedValue)
+            case .invalidated:
+                GenericError()
+            @unknown default:
+                GenericError()
+            }
+        }
     }
     
     private func startSharePlay() {
-        if #available(iOS 15.4, *) {
+        guard isOnFaceTimeCall else {
             startActivity = GroupActivityView { PlayTogether(title: "Face Cards 🃏") }
-        } else {
-            Task {
-                try await startSession()
-            }
+            return
+        }
+        Task {
+            try await startSession()
         }
     }
     
@@ -79,11 +90,6 @@ struct PlayTogetherView: View {
     @MainActor
     private func configureSession(_ session: GroupSession<PlayTogether>) {
         self.session = session
-        
-        session.$state.sink { state in
-            self.state = state
-        }.store(in: &cancellables)
-        
         session.join()
     }
     

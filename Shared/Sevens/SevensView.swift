@@ -48,7 +48,7 @@ struct SevensView: View {
             }
         }
         .navigationTitle("Sevens")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationTitle()
         .toolbar {
             Button {
                 displayHelp = true
@@ -61,3 +61,4 @@ struct SevensView: View {
         }
     }
 }
+

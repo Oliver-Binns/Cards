@@ -24,8 +24,10 @@ struct GameButton: View {
                 }
                 .font(.caption)
                 .foregroundColor(.primary)
-            }.padding()
+            }
+            .padding()
         }
+        .buttonStyle(.plain)
         .foregroundColor(.red)
         .background(.background)
         .cornerRadius(8)

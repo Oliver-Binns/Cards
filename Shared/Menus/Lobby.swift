@@ -13,6 +13,15 @@ struct Lobby: View {
     
     let games = GameButtonViewModel.games
     
+    private var game: Binding<Game?> {
+        Binding {
+            session.activity.game
+        } set: { newValue in
+            session.activity.game = newValue
+        }
+
+    }
+    
     var body: some View {
         VStack(spacing: 16) {
             Text("Lobby")
@@ -31,7 +40,7 @@ struct Lobby: View {
                     let uuid = session.localParticipant.id
                     session.activity.names[uuid] = $0
                 }))
-                .textContentType(.givenName)
+                .givenNameContentType()
             }
             .padding()
             .background(.background)
@@ -50,21 +59,6 @@ struct Lobby: View {
                         }.disabled(!game.playerCount.contains(session.activeParticipants.count))
                     }
                 }
-            }
-            
-
-            if let players = session.activity.players,
-               let playerIndex = players.firstIndex(of: session.localParticipant.id) {
-                NavigationLink(isActive: .init(get: { session.activity.game != nil },
-                                               set: { _ in session.activity.game = nil })) {
-                    GameView(game: .init(get: {
-                        session.activity.game
-                    }, set: {
-                        session.activity.game = $0
-                    }), playerIndex: playerIndex) { winner in
-                        announceWinner(winner)
-                    }
-                } label: { EmptyView() }
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -92,6 +86,18 @@ struct Lobby: View {
             }
         }
         .onAppear { Task { await getMessages() } }
+        .navigationDestination(unwrapping: game) { game in
+            if let players = session.activity.players,
+               let playerIndex = players.firstIndex(of: session.localParticipant.id) {
+                GameView(game: .init(get: {
+                    session.activity.game
+                }, set: {
+                    session.activity.game = $0
+                }), playerIndex: playerIndex) { winner in
+                    announceWinner(winner)
+                }
+            }
+        }
         .alert("Oh no!",
                isPresented: .init { alertText != nil } set: { _ in alertText = nil }) {
             Text("Ok")
