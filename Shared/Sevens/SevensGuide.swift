@@ -17,7 +17,9 @@ struct SevensGuide: View {
                 🏆 The winner is the player who gets rid of all their cards first.
                 """).font(.system(.body, design: .serif))
                 Spacer()
-            }.padding()
+            }
+            .padding()
+            .readableGuidePadding()
         }
     }
 }

@@ -3,7 +3,7 @@ import GroupActivities
 
 struct MainMenu: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 16) {
                 Text("Face Cards 🃏")
                     .font(.system(.largeTitle, design: .rounded))
@@ -21,8 +21,7 @@ struct MainMenu: View {
             .padding()
             .background(Color.dynamicGreen)
         }
-        .navigationViewStyle(.stack)
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationTitle()
         .accentColor(.primary)
     }
     

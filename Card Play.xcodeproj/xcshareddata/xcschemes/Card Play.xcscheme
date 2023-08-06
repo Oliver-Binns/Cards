@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C0AE6D7279D674E005695FB"
                BuildableName = "Deal.app"
-               BlueprintName = "Card Play (iOS)"
+               BlueprintName = "Card Play"
                ReferencedContainer = "container:Card Play.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,7 +50,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C0AE6D7279D674E005695FB"
             BuildableName = "Deal.app"
-            BlueprintName = "Card Play (iOS)"
+            BlueprintName = "Card Play"
             ReferencedContainer = "container:Card Play.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C0AE6D7279D674E005695FB"
             BuildableName = "Deal.app"
-            BlueprintName = "Card Play (iOS)"
+            BlueprintName = "Card Play"
             ReferencedContainer = "container:Card Play.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -20,11 +20,13 @@ git config core.hooksPath hooks
 ```
 
 ## Some Future Ideas
+* App Clip to play with users who do not have the app installed
 * Additional games: Hearts, Go Fish, Speed
 * Extra games are In-App Purchases
 * visionOS support with immersive experiences
 * In-App Messaging / Nudges
 * Emoji reactions to opponent moves
+* GameKit Matchmaker
 
 ## Implemented
 * ~~Sevens / Parliament Card Game~~
