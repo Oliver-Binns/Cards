@@ -22,19 +22,7 @@ struct HandView: View {
                         ForEach(Array(hand
                                         .sorted(by: compareCards(_:_:))
                                         .enumerated()), id: \.element.id) { (index, item) in
-                            ZStack {
-                                style.front.image(forCard: item.card)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .shadow(radius: 4)
-                                
-                                style.blank
-                                    .resizable()
-                                    .scaledToFit()
-                                    .colorInvert()
-                                    .opacity(item.isValid ? 0 : 0.5)
-                            }
-                            .onTapGesture {
+                            Button {
                                 withAnimation {
                                     guard item.isValid else {
                                         selectedCard = nil
@@ -42,7 +30,21 @@ struct HandView: View {
                                     }
                                     selectedCard = item
                                 }
+                            } label: {
+                                ZStack {
+                                    style.front.image(forCard: item.card)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .shadow(radius: 4)
+                                    
+                                    style.blank
+                                        .resizable()
+                                        .scaledToFit()
+                                        .colorInvert()
+                                        .opacity(item.isValid ? 0 : 0.5)
+                                }
                             }
+                            .buttonStyle(.borderless)
                             .rotationEffect(.degrees(angle(forIndex: index)), anchor: anchorPoint(forIndex: index))
                             .padding(.leading, CGFloat(index) * geo.size.height * 0.07)
                             .offset(x: 0, y: selectedCard == item ? -geo.size.height / 4 : 0)
@@ -115,3 +117,22 @@ struct HandView: View {
         }
     }
 }
+
+#if DEBUG
+struct HandViewPreview: PreviewProvider {
+    @Namespace private static var namespace
+    
+    static var previews: some View {
+        HandView(hand: [
+            .init(isValid: false, card: .joker(.red)),
+            .init(isValid: true, card: .suited(.ace, .spades)),
+            .init(isValid: true, card: .suited(.king, .diamonds)),
+            .init(isValid: false, card: .joker(.black)),
+            
+        ],
+                 isDisabled: false,
+                 namespace: namespace,
+                 playCard: { _ in })
+    }
+}
+#endif
