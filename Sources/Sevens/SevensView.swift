@@ -6,7 +6,7 @@ import SwiftUI
 struct SevensView: View {
     @ObservedObject var game: Sevens
     
-    let playerIndex: Int
+    let playerIndex: Int?
     let didPlay: (PlayingCard?) -> Void
     
     @Namespace private var namespace
@@ -20,30 +20,32 @@ struct SevensView: View {
                     .layoutPriority(0.1)
                     .readableGuidePadding()
                 
-                VStack {
-                    Spacer()
-                    ZStack(alignment: .bottom) {
-                        HandView(hand: game.hand(forPlayer: playerIndex),
-                                 isDisabled: game.currentPlayer != playerIndex,
-                                 namespace: namespace) { card in
-                            didPlay(card)
-                        }
-                        
-                        if game.currentPlayer != playerIndex {
-                            HStack(spacing: 8) {
-                                ProgressView()
-                                Text("Waiting for your turn")
+                if let playerIndex {
+                    VStack {
+                        Spacer()
+                        ZStack(alignment: .bottom) {
+                            HandView(hand: game.hand(forPlayer: playerIndex),
+                                     isDisabled: game.currentPlayer != playerIndex,
+                                     namespace: namespace) { card in
+                                didPlay(card)
                             }
-                            .font(.headline)
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(.background)
-                            .cornerRadius(8)
-                            .shadow(radius: 4)
-                            .padding()
-                            .transition(.move(edge: .bottom))
-                        }
-                    }.frame(maxHeight: geo.size.height * 0.7)
+                            
+                            if game.currentPlayer != playerIndex {
+                                HStack(spacing: 8) {
+                                    ProgressView()
+                                    Text("Waiting for your turn")
+                                }
+                                .font(.headline)
+                                .padding()
+                                .frame(maxWidth: .infinity)
+                                .background(.background)
+                                .cornerRadius(8)
+                                .shadow(radius: 4)
+                                .padding()
+                                .transition(.move(edge: .bottom))
+                            }
+                        }.frame(maxHeight: geo.size.height * 0.7)
+                    }
                 }
             }
         }

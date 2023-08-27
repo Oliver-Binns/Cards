@@ -3,6 +3,8 @@ import Combine
 import SwiftUI
 
 public final class RandomAutomatedPlayer: NonLocalPlayer {
+    public let id = UUID()
+    
     private let index: Int
     @ObservedObject private var game: Sevens
     private var cancellables: Set<AnyCancellable> = []

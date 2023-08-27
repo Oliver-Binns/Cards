@@ -21,18 +21,20 @@ struct LobbyView: View {
             Spacer()
             
             VStack(alignment: .center, spacing: 16) {
+                #if swift(>=5.9)
                 if #available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *) {
                     Image(systemName: "person.line.dotted.person.fill")
                         .symbolEffect(.pulse, isActive: true)
                         .font(.title)
                 }
+                #endif
                 
                 Text("Waiting for players to join...")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
                 
-                Text("There are currently \(model.players.count) players at the table.")
+                Text("There are currently \(session.activity.participantOrder.count) players at the table.")
                 Text("\(game.players) players are required to start.")
                 
                 Button(action: joinTable) {

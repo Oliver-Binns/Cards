@@ -23,6 +23,9 @@ struct MainMenu: View {
             .navigationDestination(unwrapping: $model.game) { game in
                 GameView(game: game)
             }
+            .navigationDestination(unwrapping: $model.error) { error in
+                ErrorView()
+            }
         }
         .inlineNavigationTitle()
         .accentColor(.primary)

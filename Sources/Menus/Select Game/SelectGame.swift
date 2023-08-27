@@ -19,7 +19,7 @@ struct SelectGame: View {
                 .frame(maxWidth: .infinity)
             
             Section {
-                Text("Game:")
+                Text("Select game:")
                 
                 Picker(selection: $playerCount) {
                     Label("Sevens", systemImage: "7.circle.fill")

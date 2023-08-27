@@ -7,7 +7,7 @@ struct GameView: View {
     
     var body: some View {
         VStack {
-            if model.players.count + 1 < game.players,
+            if model.players.count < game.players,
                let session = model.sharePlay.session {
                 // we don't have enough players for the current game!
                 LobbyView(game: $game, session: session)

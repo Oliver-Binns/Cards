@@ -3,11 +3,11 @@ import Foundation
 import GroupActivities
 
 final class RemotePlayer: NonLocalPlayer {
-    private let id: UUID
+    let id: UUID
     private let messenger: GroupSessionMessenger
     
     init<Activity: GroupActivity>(id: UUID,
-                                         session: GroupSession<Activity>) {
+                                  session: GroupSession<Activity>) {
         self.id = id
         self.messenger = GroupSessionMessenger(session: session)
     }

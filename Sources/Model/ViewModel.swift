@@ -7,10 +7,25 @@ import SwiftUI
 final class ViewModel: ObservableObject {
     @Published var error: Error?
     @Published var game: (any Game)?
-    @Published private(set) var players: [NonLocalPlayer] = []
     
-    var playerIndex: Int {
-        0
+    private var tasks: [Task<(), Never>] = []
+    @Published private(set) var players: [NonLocalPlayer] = [] {
+        didSet {
+            tasks.forEach { $0.cancel() }
+            tasks = players.map { player in
+                Task {
+                    await followPlayer(player)
+                }
+            }
+        }
+    }
+    
+    var playerIndex: Int? {
+        guard let session = sharePlay.session else {
+            return 0
+        }
+        let localID = session.localParticipant.id
+        return session.activity.participantOrder.firstIndex(of: localID)
     }
     
     @ObservedObject
@@ -21,33 +36,38 @@ final class ViewModel: ObservableObject {
     init() {
         sharePlay.$session
             .receive(on: RunLoop.main)
+            .map(\.?.activity.game)
+            .assign(to: \.game, on: self)
+            .store(in: &cancellables)
+
+        sharePlay.$session
             .sink { session in
-                guard let session else {
-                    self.game = nil
-                    return
-                }
-                self.game = session.activity.game
-                self.players = session.activeParticipants
-                    .map(\.id).map {
+                guard let session else { return }
+                session.$activity.sink(receiveValue: { activity in
+                    self.players = activity.participantOrder.map {
                         RemotePlayer(id: $0, session: session)
                     }
-            }.store(in: &cancellables)
+                })
+                .store(in: &self.cancellables)
+            }
+            .store(in: &cancellables)
     }
     
     func setPlayers(_ players: [NonLocalPlayer], of game: any Game) {
         self.players = players
         self.game = game
-        
-        players.forEach { player in
-            Task {
-                await followPlayer(player)
-            }
-        }
     }
     
     func playCard(_ card: PlayingCard?) {
         game?.play(card: card)
-        // todo: also notify other players on SharePlay!
+        
+        Task {
+            do {
+                try await sharePlay.sendMove(card)
+            } catch {
+                self.error = error
+            }
+        }
     }
     
     func followPlayer(_ player: NonLocalPlayer) async {
@@ -64,7 +84,9 @@ final class ViewModel: ObservableObject {
 
 final class SharePlayModel: ObservableObject {
     private let groupStateObserver = GroupStateObserver()
+    
     @Published private(set) var session: GroupSession<PlayTogether>? = nil
+    private var messenger: GroupSessionMessenger? = nil
     
     /// A SharePlay connection exists:
     /// this is either an active FaceTime call or iMessage SharePlay session
@@ -97,12 +119,17 @@ final class SharePlayModel: ObservableObject {
     
     func findSessions() async {
         for await session in PlayTogether.sessions() {
-            // todo: when should activity be joined?
-            session.join()
-            
             await MainActor.run {
+                // todo: when should activity be joined?
+                session.join()
+                
                 self.session = session
+                self.messenger = GroupSessionMessenger(session: session)
             }
         }
+    }
+    
+    func sendMove(_ card: PlayingCard?) async throws {
+        try await messenger?.send(card)
     }
 }
