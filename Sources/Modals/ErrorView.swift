@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct GenericError: View {
+struct ErrorView: View {
     var body: some View {
         VStack(spacing: 8) {
             Text("This game has ended")

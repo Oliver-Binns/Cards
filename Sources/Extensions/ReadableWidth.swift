@@ -1,9 +1,3 @@
-//
-//  ReadableWidth.swift
-//  Card Play
-//
-//  Created by Binns, Oliver on 29/05/2022.
-//
 import SwiftUI
 
 private struct ReadableGuidePadding: ViewModifier {

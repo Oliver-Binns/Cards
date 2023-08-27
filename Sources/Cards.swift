@@ -1,10 +1,13 @@
 import SwiftUI
 
 @main
-struct Card_PlayApp: App {
+struct CardsApp: App {
+    @State var model = ViewModel()
+    
     var body: some Scene {
         WindowGroup {
             MainMenu()
+                .environmentObject(model)
         }
     }
 }
