@@ -38,6 +38,7 @@
 		7C9277E227AECB5400511484 /* LoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9277E127AECB5400511484 /* LoserView.swift */; };
 		7CA9E68D2A6F261E009CFA58 /* GroupSession+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */; };
 		7CA9E6902A6F292B009CFA58 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */; };
+		7CE61F1A2A9CA5F000DB58CF /* SharePlayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE61F192A9CA5F000DB58CF /* SharePlayModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		7C91992D27A5921300BC5802 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		7C9277E127AECB5400511484 /* LoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserView.swift; sourceTree = "<group>"; };
 		7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupSession+Hashable.swift"; sourceTree = "<group>"; };
+		7CE61F192A9CA5F000DB58CF /* SharePlayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePlayModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				7C3EB7112A9B34D5001038AC /* ViewModel.swift */,
+				7CE61F192A9CA5F000DB58CF /* SharePlayModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */,
 				7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */,
 				7C2A707F2A9B466200E3B737 /* LobbyView.swift in Sources */,
+				7CE61F1A2A9CA5F000DB58CF /* SharePlayModel.swift in Sources */,
 				7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */,
 				7C47903B2A73A4CC00ABC40D /* ErrorView.swift in Sources */,
 				7C1ECFB827B81A2100C8C601 /* Color.swift in Sources */,
