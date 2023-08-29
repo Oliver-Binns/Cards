@@ -4,6 +4,7 @@ import Sevens
 import SwiftUI
 
 struct SevensView: View {
+    @EnvironmentObject var model: ViewModel
     @ObservedObject var game: Sevens
     
     let playerIndex: Int?
@@ -46,6 +47,14 @@ struct SevensView: View {
                             }
                         }.frame(maxHeight: geo.size.height * 0.7)
                     }
+                }
+            }
+            
+            if let winner = game.winner {
+                if winner == model.playerIndex {
+                    WinnerView()
+                } else {
+                    LoserView()
                 }
             }
         }
