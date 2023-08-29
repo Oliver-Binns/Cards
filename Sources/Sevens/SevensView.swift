@@ -13,6 +13,7 @@ struct SevensView: View {
     @Namespace private var namespace
     
     @State private var displayHelp: Bool = false
+    @Environment(\.openImmersiveSpace) private var openSpace
     @Environment(\.openWindow) private var openWindow
     
     var body: some View {
@@ -77,6 +78,10 @@ struct SevensView: View {
         .onAppear {
             guard playerIndex != nil else { return }
             openWindow(id: "hand-view")
+            
+            Task {
+                await openSpace(id: "immersive-space")
+            }
         }
         #endif
     }
