@@ -13,6 +13,7 @@ struct SevensView: View {
     @Namespace private var namespace
     
     @State private var displayHelp: Bool = false
+    @Environment(\.openWindow) private var openWindow
     
     var body: some View {
         ZStack {
@@ -21,6 +22,7 @@ struct SevensView: View {
                     .layoutPriority(0.1)
                     .readableGuidePadding()
                 
+                #if !os(visionOS)
                 if let playerIndex {
                     VStack {
                         Spacer()
@@ -48,6 +50,7 @@ struct SevensView: View {
                         }.frame(maxHeight: geo.size.height * 0.7)
                     }
                 }
+                #endif
             }
             
             if let winner = game.winner {
@@ -70,6 +73,12 @@ struct SevensView: View {
         .sheet(isPresented: $displayHelp) {
             SevensGuide()
         }
+        #if os(visionOS)
+        .onAppear {
+            guard playerIndex != nil else { return }
+            openWindow(id: "hand-view")
+        }
+        #endif
     }
 }
 
