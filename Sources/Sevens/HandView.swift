@@ -23,13 +23,7 @@ struct HandView: View {
                                         .sorted(by: compareCards(_:_:))
                                         .enumerated()), id: \.element.id) { (index, item) in
                             Button {
-                                withAnimation {
-                                    guard item.isValid else {
-                                        selectedCard = nil
-                                        return
-                                    }
-                                    selectedCard = item
-                                }
+                                selectCard(item: item)
                             } label: {
                                 ZStack {
                                     style.front.image(forCard: item.card)
@@ -58,18 +52,12 @@ struct HandView: View {
             }
             
             if hand.contains(where: { $0.isValid }) {
-                Button("Play") {
-                    guard let selectedCard = selectedCard else {
-                        return
-                    }
-                    withAnimation {
-                        playCard(selectedCard.card)
-                        self.selectedCard = nil
-                    }
-                }
-                .tint(.blue)
-                .disabled(selectedCard == nil)
-                .buttonStyle(.borderedProminent)
+                #if !os(visionOS)
+                Button("Play", action: play)
+                    .tint(.blue)
+                    .disabled(selectedCard == nil)
+                    .buttonStyle(.borderedProminent)
+                #endif
             } else {
                 Button("Pass") {
                     playCard(nil)
@@ -114,6 +102,31 @@ struct HandView: View {
             default:
                 return false
             }
+        }
+    }
+    
+    func selectCard(item: HandCard) {
+        withAnimation {
+            guard item.isValid else {
+                selectedCard = nil
+                return
+            }
+            selectedCard = item
+            
+            #if os(visionOS)
+            play()
+            #endif
+        }
+
+    }
+    
+    func play() {
+        guard let selectedCard = selectedCard else {
+            return
+        }
+        withAnimation {
+            playCard(selectedCard.card)
+            self.selectedCard = nil
         }
     }
 }
