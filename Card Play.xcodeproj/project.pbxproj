@@ -34,6 +34,7 @@
 		7C7612842A9CF94C00518BC9 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7612832A9CF94C00518BC9 /* InputView.swift */; };
 		7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */; };
 		7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */; };
+		7C9169532AA3C89D00399476 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9169522AA3C89D00399476 /* ImmersiveView.swift */; };
 		7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
 		7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993127A59DD600BC5802 /* ConfettiSwiftUI */; };
 		7C9277E227AECB5400511484 /* LoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9277E127AECB5400511484 /* LoserView.swift */; };
@@ -83,6 +84,7 @@
 		7C7612832A9CF94C00518BC9 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSupport.swift; sourceTree = "<group>"; };
 		7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupActivityView+AppKit.swift"; sourceTree = "<group>"; };
+		7C9169522AA3C89D00399476 /* ImmersiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
 		7C91992D27A5921300BC5802 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		7C9277E127AECB5400511484 /* LoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserView.swift; sourceTree = "<group>"; };
 		7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupSession+Hashable.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		7C7612822A9CF93C00518BC9 /* VisionOS */ = {
 			isa = PBXGroup;
 			children = (
+				7C9169522AA3C89D00399476 /* ImmersiveView.swift */,
 				7C7612832A9CF94C00518BC9 /* InputView.swift */,
 			);
 			path = VisionOS;
@@ -436,6 +439,7 @@
 				7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */,
 				7C47903B2A73A4CC00ABC40D /* ErrorView.swift in Sources */,
 				7C1ECFB827B81A2100C8C601 /* Color.swift in Sources */,
+				7C9169532AA3C89D00399476 /* ImmersiveView.swift in Sources */,
 				7C9277E227AECB5400511484 /* LoserView.swift in Sources */,
 				7C2A70812A9B468000E3B737 /* TableView.swift in Sources */,
 				7C2A70832A9B622500E3B737 /* RemotePlayer.swift in Sources */,

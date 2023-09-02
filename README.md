@@ -23,7 +23,6 @@ git config core.hooksPath hooks
 * App Clip to play with users who do not have the app installed
 * Additional games: Hearts, Go Fish, Speed
 * Extra games are In-App Purchases
-* Shared Immersive experiences with Apple Vision Pro
 * In-App Messaging / Nudges
 * Emoji reactions to opponent moves
 * GameKit Matchmaker
@@ -33,6 +32,7 @@ git config core.hooksPath hooks
 * ~~SharePlay support~~
 * ~~Triggering SharePlay within the app~~
 * ~~Support for Apple Vision Pro~~
+* ~~Shared Immersive experiences with Apple Vision Pro~~
 
 ## More Details
 

@@ -4,6 +4,10 @@ import SwiftUI
 struct CardsApp: App {
     @State var model = ViewModel()
     
+    #if os(visionOS)
+    @State var immersionStyle: ImmersionStyle = .mixed
+    #endif
+    
     var body: some Scene {
         WindowGroup {
             MainMenu()
@@ -16,6 +20,11 @@ struct CardsApp: App {
                 .environmentObject(model)
         }
         .defaultSize(width: 600, height: 600, depth: 1)
+        
+        ImmersiveSpace(id: "immersive-space") {
+            ImmersiveView()
+                .environmentObject(model)
+        }.immersionStyle(selection: $immersionStyle, in: .mixed)
         #endif
     }
 }
