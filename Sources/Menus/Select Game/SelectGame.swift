@@ -1,11 +1,12 @@
 import CardsModel
 import Sevens
+import GroupActivities
 import SwiftUI
 
 struct SelectGame: View {
     @EnvironmentObject var model: ViewModel
     
-    @State private var gameType: (any Game.Type) = Sevens.self
+    @State private var gameType: String = "Sevens"
     @State private var startNoActiveSession: Bool = false
     @State private var presentSharePlayDialog: Bool = false
     
@@ -21,11 +22,11 @@ struct SelectGame: View {
             Section {
                 Text("Select game:")
                 
-                Picker(selection: $playerCount) {
-                    Label("Sevens", systemImage: "7.circle.fill")
+                Picker(selection: $gameType) {
+                    Label("Sevens", systemImage: "7.circle.fill").tag("Sevens")
                     // Extra games coming soon:
-                    // Label("Hearts", systemImage: "heart.circle.fill")
-                    // Label("Go Fish", systemImage: "fish.circle.fill")
+                    // Label("Hearts", systemImage: "heart.circle.fill").tag("Hearts")
+                    // Label("Go Fish", systemImage: "fish.circle.fill").tag("Go Fish")
                 } label: {
                     Text("Game type")
                 }.pickerStyle(.segmented)
@@ -46,7 +47,11 @@ struct SelectGame: View {
                     Text("Number of players")
                 }.pickerStyle(.segmented)
             }
-
+            
+            ShareLink(item: createGame(),
+                      preview: SharePreview("Sevens", image: Image("Icon")))
+                .hidden()
+            
             Button {
                 Task {
                     await startGame()
@@ -108,15 +113,24 @@ struct SelectGame: View {
         }
     }
     
+    private func createGame() -> some Transferable & Game {
+        switch gameType {
+        case "Sevens":
+            return Sevens(players: playerCount)
+        default:
+            return Sevens(players: playerCount)
+        }
+    }
+    
     private func startLocalGame() {
-        let game = gameType.init(players: playerCount)
+        let game = createGame()
         model.game = game
         model.setPlayers((1..<playerCount).map(game.autoPlayer(index:)),
                          of: game)
     }
     
     private func activity() -> PlayTogether {
-        let game = gameType.init(players: playerCount)
+        let game = createGame()
         return PlayTogether(game: game)
     }
 }

@@ -33,6 +33,7 @@
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */; };
 		7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */; };
+		7C9169512AA37E4C00399476 /* Sevens+Transferable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9169502AA37E4C00399476 /* Sevens+Transferable.swift */; };
 		7C91992E27A5921300BC5802 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992D27A5921300BC5802 /* WinnerView.swift */; };
 		7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993127A59DD600BC5802 /* ConfettiSwiftUI */; };
 		7C9277E227AECB5400511484 /* LoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9277E127AECB5400511484 /* LoserView.swift */; };
@@ -81,6 +82,7 @@
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
 		7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSupport.swift; sourceTree = "<group>"; };
 		7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupActivityView+AppKit.swift"; sourceTree = "<group>"; };
+		7C9169502AA37E4C00399476 /* Sevens+Transferable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sevens+Transferable.swift"; sourceTree = "<group>"; };
 		7C91992D27A5921300BC5802 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		7C9277E127AECB5400511484 /* LoserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserView.swift; sourceTree = "<group>"; };
 		7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupSession+Hashable.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		7C0AE71F279D943A005695FB /* SharePlay */ = {
 			isa = PBXGroup;
 			children = (
+				7C91694F2AA37E4200399476 /* Transferable */,
 				7C0AE720279D9446005695FB /* PlayTogether.swift */,
 				7C55556E284378FA000C6F2C /* GroupActivityView+UIKit.swift */,
 				7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */,
@@ -246,6 +249,14 @@
 				7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C91694F2AA37E4200399476 /* Transferable */ = {
+			isa = PBXGroup;
+			children = (
+				7C9169502AA37E4C00399476 /* Sevens+Transferable.swift */,
+			);
+			path = Transferable;
 			sourceTree = "<group>";
 		};
 		7CA9E68B2A6F2610009CFA58 /* GroupActivities */ = {
@@ -417,6 +428,7 @@
 				7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */,
 				7C3E52E7279DC0300002DE88 /* SevensView.swift in Sources */,
 				7C3EB7122A9B34D5001038AC /* ViewModel.swift in Sources */,
+				7C9169512AA37E4C00399476 /* Sevens+Transferable.swift in Sources */,
 				7C3A068D27A1D18D00261364 /* MainMenu.swift in Sources */,
 				7C0AE721279D9446005695FB /* PlayTogether.swift in Sources */,
 				7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */,
