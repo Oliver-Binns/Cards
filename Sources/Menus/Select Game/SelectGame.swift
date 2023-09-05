@@ -1,6 +1,7 @@
 import CardsModel
 import Sevens
 import SwiftUI
+import GroupActivities
 
 struct SelectGame: View {
     @EnvironmentObject var model: ViewModel

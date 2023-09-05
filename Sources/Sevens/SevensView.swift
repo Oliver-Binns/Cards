@@ -51,7 +51,7 @@ struct SevensView: View {
             }
             
             if let winner = game.winner {
-                if winner == model.playerIndex {
+                if winner == model.localPlayerIndex {
                     WinnerView()
                 } else {
                     LoserView()

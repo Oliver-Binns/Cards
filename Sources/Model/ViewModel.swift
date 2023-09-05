@@ -7,6 +7,7 @@ final class ViewModel: ObservableObject {
     @Published var error: Error?
     @Published var game: (any Game)? {
         didSet {
+            guard game !== oldValue else { return }
             sharePlay.startGame()
         }
     }
@@ -23,7 +24,7 @@ final class ViewModel: ObservableObject {
         }
     }
     
-    var playerIndex: Int? {
+    var localPlayerIndex: Int? {
         guard let session = sharePlay.session else {
             return 0
         }

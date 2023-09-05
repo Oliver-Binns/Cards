@@ -10,7 +10,7 @@ struct TableView: View {
         switch game {
         case let game as Sevens:
             SevensView(game: game,
-                       playerIndex: model.playerIndex,
+                       playerIndex: model.localPlayerIndex,
                        didPlay: model.playCard)
         default:
             Text("Table")

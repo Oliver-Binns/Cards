@@ -14,7 +14,7 @@ final class SharePlayModel: ObservableObject {
             if let session {
                 session.join()
                 messenger = GroupSessionMessenger(session: session)
-                catchUpUsers()
+                keepOtherUsersUpToDate()
             } else {
                 messenger = nil
             }
@@ -84,7 +84,7 @@ final class SharePlayModel: ObservableObject {
     private func catchUp() async {
         guard let messenger else { return }
         for await (message, _) in messenger
-            .messages(of: [PlayingCard?].self) {
+            .messages(of: [PlayingCard?].self) where moves.isEmpty {
             moves = message
             
             await MainActor.run {
@@ -99,14 +99,20 @@ final class SharePlayModel: ObservableObject {
     }
     
     /// Catch up remote users who join late so they can watch or rejoin the game
-    private func catchUpUsers() {
+    private func keepOtherUsersUpToDate() {
         guard let session else { return }
         
-        session.$activeParticipants
+        session
+            .$activeParticipants
             .sink { activeParticipants in
                 let newParticipants = activeParticipants.subtracting(session.activeParticipants)
+                guard !newParticipants.isEmpty,
+                      !self.moves.isEmpty else { return }
+                
                 Task {
-                    try await self.messenger?.send(self.moves, to: .only(newParticipants))
+                    try await self.messenger?
+                        .send(self.moves,
+                              to: .only(newParticipants))
                 }
             }
             .store(in: &cancellables)
