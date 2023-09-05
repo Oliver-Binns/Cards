@@ -1,12 +1,12 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.8
 
 import PackageDescription
 
 let package = Package(
     name: "Cards",
     platforms: [
-        .iOS(.v13),
-        .macOS(.v10_15)
+        .iOS(.v16),
+        .macOS(.v13)
     ],
     products: [
         .library(name: "Cards", targets: ["CardsModel", "CardsScoring", "CardsStyle"]),

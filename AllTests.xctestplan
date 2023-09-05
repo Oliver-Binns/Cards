@@ -41,8 +41,8 @@
     {
       "target" : {
         "containerPath" : "container:Card Play.xcodeproj",
-        "identifier" : "7C0AE6E4279D674E005695FB",
-        "name" : "Tests iOS"
+        "identifier" : "7C942E8A2AA7679000176A5C",
+        "name" : "DealTests"
       }
     }
   ],

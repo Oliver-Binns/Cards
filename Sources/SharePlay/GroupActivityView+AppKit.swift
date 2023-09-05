@@ -9,7 +9,7 @@ struct GroupActivityView<ActivityType: GroupActivity>: NSViewControllerRepresent
     let type: () async throws -> ActivityType
 
     func makeNSViewController(context: Context) -> NSViewController {
-        // GroupActivitySharingController should be avaialble on macOS 13+
+        // GroupActivitySharingController should be available on macOS 13+
         // https://developer.apple.com/documentation/groupactivities/groupactivitysharingcontroller-4gtfk
         // Currently receiving the error `Cannot find 'GroupActivitySharingController' in scope`
         //

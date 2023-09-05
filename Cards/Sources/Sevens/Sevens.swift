@@ -3,13 +3,9 @@ import CardsScoring
 import Combine
 
 public final class Sevens: ObservableObject {
-    @Published private var turn: TurnState!
+    @Published private var turn: TurnState
     @Published private var hands: [[PlayingCard]]
     @Published public private(set) var table: [Suit: Run]
-    
-    public var winner: Int? {
-        hands.firstIndex(where: \.isEmpty)
-    }
     
     var scores: [Int] {
         hands.map {
@@ -21,11 +17,24 @@ public final class Sevens: ObservableObject {
         turn.currentPlayer
     }
     
+    public var currentPlayerPublisher: AnyPublisher<Int, Never> {
+        $turn
+            .map { $0.currentPlayer }
+            .eraseToAnyPublisher()
+    }
+    
     public init(players: Int) {
-        hands = Deck.noJokers.shuffled().deal(playerCount: players)
-        table = Suit.allCases.reduce(into: [:], { $0[$1] = Run() })
+        let hands = Deck.noJokers.shuffled().deal(playerCount: players)
+        self.hands = hands
         
-        let startingPlayer = hands.firstIndex { $0.contains(where: isValid(card:)) } ?? 0
+        let table = Suit.allCases.reduce(into: [:], { $0[$1] = Run() })
+        self.table = table
+        
+        let startingPlayer = hands.firstIndex {
+            $0.contains(where: { card in
+                Self.isValid(card: card, table: table)
+            })
+        } ?? 0
         turn = TurnState(playerCount: players, startPlayer: startingPlayer)
     }
     
@@ -34,6 +43,10 @@ public final class Sevens: ObservableObject {
     }
     
     private func isValid(card: PlayingCard) -> Bool {
+        Self.isValid(card: card, table: table)
+    }
+    
+    private static func isValid(card: PlayingCard, table: [Suit: Run]) -> Bool {
         switch card {
         case .suited(.seven, .diamonds):
             return true
@@ -81,11 +94,20 @@ extension Sevens: Codable {
     }
 }
 
-extension PlayingCard {
-    var isSeven: Bool {
-        switch self {
-        case .suited(.seven, _): return true
-        default: return false
-        }
+extension Sevens: Game {
+    public var title: String {
+        "Sevens"
+    }
+    
+    public var winner: Int? {
+        hands.firstIndex(where: \.isEmpty)
+    }
+    
+    public var players: Int {
+        hands.count
+    }
+    
+    public func autoPlayer(index: Int) -> NonLocalPlayer {
+        RandomAutomatedPlayer(index: index, game: self)
     }
 }
