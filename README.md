@@ -21,7 +21,7 @@ git config core.hooksPath hooks
 
 ## Some Future Ideas
 * App Clip to play with users who do not have the app installed
-* Additional games: Hearts, Go Fish, Speed
+* Additional games: Go Fish, Speed
 * Extra games are In-App Purchases
 * visionOS support with immersive experiences
 * In-App Messaging / Nudges
@@ -30,6 +30,7 @@ git config core.hooksPath hooks
 
 ## Implemented
 * ~~Sevens / Parliament Card Game~~
+* ~~Hearts Card Game~~
 * ~~SharePlay support~~
 * ~~Triggering SharePlay within the app~~
 

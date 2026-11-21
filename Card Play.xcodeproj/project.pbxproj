@@ -29,6 +29,7 @@
 		7C5C324227B9778E004897BF /* SevensGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5C324127B9778E004897BF /* SevensGuide.swift */; };
 		7C72FDEC2A63EDFD001E6551 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C72FDEB2A63EDFD001E6551 /* Game.swift */; };
 		7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */ = {isa = PBXBuildFile; productRef = 7C72FDEE2A63EE2E001E6551 /* Sevens */; };
+		7C72FDF12A640EFF001E6551 /* Hearts in Frameworks */ = {isa = PBXBuildFile; productRef = 7C72FDF02A640EFF001E6551 /* Hearts */; };
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */; };
 		7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */; };
@@ -96,6 +97,7 @@
 			files = (
 				7CA9E6902A6F292B009CFA58 /* SwiftUINavigation in Frameworks */,
 				7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */,
+				7C72FDF12A640EFF001E6551 /* Hearts in Frameworks */,
 				7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */,
 				7C0AE719279D7E06005695FB /* Cards in Frameworks */,
 			);
@@ -283,6 +285,7 @@
 				7C91993127A59DD600BC5802 /* ConfettiSwiftUI */,
 				7C72FDEE2A63EE2E001E6551 /* Sevens */,
 				7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */,
+				7C72FDF02A640EFF001E6551 /* Hearts */,
 			);
 			productName = "Card Play (iOS)";
 			productReference = 7C0AE6D8279D674E005695FB /* Deal.app */;
@@ -791,6 +794,10 @@
 		7C72FDEE2A63EE2E001E6551 /* Sevens */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Sevens;
+		};
+		7C72FDF02A640EFF001E6551 /* Hearts */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Hearts;
 		};
 		7C91993127A59DD600BC5802 /* ConfettiSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;

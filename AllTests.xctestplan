@@ -40,6 +40,13 @@
     },
     {
       "target" : {
+        "containerPath" : "container:Cards",
+        "identifier" : "HeartsTests",
+        "name" : "HeartsTests"
+      }
+    },
+    {
+      "target" : {
         "containerPath" : "container:Card Play.xcodeproj",
         "identifier" : "7C0AE6E4279D674E005695FB",
         "name" : "Tests iOS"

@@ -80,12 +80,3 @@ extension Sevens: Codable {
         try container.encode(table, forKey: .table)
     }
 }
-
-extension PlayingCard {
-    var isSeven: Bool {
-        switch self {
-        case .suited(.seven, _): return true
-        default: return false
-        }
-    }
-}
