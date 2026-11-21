@@ -8,6 +8,6 @@
       location = "group:Card Play.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/obinns/cards/AllTests.xctestplan">
+      location = "group:AllTests.xctestplan">
    </FileRef>
 </Workspace>
