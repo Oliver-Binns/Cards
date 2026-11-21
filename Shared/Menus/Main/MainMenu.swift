@@ -5,24 +5,26 @@ struct MainMenu: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
-                Text("FaceCards 🃏")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .fontWeight(.semibold)
-                
                 Spacer()
-                
+
+                Heading()
+
+                Spacer()
+
                 PlaySoloView()
-                
+
                 PlayTogetherView()
-                
+
                 Spacer()
             }
             .readableGuidePadding()
             .padding()
-            .background(Color.dynamicGreen)
+            .background { FeltBackground() }
         }
         .inlineNavigationTitle()
-        .accentColor(.primary)
     }
-    
+}
+
+#Preview {
+    MainMenu()
 }
