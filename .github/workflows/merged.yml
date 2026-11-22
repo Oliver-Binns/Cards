@@ -25,17 +25,14 @@ jobs:
 
       - name: Save Certificate
         env:
-          IOS_CERTIFICATE: ${{ secrets.IOS_CERTIFICATE }}
+          CERTIFICATE: ${{ secrets.CERTIFICATE }}
         run: |
-          echo -n "$IOS_CERTIFICATE" | base64 --decode -o "$RUNNER_TEMP/distribution.p12"
+          echo -n "$CERTIFICATE" | base64 --decode -o "$RUNNER_TEMP/distribution.p12"
 
       - name: Upload to App Store (Fastlane)
         env:
-          IOS_TEAM_ID: ${{ vars.IOS_TEAM_ID }}
-          APP_STORE_CONNECT_API_KEY_ID: ${{ vars.APP_STORE_CONNECT_API_KEY_ID }}
-          APP_STORE_CONNECT_API_ISSUER_ID: ${{ vars.APP_STORE_CONNECT_API_ISSUER_ID }}
-          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
-          IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          API_KEY: ${{ secrets.API_KEY }}
+          CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
         run: |
           CERTIFICATE_PATH="$RUNNER_TEMP/distribution.p12" bundle exec fastlane ios release
 
