@@ -9,6 +9,12 @@ jobs:
   build-and-deploy:
     name: Build and deploy to App Store and TestFlight
     runs-on: macos-latest
+    env:
+      # Hosted runners can take well over fastlane's default 3s (doubling over
+      # 4 retries) to answer `xcodebuild -showBuildSettings`, especially while
+      # simulators are booting for screenshot generation.
+      FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT: 120
+      FASTLANE_XCODEBUILD_SETTINGS_RETRIES: 4
 
     steps:
       - name: Checkout
