@@ -10,6 +10,6 @@ struct GenericError: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(Color.dynamicGreen)
+        .background { FeltBackground() }
     }
 }

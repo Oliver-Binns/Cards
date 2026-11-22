@@ -4,25 +4,27 @@ import GroupActivities
 struct MainMenu: View {
     var body: some View {
         NavigationStack {
-            VStack(spacing: 16) {
-                Text("FaceCards 🃏")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .fontWeight(.semibold)
-                
+            VStack(spacing: 40) {
                 Spacer()
-                
-                PlaySoloView()
-                
+
+                Heading()
+
+                Spacer()
+
                 PlayTogetherView()
-                
+
+                PlaySoloView()
+
                 Spacer()
             }
             .readableGuidePadding()
             .padding()
-            .background(Color.dynamicGreen)
+            .background { FeltBackground() }
         }
         .inlineNavigationTitle()
-        .accentColor(.primary)
     }
-    
+}
+
+#Preview {
+    MainMenu()
 }

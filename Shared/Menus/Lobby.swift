@@ -62,7 +62,7 @@ struct Lobby: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .background(Color.dynamicGreen)
+        .background { FeltBackground() }
         .overlay {
             VStack {
                 if let winner = winner,

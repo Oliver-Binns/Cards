@@ -29,31 +29,30 @@ struct PlayTogetherView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            Text("FaceCards 🃏 is best enjoyed with friends.")
-                .frame(maxWidth: .infinity)
-            
-            if canStartSharePlay || isOnFaceTimeCall {
-                Button(action: startSharePlay) {
-                    HStack {
-                        Image(systemName: "shareplay")
-                        Text("Start SharePlay")
-                    }
-                    .padding(8)
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(.blue)
-            } else {
+            let canPlayTogether = canStartSharePlay || isOnFaceTimeCall
+
+            Button(action: startSharePlay) {
                 HStack {
-                    Image(systemName: "video.fill")
-                    Text("Join a FaceTime call to activate SharePlay!")
+                    Image(systemName: "shareplay")
+                    Text("Start SharePlay")
                 }
+                .padding(8)
+                .frame(maxWidth: .infinity)
             }
+            .buttonStyle(.borderedProminent)
+            .disabled(!canPlayTogether)
+
+            Text(
+                canPlayTogether ?
+                    "FaceCards is best enjoyed with friends":
+                    "Join a FaceTime call to activate SharePlay"
+            )
+            .frame(maxWidth: .infinity)
+            .font(.subheadline.weight(.semibold))
+            .italic()
+            .foregroundStyle(Color(.accent))
+            .padding(.horizontal)
         }
-        .padding()
-        .background(.background)
-        .cornerRadius(8)
-        .shadow(radius: 4)
         .sheet(item: $startActivity, content: { $0 })
         .task {
             await checkForSession()
@@ -80,7 +79,7 @@ struct PlayTogetherView: View {
             }
         )
     }
-
+    
     private func startSharePlay() {
         guard isOnFaceTimeCall else {
             startActivity = GroupActivityView { PlayTogether(title: "FaceCards 🃏") }

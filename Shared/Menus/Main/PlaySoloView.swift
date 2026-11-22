@@ -6,19 +6,17 @@ struct PlaySoloView: View {
             NavigationLink {
                 SoloGame()
             } label: {
-                HStack {
-                    Image(systemName: "person")
-                    Text("Play Solo")
-                }
-                .padding(8)
-                .frame(maxWidth: .infinity)
+                Label("Play Solo", systemImage: "person")
+                    .font(.body.weight(.semibold))
+                    .padding(8)
+                    .frame(maxWidth: .infinity)
             }
-            .buttonStyle(.borderedProminent)
-            .accentColor(.blue)
+            .buttonStyle(.bordered)
+            .outlinedButtonBorder(Color(.accent), lineWidth: 1.5)
         }
-        .padding()
-        .background(.background)
-        .cornerRadius(8)
-        .shadow(radius: 4)
     }
+}
+
+#Preview {
+    PlaySoloView()
 }

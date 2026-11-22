@@ -31,7 +31,7 @@ struct GameView: View {
                 VStack { }
             }
         }
-        .background(Color.dynamicGreen)
+        .background { FeltBackground() }
         .onAppear {
             setupTimer()
         }
