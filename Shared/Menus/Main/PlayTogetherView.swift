@@ -1,7 +1,6 @@
 import Combine
 import GroupActivities
 import SwiftUI
-import SwiftUINavigation
 
 struct PlayTogetherView: View {
     @StateObject private var groupStateObserver = GroupStateObserver()
@@ -59,18 +58,29 @@ struct PlayTogetherView: View {
         .task {
             await checkForSession()
         }
-        .navigationDestination(unwrapping: $session) { session in
-            switch session.wrappedValue.state {
-            case .joined, .waiting:
-                Lobby(session: session.wrappedValue)
-            case .invalidated:
-                GenericError()
-            @unknown default:
-                GenericError()
+        .navigationDestination(isPresented: isShowingSession) {
+            if let session {
+                switch session.state {
+                case .joined, .waiting:
+                    Lobby(session: session)
+                case .invalidated:
+                    GenericError()
+                @unknown default:
+                    GenericError()
+                }
             }
         }
     }
-    
+
+    private var isShowingSession: Binding<Bool> {
+        Binding(
+            get: { session != nil },
+            set: { isPresented in
+                if !isPresented { session = nil }
+            }
+        )
+    }
+
     private func startSharePlay() {
         guard isOnFaceTimeCall else {
             startActivity = GroupActivityView { PlayTogether(title: "Face Cards 🃏") }
