@@ -1,0 +1,15 @@
+FaceCards brings classic card games to your iPhone and iPad — play on your own or with friends and family over FaceTime using SharePlay.
+
+SEVENS
+Also known as Parliament or Fan Tan, Sevens is a simple, fun card game for everyone. The deck is dealt out amongst all the players and the game begins with the seven of diamonds. Each turn, add a card to the table by building up or down from the sevens of each suit. If you can't play, you must pass. The first player to get rid of all their cards wins!
+
+PLAY TOGETHER WITH SHAREPLAY
+Start a FaceTime call and play together in real time, wherever you are. Everyone sees the table update as cards are played.
+
+PLAY SOLO
+No one around? Play against computer opponents at any time.
+
+LEARN AS YOU GO
+Not sure of the rules? A built-in guide explains how to play.
+
+FaceCards is developed in the open — find the source code, request features and report issues on GitHub.

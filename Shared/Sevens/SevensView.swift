@@ -55,6 +55,7 @@ struct SevensView: View {
             } label: {
                 Image(systemName: "questionmark.circle.fill")
             }
+            .accessibilityLabel("How to Play")
         }
         .sheet(isPresented: $displayHelp) {
             SevensGuide()
