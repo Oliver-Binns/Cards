@@ -38,7 +38,6 @@
 		7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C91993127A59DD600BC5802 /* ConfettiSwiftUI */; };
 		7C9277E227AECB5400511484 /* LoserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9277E127AECB5400511484 /* LoserView.swift */; };
 		7CA9E68D2A6F261E009CFA58 /* GroupSession+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9E68C2A6F261E009CFA58 /* GroupSession+Hashable.swift */; };
-		7CA9E6902A6F292B009CFA58 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */; };
 		7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC65D427A30C1300B61C83 /* SoloGame.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CA9E6902A6F292B009CFA58 /* SwiftUINavigation in Frameworks */,
 				7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */,
 				7C91993227A59DD600BC5802 /* ConfettiSwiftUI in Frameworks */,
 				7C0AE719279D7E06005695FB /* Cards in Frameworks */,
@@ -282,7 +280,6 @@
 				7C0AE718279D7E06005695FB /* Cards */,
 				7C91993127A59DD600BC5802 /* ConfettiSwiftUI */,
 				7C72FDEE2A63EE2E001E6551 /* Sevens */,
-				7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */,
 			);
 			productName = "Card Play (iOS)";
 			productReference = 7C0AE6D8279D674E005695FB /* Deal.app */;
@@ -357,7 +354,6 @@
 			mainGroup = 7C0AE6CB279D674C005695FB;
 			packageReferences = (
 				7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
-				7CA9E68E2A6F292B009CFA58 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
 			);
 			productRefGroup = 7C0AE6D9279D674E005695FB /* Products */;
 			projectDirPath = "";
@@ -773,14 +769,6 @@
 				minimumVersion = 0.3.0;
 			};
 		};
-		7CA9E68E2A6F292B009CFA58 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.8.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -796,11 +784,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7C91993027A59DD600BC5802 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
-		};
-		7CA9E68F2A6F292B009CFA58 /* SwiftUINavigation */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7CA9E68E2A6F292B009CFA58 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
-			productName = SwiftUINavigation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -13,13 +13,12 @@ struct Lobby: View {
     
     let games = GameButtonViewModel.games
     
-    private var game: Binding<Game?> {
+    private var isPlayingGame: Binding<Bool> {
         Binding {
-            session.activity.game
-        } set: { newValue in
-            session.activity.game = newValue
+            session.activity.game != nil
+        } set: { isPresented in
+            if !isPresented { session.activity.game = nil }
         }
-
     }
     
     var body: some View {
@@ -86,7 +85,7 @@ struct Lobby: View {
             }
         }
         .onAppear { Task { await getMessages() } }
-        .navigationDestination(unwrapping: game) { game in
+        .navigationDestination(isPresented: isPlayingGame) {
             if let players = session.activity.players,
                let playerIndex = players.firstIndex(of: session.localParticipant.id) {
                 GameView(game: .init(get: {

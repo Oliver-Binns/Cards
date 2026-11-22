@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftUINavigation
 
 extension View {
     func inlineNavigationTitle() -> some View {
