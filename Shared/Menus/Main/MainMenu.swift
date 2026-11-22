@@ -4,16 +4,16 @@ import GroupActivities
 struct MainMenu: View {
     var body: some View {
         NavigationStack {
-            VStack(spacing: 16) {
+            VStack(spacing: 40) {
                 Spacer()
 
                 Heading()
 
                 Spacer()
 
-                PlaySoloView()
-
                 PlayTogetherView()
+
+                PlaySoloView()
 
                 Spacer()
             }

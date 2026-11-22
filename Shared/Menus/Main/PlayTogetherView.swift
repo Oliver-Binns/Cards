@@ -48,7 +48,7 @@ struct PlayTogetherView: View {
                     "Join a FaceTime call to activate SharePlay"
             )
             .frame(maxWidth: .infinity)
-            .font(.body.weight(.semibold))
+            .font(.subheadline.weight(.semibold))
             .italic()
             .foregroundStyle(Color(.accent))
             .padding(.horizontal)
