@@ -30,3 +30,20 @@ struct FeltBackground: View {
         }
     }
 }
+
+/// A cream card-stock background, used for printed-style content such as the rules.
+struct PaperBackground: View {
+    var body: some View {
+        if #available(iOS 17.0, *) {
+            AnyView(
+                Color(.paper)
+                    .colorEffect(
+                        ShaderLibrary.feltNoise(.float(0.03))
+                    )
+                    .ignoresSafeArea()
+            )
+        } else {
+            AnyView(Color(.paper).ignoresSafeArea())
+        }
+    }
+}
