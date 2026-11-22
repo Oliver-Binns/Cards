@@ -4,6 +4,7 @@ default_platform(:ios)
 
 platform :ios do
   PROJECT = "Card Play.xcodeproj"
+  WORKSPACE = "CardPlay.xcworkspace"
   SCHEME = "Card Play"
   TARGET = "Card Play"
   TEAM_ID = "Z86DH46P79"
@@ -119,7 +120,7 @@ platform :ios do
     increment_build_number(xcodeproj: PROJECT, build_number: build_number)
 
     build_app(
-      project: PROJECT,
+      workspace: WORKSPACE,
       scheme: SCHEME,
       export_method: "app-store",
       destination: "generic/platform=iOS",
