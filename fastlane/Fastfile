@@ -1,3 +1,5 @@
+require "fileutils"
+require "json"
 require "securerandom"
 
 default_platform(:ios)
@@ -68,6 +70,62 @@ platform :ios do
     { identifier: app_identifier, profile_name: profile_name }
   end
 
+  # Finds the newest available simulator whose name matches the pattern, on
+  # the newest installed iOS runtime, so the lane keeps working as GitHub's
+  # runners move to new Xcode versions and device names.
+  def latest_simulator(pattern)
+    devices = JSON.parse(sh("xcrun simctl list devices available -j", log: false))["devices"]
+    runtimes = devices.select { |runtime, _| runtime.include?("SimRuntime.iOS-") }
+    runtimes = runtimes.sort_by { |runtime, _| runtime[/iOS-([\d-]+)/, 1].split("-").map(&:to_i) }.reverse
+
+    runtimes.each do |_, runtime_devices|
+      matching = runtime_devices.select { |device| device["name"].match?(pattern) }
+      return matching.max_by { |device| device["name"].scan(/\d+/).map(&:to_i) } unless matching.empty?
+    end
+
+    UI.user_error!("No available simulator matching #{pattern.inspect}")
+  end
+
+  # App Store Connect requires 6.9" iPhone and 13" iPad screenshots; every
+  # smaller size is scaled down from these.
+  private_lane :generate_app_store_screenshots do
+    FileUtils.rm_rf("screenshots/en-GB")
+
+    simulators = [
+      latest_simulator(/^iPhone \d+ Pro Max$/),
+      latest_simulator(/^iPad Pro 13-inch/)
+    ]
+
+    simulators.each do |simulator|
+      UI.message("Capturing screenshots on #{simulator["name"]} (#{simulator["udid"]})")
+      sh("xcrun", "simctl", "boot", simulator["udid"]) unless simulator["state"] == "Booted"
+      sh(
+        "xcrun", "simctl", "status_bar", simulator["udid"], "override",
+        "--time", "9:41",
+        "--dataNetwork", "wifi",
+        "--wifiMode", "active",
+        "--wifiBars", "3",
+        "--cellularMode", "active",
+        "--cellularBars", "4",
+        "--batteryState", "charged",
+        "--batteryLevel", "100"
+      )
+    end
+
+    # xcodebuild forwards TEST_RUNNER_-prefixed variables to the UI test runner.
+    ENV["TEST_RUNNER_GENERATE_SCREENSHOTS"] = "1"
+    run_tests(
+      workspace: WORKSPACE,
+      scheme: SCHEME,
+      destination: simulators.map { |simulator| "platform=iOS Simulator,id=#{simulator["udid"]}" },
+      only_testing: ["Tests iOS/AppStoreScreenshotGenerationTests"],
+      result_bundle: true,
+      output_directory: "test_output"
+    )
+  ensure
+    ENV.delete("TEST_RUNNER_GENERATE_SCREENSHOTS")
+  end
+
   private_lane :ensure_available_version do
     app = Spaceship::ConnectAPI::App.find(app_identifier)
     live_version = app.get_live_app_store_version
@@ -109,6 +167,9 @@ platform :ios do
     signing_profile = setup_distribution_signing(api_key: api_key)
 
     ensure_available_version
+
+    generate_app_store_screenshots
+
     version_number = get_version_number(xcodeproj: PROJECT, target: TARGET)
 
     build_number = latest_testflight_build_number(
@@ -131,13 +192,9 @@ platform :ios do
       }
     )
 
-    # Metadata and screenshots are only uploaded once they exist in fastlane/
-    # (e.g. after `bundle exec fastlane deliver download_metadata`).
     upload_to_app_store(
       api_key: api_key,
       force: true,
-      skip_metadata: !File.directory?("metadata"),
-      skip_screenshots: !File.directory?("screenshots"),
       overwrite_screenshots: true,
       precheck_include_in_app_purchases: false
     )

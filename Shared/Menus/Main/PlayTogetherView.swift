@@ -29,7 +29,7 @@ struct PlayTogetherView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            Text("Face Cards 🃏 is best enjoyed with friends.")
+            Text("FaceCards 🃏 is best enjoyed with friends.")
                 .frame(maxWidth: .infinity)
             
             if canStartSharePlay || isOnFaceTimeCall {
@@ -83,7 +83,7 @@ struct PlayTogetherView: View {
 
     private func startSharePlay() {
         guard isOnFaceTimeCall else {
-            startActivity = GroupActivityView { PlayTogether(title: "Face Cards 🃏") }
+            startActivity = GroupActivityView { PlayTogether(title: "FaceCards 🃏") }
             return
         }
         Task {
@@ -104,7 +104,7 @@ struct PlayTogetherView: View {
     }
     
     private func startSession() async throws {
-        let groupActivity = PlayTogether(title: "Face Cards 🃏")
+        let groupActivity = PlayTogether(title: "FaceCards 🃏")
         _ = try await groupActivity.activate()
     }
 }

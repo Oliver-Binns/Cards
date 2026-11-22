@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C0AE6EA279D674F005695FB /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6E9279D674F005695FB /* Tests_iOS.swift */; };
+		7CA5C0DE2F00000100000002 /* AppStoreScreenshotGenerationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA5C0DE2F00000100000001 /* AppStoreScreenshotGenerationTests.swift */; };
 		7C0AE6EC279D674F005695FB /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6EB279D674F005695FB /* Tests_iOSLaunchTests.swift */; };
 		7C0AE6F6279D674F005695FB /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6F5279D674F005695FB /* Tests_macOS.swift */; };
 		7C0AE6F8279D674F005695FB /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0AE6F7279D674F005695FB /* Tests_macOSLaunchTests.swift */; };
@@ -58,6 +59,7 @@
 		7C0AE6E0279D674E005695FB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		7C0AE6E5279D674E005695FB /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6E9279D674F005695FB /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		7CA5C0DE2F00000100000001 /* AppStoreScreenshotGenerationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotGenerationTests.swift; sourceTree = "<group>"; };
 		7C0AE6EB279D674F005695FB /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
 		7C0AE6F1279D674F005695FB /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0AE6F5279D674F005695FB /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				7C0AE6E9279D674F005695FB /* Tests_iOS.swift */,
 				7C0AE6EB279D674F005695FB /* Tests_iOSLaunchTests.swift */,
+				7CA5C0DE2F00000100000001 /* AppStoreScreenshotGenerationTests.swift */,
 			);
 			path = "Tests iOS";
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			files = (
 				7C0AE6EC279D674F005695FB /* Tests_iOSLaunchTests.swift in Sources */,
 				7C0AE6EA279D674F005695FB /* Tests_iOS.swift in Sources */,
+				7CA5C0DE2F00000100000002 /* AppStoreScreenshotGenerationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +580,7 @@
 				DEVELOPMENT_TEAM = Z86DH46P79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Face Cards";
+				INFOPLIST_KEY_CFBundleDisplayName = "FaceCards";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -612,7 +616,7 @@
 				DEVELOPMENT_TEAM = Z86DH46P79;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Face Cards";
+				INFOPLIST_KEY_CFBundleDisplayName = "FaceCards";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -654,7 +658,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Card Play (iOS)";
+				TEST_TARGET_NAME = "Card Play";
 			};
 			name = Debug;
 		};
@@ -674,7 +678,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Card Play (iOS)";
+				TEST_TARGET_NAME = "Card Play";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -45,6 +45,7 @@ struct HandView: View {
                                 }
                             }
                             .buttonStyle(.borderless)
+                            .accessibilityIdentifier(item.isValid ? "playable-card" : "card")
                             .rotationEffect(.degrees(angle(forIndex: index)), anchor: anchorPoint(forIndex: index))
                             .padding(.leading, CGFloat(index) * geo.size.height * 0.07)
                             .offset(x: 0, y: selectedCard == item ? -geo.size.height / 4 : 0)

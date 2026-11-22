@@ -1,0 +1,3 @@
+Play Solo can be tested on a single device without any setup: tap "Play Solo" from the main menu to play Sevens against computer opponents.
+
+Multiplayer uses SharePlay and requires two devices on a FaceTime call. Start a FaceTime call, open the app and tap "Start SharePlay" to invite the other participants to join the game.
