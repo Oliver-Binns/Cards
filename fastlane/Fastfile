@@ -199,18 +199,26 @@ platform :ios do
       precheck_include_in_app_purchases: false
     )
 
-    upload_to_testflight(
-      api_key: api_key,
-      distribute_only: true,
-      app_identifier: app_identifier,
-      app_version: version_number,
-      build_number: build_number,
-      distribute_external: true,
-      groups: ["Public"],
-      changelog: last_git_commit[:message],
-      submit_beta_review: true,
-      reject_build_waiting_for_review: false
-    )
+    begin
+      upload_to_testflight(
+        api_key: api_key,
+        distribute_only: true,
+        app_identifier: app_identifier,
+        app_version: version_number,
+        build_number: build_number,
+        distribute_external: true,
+        groups: ["Public"],
+        changelog: last_git_commit[:message],
+        submit_beta_review: true,
+        reject_build_waiting_for_review: false
+      )
+    rescue => e
+      # Apple only allows one build per train in beta review at a time. The build
+      # is already uploaded, so skip external distribution rather than failing the release.
+      raise unless e.message =~ /another build is in review|already in beta review/i
+
+      UI.important("Skipping TestFlight beta review submission: #{e.message}")
+    end
   end
 
   after_all do |lane|
