@@ -1,109 +1,163 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-require 'securerandom'
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
+require "securerandom"
 
 default_platform(:ios)
 
 platform :ios do
-  desc "Bump Build Number & Deploy to TestFlight"
-  lane :on_merge do |options|
-    # Increment Build Number	
-    is_new_beta = analyze_commits(match: 'beta/*.*.*')
+  PROJECT = "Card Play.xcodeproj"
+  SCHEME = "Card Play"
+  TARGET = "Card Play"
+  KEYCHAIN = "signing_temp"
 
-    if !is_new_beta
-      puts "No changes since last deployment. Exiting build."
-      next
-    end
+  def app_identifier
+    ENV.fetch("APP_IDENTIFIER", "uk.co.oliverbinns.cardplay.Card-Play")
+  end
 
-    build_number = lane_context[SharedValues::RELEASE_NEXT_VERSION]
-    increment_build_number_in_plist(build_number: build_number)
-    increment_build_number_in_xcodeproj(build_number: build_number)
+  private_lane :load_app_store_connect_api_key do
+    app_store_connect_api_key(
+      key_id: ENV.fetch("APP_STORE_CONNECT_API_KEY_ID"),
+      issuer_id: ENV.fetch("APP_STORE_CONNECT_API_ISSUER_ID"),
+      key_content: ENV.fetch("APP_STORE_CONNECT_API_KEY"),
+      is_key_content_base64: false
+    )
 
-    # Increment Version Number
-    analyze_commits(match: '*.*.*')
-    version_number = lane_context[SharedValues::RELEASE_NEXT_VERSION]
-    increment_version_number_in_plist(version_number: version_number)
-    increment_version_number_in_xcodeproj(version_number: version_number)
+    lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+  end
 
-    # Import Signing Certificate
+  # GitHub-hosted runners have an empty keychain, so import the distribution
+  # certificate into a temporary keychain for the duration of the build.
+  private_lane :import_distribution_certificate do
     password = SecureRandom.hex
 
     create_keychain(
-      name: "signing_temp",
+      name: KEYCHAIN,
       password: password,
-      unlock: true
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600
     )
 
     import_certificate(
-      certificate_path: options[:certificate_path],
-      certificate_password: options[:certificate_password],
-      keychain_name: 'signing_temp',
-      keychain_password: password,
-      log_output: true
+      certificate_path: ENV.fetch("CERTIFICATE_PATH"),
+      certificate_password: ENV.fetch("IOS_CERTIFICATE_PASSWORD"),
+      keychain_name: KEYCHAIN,
+      keychain_password: password
     )
+  end
 
+  private_lane :setup_distribution_signing do |options|
     get_provisioning_profile(
-      provisioning_name: options[:scheme],
-      readonly: true,
-      api_key: options[:api_key]
+      api_key: options[:api_key],
+      app_identifier: app_identifier,
+      readonly: true
     )
+    profile_name = lane_context[SharedValues::SIGH_NAME]
 
     update_code_signing_settings(
+      path: PROJECT,
       use_automatic_signing: false,
-      profile_name: options[:scheme],
-      targets: options[:scheme],
-      team_id: "Z86DH46P79",
+      team_id: ENV.fetch("IOS_TEAM_ID"),
+      targets: [TARGET],
       build_configurations: "Release",
-      code_sign_identity: "Apple Distribution"
+      code_sign_identity: "Apple Distribution",
+      profile_name: profile_name
     )
 
-    xcarchive(
-       scheme: options[:scheme],
-       sdk: "iphoneos",
-       destination: "generic/platform=iOS",
-       configuration: "Release",
-       archive_path: options[:scheme] + ".xcarchive"
-    )
+    { identifier: app_identifier, profile_name: profile_name }
+  end
 
-    Dir.chdir("..") do
-      sh(
-        "xcodebuild",
-        "-exportArchive",
-        "-archivePath", options[:scheme] + ".xcarchive",
-        "-exportOptionsPlist", "exportOptions.plist",
-        "-exportPath", "./build"
-      )
+  private_lane :ensure_available_version do
+    app = Spaceship::ConnectAPI::App.find(app_identifier)
+    live_version = app.get_live_app_store_version
+
+    current_version = get_version_number(xcodeproj: PROJECT, target: TARGET)
+    version_parts = current_version.split(".").map(&:to_i)
+
+    # A new version must be strictly greater than the version currently live
+    # on the App Store. We only compare against the live version (not any
+    # unreleased draft) so that repeated CI runs keep targeting the same
+    # not-yet-released draft version rather than bumping past it every time.
+    if live_version
+      live_version_parts = live_version.version_string.split(".").map(&:to_i)
+      if (version_parts <=> live_version_parts) <= 0
+        version_parts = live_version_parts.dup
+        version_parts[-1] += 1
+      end
     end
 
-    add_git_tag(
-      tag: "beta/" + build_number
-    )
-    push_git_tags
+    new_version = version_parts.join(".")
 
-    # Upload Build
-    notes = conventional_changelog(format: 'plain')
+    if new_version != current_version
+      UI.important("Version #{current_version} is not newer than the live App Store version. Bumping to #{new_version}.")
+
+      project = Xcodeproj::Project.open("../#{PROJECT}")
+      project.targets.each do |target|
+        target.build_configurations.each do |config|
+          config.build_settings["MARKETING_VERSION"] = new_version if config.build_settings["MARKETING_VERSION"]
+        end
+      end
+      project.save
+    end
+  end
+
+  desc "Build and upload to App Store and TestFlight"
+  lane :release do
+    api_key = load_app_store_connect_api_key
+    import_distribution_certificate
+    signing_profile = setup_distribution_signing(api_key: api_key)
+
+    ensure_available_version
+    version_number = get_version_number(xcodeproj: PROJECT, target: TARGET)
+
+    build_number = latest_testflight_build_number(
+      api_key: api_key,
+      platform: "ios",
+      app_identifier: app_identifier,
+      version: version_number
+    ).next.to_s
+    increment_build_number(xcodeproj: PROJECT, build_number: build_number)
+
+    build_app(
+      project: PROJECT,
+      scheme: SCHEME,
+      export_method: "app-store",
+      destination: "generic/platform=iOS",
+      export_options: {
+        provisioningProfiles: {
+          signing_profile[:identifier] => signing_profile[:profile_name]
+        }
+      }
+    )
+
+    # Metadata and screenshots are only uploaded once they exist in fastlane/
+    # (e.g. after `bundle exec fastlane deliver download_metadata`).
+    upload_to_app_store(
+      api_key: api_key,
+      force: true,
+      skip_metadata: !File.directory?("metadata"),
+      skip_screenshots: !File.directory?("screenshots"),
+      overwrite_screenshots: true,
+      precheck_include_in_app_purchases: false
+    )
 
     upload_to_testflight(
+      api_key: api_key,
+      distribute_only: true,
+      app_identifier: app_identifier,
+      app_version: version_number,
+      build_number: build_number,
       distribute_external: true,
       groups: ["Public"],
-      changelog: notes,
-      api_key: options[:api_key],
-      reject_build_waiting_for_review: false,
+      changelog: last_git_commit[:message],
       submit_beta_review: true,
-      ipa: "build/" + options[:scheme] + ".ipa"
+      reject_build_waiting_for_review: false
     )
-    
-    delete_keychain(name: "signing_temp")
+  end
+
+  after_all do |lane|
+    delete_keychain(name: KEYCHAIN) if lane == :release
+  end
+
+  error do |lane, exception|
+    delete_keychain(name: KEYCHAIN) if lane == :release && File.exist?(File.expand_path("~/Library/Keychains/#{KEYCHAIN}-db"))
   end
 end
