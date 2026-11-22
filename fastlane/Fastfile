@@ -4,7 +4,6 @@ default_platform(:ios)
 
 platform :ios do
   PROJECT = "Card Play.xcodeproj"
-  # The local Cards package is only referenced by the workspace, so builds must use it.
   WORKSPACE = "CardPlay.xcworkspace"
   SCHEME = "Card Play"
   TARGET = "Card Play"
