@@ -31,6 +31,7 @@
 		7C72FDEF2A63EE2E001E6551 /* Sevens in Frameworks */ = {isa = PBXBuildFile; productRef = 7C72FDEE2A63EE2E001E6551 /* Sevens */; };
 		7C7560A4279F6927007E3DE1 /* SevensTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7560A3279F6927007E3DE1 /* SevensTableView.swift */; };
 		7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */; };
+		7C8FED522A6F0E3C00C949A1 /* ButtonBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED512A6F0E3C00C949A1 /* ButtonBorder.swift */; };
 		7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */; };
 		7C91992527A548FA00BC5802 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992427A548FA00BC5802 /* GameButton.swift */; };
 		7C91992827A55F4800BC5802 /* GameButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */; };
@@ -83,6 +84,7 @@
 		7C72FDEB2A63EDFD001E6551 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = Shared/SharePlay/Game.swift; sourceTree = SOURCE_ROOT; };
 		7C7560A3279F6927007E3DE1 /* SevensTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevensTableView.swift; sourceTree = "<group>"; };
 		7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformSupport.swift; sourceTree = "<group>"; };
+		7C8FED512A6F0E3C00C949A1 /* ButtonBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonBorder.swift; sourceTree = "<group>"; };
 		7C8FED512A6F136600C949A1 /* GroupActivityView+AppKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GroupActivityView+AppKit.swift"; sourceTree = "<group>"; };
 		7C91992427A548FA00BC5802 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		7C91992727A55F4800BC5802 /* GameButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButtonViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				A720DF7F30B25FA20096238D /* ShapeStyle.swift */,
 				7CA9E68B2A6F2610009CFA58 /* GroupActivities */,
 				7C55557C284388FA000C6F2C /* ReadableWidth.swift */,
+				7C8FED512A6F0E3C00C949A1 /* ButtonBorder.swift */,
 				7C8FED4F2A6F0E3C00C949A1 /* PlatformSupport.swift */,
 				A720DF8330B261DB0096238D /* FeltNoise.metal */,
 			);
@@ -420,6 +423,7 @@
 				7C3A069127A1D73800261364 /* Lobby.swift in Sources */,
 				7C91992827A55F4800BC5802 /* GameButtonViewModel.swift in Sources */,
 				7C8FED502A6F0E3C00C949A1 /* PlatformSupport.swift in Sources */,
+				7C8FED522A6F0E3C00C949A1 /* ButtonBorder.swift in Sources */,
 				7C8FED522A6F136600C949A1 /* GroupActivityView+AppKit.swift in Sources */,
 				7CFC65D527A30C1300B61C83 /* SoloGame.swift in Sources */,
 				7C47903B2A73A4CC00ABC40D /* GenericError.swift in Sources */,

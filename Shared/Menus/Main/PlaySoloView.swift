@@ -7,10 +7,12 @@ struct PlaySoloView: View {
                 SoloGame()
             } label: {
                 Label("Play Solo", systemImage: "person")
+                    .font(.body.weight(.semibold))
                     .padding(8)
                     .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
+            .outlinedButtonBorder(Color(.accent), lineWidth: 1.5)
         }
     }
 }
